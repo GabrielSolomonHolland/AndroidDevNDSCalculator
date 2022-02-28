@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NDSCalculator">
         <activity
+            android:name=".SeeTables"
+            android:exported="false" />
+        <activity
+            android:name=".SeeEquations"
+            android:exported="false" />
+        <activity
+            android:name=".CalculatorLanding"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
