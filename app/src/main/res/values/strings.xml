@@ -1,7 +1,7 @@
  <resources>
         <string name="NDS_Calculator">dropDownMenuExample</string>
         <string-array name="dropDownWoods">
-            <item>C</item>
+            <item></item>
             <item>C++</item>
             <item>Java</item>
             <item>JavaScript</item>
