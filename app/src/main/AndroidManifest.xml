@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.NDSCalculator">
+        android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity
             android:name=".SeeTables"
             android:exported="false" />
@@ -28,5 +28,6 @@
             </intent-filter>
         </activity>
     </application>
+
 
 </manifest>

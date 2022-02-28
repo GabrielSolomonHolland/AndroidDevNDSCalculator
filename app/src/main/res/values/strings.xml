@@ -1,3 +1,10 @@
-<resources>
-    <string name="app_name">NDSCalculator</string>
-</resources>
+ <resources>
+        <string name="NDS_Calculator">dropDownMenuExample</string>
+        <string-array name="dropDownWoods">
+            <item>C</item>
+            <item>C++</item>
+            <item>Java</item>
+            <item>JavaScript</item>
+            <item>VisualBasic</item>
+        </string-array>
+    </resources>
