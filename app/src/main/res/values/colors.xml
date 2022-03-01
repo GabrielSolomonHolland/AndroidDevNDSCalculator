@@ -7,4 +7,12 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- color pallatte for app: -->
+    <color name="CP1Black">#000001</color>
+    <color name="CP1Blue">#092a3a</color>
+    <color name="CP1Green">#395036</color>
+    <color name="CP1Brown">#a37c19</color>
+    <color name="CP1Beige">#ffe9c7</color>
+
 </resources>

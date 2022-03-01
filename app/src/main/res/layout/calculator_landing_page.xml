@@ -1,6 +1,268 @@
-<?xml version="1.0" encoding="utf-8"?>
+<!-- Credit @Jacob Kapfer -->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"/>
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="314dp"
+        android:layout_height="530dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/case1BTN"
+                    android:layout_width="48dp"
+                    android:layout_height="75dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_weight="1"
+                    android:onClick="onClick"
+                    android:text="Case 1" />
+
+                <Button
+                    android:id="@+id/case2BTN"
+                    android:layout_width="48dp"
+                    android:layout_height="75dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_weight="1"
+                    android:onClick="onClick"
+                    android:text="Case 2" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/case3BTN"
+                    android:layout_width="48dp"
+                    android:layout_height="75dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_weight="1"
+                    android:onClick="onClick"
+                    android:text="Case 3" />
+
+                <Button
+                    android:id="@+id/case4BTN"
+                    android:layout_width="48dp"
+                    android:layout_height="75dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_weight="1"
+                    android:onClick="onClick"
+                    android:text="Case 4" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/case5BTN"
+                    android:layout_width="48dp"
+                    android:layout_height="75dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_weight="1"
+                    android:onClick="onClick"
+                    android:text="Case 5" />
+
+                <Button
+                    android:id="@+id/case6BTN"
+                    android:layout_width="48dp"
+                    android:layout_height="75dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_weight="1"
+                    android:onClick="onClick"
+                    android:text="Case 6" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/case7BTN"
+                    android:layout_width="48dp"
+                    android:layout_height="75dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_weight="1"
+                    android:onClick="onClick"
+                    android:text="Case 7" />
+
+                <Button
+                    android:id="@+id/case8BTN"
+                    android:layout_width="48dp"
+                    android:layout_height="75dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_weight="1"
+                    android:onClick="onClick"
+                    android:text="Case 8" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/case9BTN"
+                    android:layout_width="48dp"
+                    android:layout_height="75dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_weight="1"
+                    android:onClick="onClick"
+                    android:text="Case 9" />
+
+                <Button
+                    android:id="@+id/case10BTN"
+                    android:layout_width="48dp"
+                    android:layout_height="75dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_weight="1"
+                    android:onClick="onClick"
+                    android:text="Case 10" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/case11BTN"
+                    android:layout_width="48dp"
+                    android:layout_height="75dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_weight="1"
+                    android:onClick="onClick"
+                    android:text="Case 11" />
+
+                <Button
+                    android:id="@+id/case12BTN"
+                    android:layout_width="48dp"
+                    android:layout_height="75dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_weight="1"
+                    android:onClick="onClick"
+                    android:text="Case 12" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/case13BTN"
+                    android:layout_width="48dp"
+                    android:layout_height="75dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_weight="1"
+                    android:onClick="onClick"
+                    android:text="Case 13" />
+
+                <Button
+                    android:id="@+id/case14BTN"
+                    android:layout_width="48dp"
+                    android:layout_height="75dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_weight="1"
+                    android:onClick="onClick"
+                    android:text="Case 14" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/case15BTN"
+                    android:layout_width="48dp"
+                    android:layout_height="75dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_weight="1"
+                    android:onClick="onClick"
+                    android:text="Case 15" />
+
+                <Button
+                    android:id="@+id/case16BTN"
+                    android:layout_width="48dp"
+                    android:layout_height="75dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_weight="1"
+                    android:onClick="onClick"
+                    android:text="Case 16" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/case17BTN"
+                    android:layout_width="48dp"
+                    android:layout_height="75dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_weight="1"
+                    android:onClick="onClick"
+                    android:text="Case 17" />
+
+                <Button
+                    android:id="@+id/case18BTN"
+                    android:layout_width="48dp"
+                    android:layout_height="75dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_weight="1"
+                    android:onClick="onClick"
+                    android:text="Case 18" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/case19BTN"
+                    android:layout_width="48dp"
+                    android:layout_height="75dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_weight="1"
+                    android:onClick="onClick"
+                    android:text="Case 19" />
+
+                <Button
+                    android:id="@+id/case20BTN"
+                    android:layout_width="48dp"
+                    android:layout_height="75dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_weight="1"
+                    android:onClick="onClick"
+                    android:text="Case 20" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <Button
+                    android:id="@+id/customBTN"
+                    android:layout_width="wrap_content"
+                    android:layout_height="75dp"
+                    android:layout_span="2"
+                    android:layout_weight="1"
+                    android:onClick="onClick"
+                    android:text="custom case" />
+            </TableRow>
+
+        </TableLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
