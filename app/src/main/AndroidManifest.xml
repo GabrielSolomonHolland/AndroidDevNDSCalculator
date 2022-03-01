@@ -10,6 +10,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity
+            android:name=".Case5"
+            android:exported="false" />
+        <activity
+            android:name=".Case4"
+            android:exported="false" />
+        <activity
+            android:name=".Case3"
+            android:exported="false" />
+        <activity
+            android:name=".Case2"
+            android:exported="false" />
+        <activity
+            android:name=".Case1"
+            android:exported="false" />
+        <activity
             android:name=".SeeTables"
             android:exported="false" />
         <activity
@@ -28,6 +43,5 @@
             </intent-filter>
         </activity>
     </application>
-
 
 </manifest>

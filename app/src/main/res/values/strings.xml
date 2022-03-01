@@ -1,10 +1,10 @@
- <resources>
-        <string name="NDS_Calculator">dropDownMenuExample</string>
-        <string-array name="dropDownWoods">
-            <item></item>
-            <item>C++</item>
-            <item>Java</item>
-            <item>JavaScript</item>
-            <item>VisualBasic</item>
-        </string-array>
-    </resources>
+<resources>
+    <string name="NDS_Calculator">dropDownMenuExample</string>
+    <string-array name="dropDownWoods">
+        <item></item>
+        <item>C++</item>
+        <item>Java</item>
+        <item>JavaScript</item>
+        <item>VisualBasic</item>
+    </string-array>
+</resources>
