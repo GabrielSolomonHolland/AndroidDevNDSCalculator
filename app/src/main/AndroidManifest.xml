@@ -10,6 +10,39 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity
+            android:name=".CaseCustom"
+            android:exported="false" />
+        <activity
+            android:name=".Case15"
+            android:exported="false" />
+        <activity
+            android:name=".Case14"
+            android:exported="false" />
+        <activity
+            android:name=".Case13"
+            android:exported="false" />
+        <activity
+            android:name=".Case12"
+            android:exported="false" />
+        <activity
+            android:name=".Case11"
+            android:exported="false" />
+        <activity
+            android:name=".Case10"
+            android:exported="false" />
+        <activity
+            android:name=".Case9"
+            android:exported="false" />
+        <activity
+            android:name=".Case8"
+            android:exported="false" />
+        <activity
+            android:name=".Case7"
+            android:exported="false" />
+        <activity
+            android:name=".Case6"
+            android:exported="false" />
+        <activity
             android:name=".Case5"
             android:exported="false" />
         <activity
