@@ -28,7 +28,7 @@
                     android:layout_height="75dp"
                     android:layout_marginRight="25dp"
                     android:layout_weight="1"
-                    android:onClick="onClick"
+                    android:onClick="enterCases"
                     android:text="Case 1" />
 
                 <Button
@@ -37,7 +37,7 @@
                     android:layout_height="75dp"
                     android:layout_marginLeft="25dp"
                     android:layout_weight="1"
-                    android:onClick="onClick"
+                    android:onClick="enterCases"
                     android:text="Case 2" />
             </TableRow>
 
@@ -51,7 +51,7 @@
                     android:layout_height="75dp"
                     android:layout_marginRight="25dp"
                     android:layout_weight="1"
-                    android:onClick="onClick"
+                    android:onClick="enterCases"
                     android:text="Case 3" />
 
                 <Button
@@ -60,7 +60,7 @@
                     android:layout_height="75dp"
                     android:layout_marginLeft="25dp"
                     android:layout_weight="1"
-                    android:onClick="onClick"
+                    android:onClick="enterCases"
                     android:text="Case 4" />
             </TableRow>
 
@@ -74,7 +74,7 @@
                     android:layout_height="75dp"
                     android:layout_marginRight="25dp"
                     android:layout_weight="1"
-                    android:onClick="onClick"
+                    android:onClick="enterCases"
                     android:text="Case 5" />
 
                 <Button
@@ -83,7 +83,7 @@
                     android:layout_height="75dp"
                     android:layout_marginLeft="25dp"
                     android:layout_weight="1"
-                    android:onClick="onClick"
+                    android:onClick="enterCases"
                     android:text="Case 6" />
             </TableRow>
 
@@ -97,7 +97,7 @@
                     android:layout_height="75dp"
                     android:layout_marginRight="25dp"
                     android:layout_weight="1"
-                    android:onClick="onClick"
+                    android:onClick="enterCases"
                     android:text="Case 7" />
 
                 <Button
@@ -106,7 +106,7 @@
                     android:layout_height="75dp"
                     android:layout_marginLeft="25dp"
                     android:layout_weight="1"
-                    android:onClick="onClick"
+                    android:onClick="enterCases"
                     android:text="Case 8" />
             </TableRow>
 
@@ -120,7 +120,7 @@
                     android:layout_height="75dp"
                     android:layout_marginRight="25dp"
                     android:layout_weight="1"
-                    android:onClick="onClick"
+                    android:onClick="enterCases"
                     android:text="Case 9" />
 
                 <Button
@@ -129,7 +129,7 @@
                     android:layout_height="75dp"
                     android:layout_marginLeft="25dp"
                     android:layout_weight="1"
-                    android:onClick="onClick"
+                    android:onClick="enterCases"
                     android:text="Case 10" />
             </TableRow>
 
@@ -143,7 +143,7 @@
                     android:layout_height="75dp"
                     android:layout_marginRight="25dp"
                     android:layout_weight="1"
-                    android:onClick="onClick"
+                    android:onClick="enterCases"
                     android:text="Case 11" />
 
                 <Button
@@ -152,7 +152,7 @@
                     android:layout_height="75dp"
                     android:layout_marginLeft="25dp"
                     android:layout_weight="1"
-                    android:onClick="onClick"
+                    android:onClick="enterCases"
                     android:text="Case 12" />
             </TableRow>
 
@@ -166,7 +166,7 @@
                     android:layout_height="75dp"
                     android:layout_marginRight="25dp"
                     android:layout_weight="1"
-                    android:onClick="onClick"
+                    android:onClick="enterCases"
                     android:text="Case 13" />
 
                 <Button
@@ -175,7 +175,7 @@
                     android:layout_height="75dp"
                     android:layout_marginLeft="25dp"
                     android:layout_weight="1"
-                    android:onClick="onClick"
+                    android:onClick="enterCases"
                     android:text="Case 14" />
             </TableRow>
 
@@ -185,72 +185,18 @@
 
                 <Button
                     android:id="@+id/case15BTN"
-                    android:layout_width="48dp"
+                    android:layout_width="293dp"
                     android:layout_height="75dp"
-                    android:layout_marginRight="25dp"
+                    android:layout_span="2"
                     android:layout_weight="1"
-                    android:onClick="onClick"
+                    android:onClick="enterCases"
                     android:text="Case 15" />
 
-                <Button
-                    android:id="@+id/case16BTN"
-                    android:layout_width="48dp"
-                    android:layout_height="75dp"
-                    android:layout_marginLeft="25dp"
-                    android:layout_weight="1"
-                    android:onClick="onClick"
-                    android:text="Case 16" />
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-
-                <Button
-                    android:id="@+id/case17BTN"
-                    android:layout_width="48dp"
-                    android:layout_height="75dp"
-                    android:layout_marginRight="25dp"
-                    android:layout_weight="1"
-                    android:onClick="onClick"
-                    android:text="Case 17" />
-
-                <Button
-                    android:id="@+id/case18BTN"
-                    android:layout_width="48dp"
-                    android:layout_height="75dp"
-                    android:layout_marginLeft="25dp"
-                    android:layout_weight="1"
-                    android:onClick="onClick"
-                    android:text="Case 18" />
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <Button
-                    android:id="@+id/case19BTN"
-                    android:layout_width="48dp"
-                    android:layout_height="75dp"
-                    android:layout_marginRight="25dp"
-                    android:layout_weight="1"
-                    android:onClick="onClick"
-                    android:text="Case 19" />
-
-                <Button
-                    android:id="@+id/case20BTN"
-                    android:layout_width="48dp"
-                    android:layout_height="75dp"
-                    android:layout_marginLeft="25dp"
-                    android:layout_weight="1"
-                    android:onClick="onClick"
-                    android:text="Case 20" />
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" >
 
                 <Button
                     android:id="@+id/customBTN"
@@ -258,7 +204,7 @@
                     android:layout_height="75dp"
                     android:layout_span="2"
                     android:layout_weight="1"
-                    android:onClick="onClick"
+                    android:onClick="enterCases"
                     android:text="custom case" />
             </TableRow>
 
