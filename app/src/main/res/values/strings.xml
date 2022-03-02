@@ -2,9 +2,14 @@
     <string name="NDS_Calculator">dropDownMenuExample</string>
     <string-array name="dropDownWoods">
         <item></item>
-        <item>C++</item>
-        <item>Java</item>
-        <item>JavaScript</item>
-        <item>VisualBasic</item>
+        <item>Douglas Fir-Larch</item>
+        <item>Douglas Fir-South</item>
+        <item>Eastern Softwoods</item>
+        <item>Eastern White Pine</item>
+        <item>Hem-Fir</item>
+        <item>Redwood</item>
+        <item>Spruce-Pine-Fir</item>
+        <item>Spruce-Pine-Fir (South)</item>
+        <item>Western Woods</item>
     </string-array>
 </resources>

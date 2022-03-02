@@ -12,25 +12,33 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.i("log","On create main activity");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Log.i("log","Successfully created and set content view for on create");
     }
 
 
     public void nav(View v) {
+        Log.i("Log", "entered navigation method");
         Button calc = findViewById(R.id.calcBTN);
         Button equations = findViewById(R.id.seeEquationsBTN);
         Button tables = findViewById(R.id.seeTablesBTN);
+        Log.i("log", "Successfully loaded buttons");
 
         Intent toCalc = new Intent(this, CalculatorLanding.class);
         Intent toEquations = new Intent(this, SeeEquations.class);
         Intent toTables = new Intent(this, SeeTables.class);
+        Log.i("log","Created intents, entering switch case for button clicks");
         switch (v.getId()) {
             case (R.id.calcBTN):
+                Log.i("log", "starting calculator");
                 startActivity(toCalc);
             case (R.id.seeEquationsBTN):
+                Log.i("log", "starting equations");
                 startActivity(toEquations);
             case (R.id.seeTablesBTN):
+                Log.i("log", "starting tables");
                 startActivity(toTables);
         }
     }

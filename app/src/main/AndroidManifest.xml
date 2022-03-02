@@ -59,26 +59,24 @@
             android:exported="false" />
         <activity
             android:name=".SeeTables"
-            android:exported="true"
-            android:noHistory="true"/>
+            android:exported="false" />
         <activity
             android:name=".SeeEquations"
-            android:exported="true"
-            android:noHistory="true"/>
+            android:exported="false" />
         <activity
             android:name=".CalculatorLanding"
-            android:exported="true"
-            android:noHistory="true"/>
-
-        <!-- this no history should help out not making the stack dummy tall
-the only "history" aka what you can use the back arrow to get to should be in the instances -->
-        <activity
-            android:name=".MainActivity"
-            android:exported="true"
-            android:noHistory="true">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

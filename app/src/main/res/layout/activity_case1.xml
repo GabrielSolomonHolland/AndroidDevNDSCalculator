@@ -85,10 +85,10 @@
         android:text="Calculate"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.551"
+        app:layout_constraintHorizontal_bias="0.525"
         app:layout_constraintStart_toEndOf="@+id/lET"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.755" />
+        app:layout_constraintVertical_bias="0.749" />
 
     <TextView
         android:id="@+id/resultTV"
@@ -102,6 +102,7 @@
         android:id="@+id/woodSelect"
         android:layout_width="338dp"
         android:layout_height="30dp"
+        android:entries="@array/dropDownWoods"
         app:layout_constraintBottom_toBottomOf="@+id/resultTV"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
