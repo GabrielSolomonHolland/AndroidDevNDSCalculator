@@ -9,6 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-9877834407809121~9892700686"/>
         <activity
             android:name=".CaseCustom"
             android:exported="false" />
@@ -64,15 +67,6 @@
             android:name=".SeeEquations"
             android:exported="false" />
         <activity
-            android:name=".CalculatorLanding"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-
-        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
@@ -80,6 +74,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".CalculatorLanding"
+            android:exported="true">
+        </activity>
+
     </application>
 
 </manifest>

@@ -8,15 +8,28 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Log.i("log","On create main activity");
+        Log.i("log", "On create main activity");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Log.i("log","Successfully created and set content view for on create");
+        Log.i("log", "Successfully created and set content view for on create");
+
+        Log.i("log","About to initialize ads");
+        MobileAds.initialize(this,new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete (InitializationStatus initializationStatus){
+            }
+        });
     }
+
+
 
 
     public void nav(View v) {
