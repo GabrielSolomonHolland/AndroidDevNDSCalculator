@@ -10,10 +10,10 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="279dp"
-        android:layout_height="274dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
+        android:layout_width="278dp"
+        android:layout_height="259dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
         app:layout_constraintBottom_toTopOf="@+id/woodSelect"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -116,53 +116,54 @@
 
     <Spinner
         android:id="@+id/woodSelect"
-        android:layout_width="240dp"
+        android:layout_width="250dp"
         android:layout_height="36dp"
         android:entries="@array/dropDownWoods"
         app:layout_constraintBottom_toBottomOf="@+id/result1TV"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.385"
+        app:layout_constraintHorizontal_bias="0.229"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.507" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
         android:id="@+id/spinner2"
-        android:layout_width="240dp"
+        android:layout_width="250dp"
         android:layout_height="36dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.385"
+        app:layout_constraintHorizontal_bias="0.229"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.549" />
+        app:layout_constraintVertical_bias="0.551" />
 
     <Button
         android:id="@+id/doneBTN1"
         android:layout_width="85dp"
         android:layout_height="38dp"
+        android:layout_marginTop="15dp"
         android:backgroundTint="@color/CP1Green"
-        android:text="Button"
+        android:onClick="setSpinner2"
+        android:text="Done"
         android:textColor="@color/CP1Beige"
         app:layout_constraintBottom_toTopOf="@+id/calculateBTN"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.938"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.205"
+        app:layout_constraintStart_toEndOf="@+id/woodSelect"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.163" />
+        app:layout_constraintVertical_bias="0.048" />
 
     <Button
         android:id="@+id/doneBTN2"
         android:layout_width="85dp"
         android:layout_height="38dp"
         android:backgroundTint="@color/CP1Green"
-        android:text="Button"
+        android:text="Done"
         android:textColor="@color/CP1Beige"
         app:layout_constraintBottom_toTopOf="@+id/calculateBTN"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.938"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.532" />
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toEndOf="@+id/spinner2"
+        app:layout_constraintTop_toBottomOf="@+id/doneBTN1"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
