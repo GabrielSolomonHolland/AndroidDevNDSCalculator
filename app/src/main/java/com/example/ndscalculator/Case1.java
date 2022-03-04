@@ -89,7 +89,9 @@ public class Case1 extends AppCompatActivity {
         }
 
     }
-    public void enterCases(View v) {
+
+
+   /* public void enterCases(View v) {
         Log.i("log", "Entered switch case for cases");
         switch (v.getId()) {
             case (R.id.case1BTN):
@@ -159,6 +161,6 @@ public class Case1 extends AppCompatActivity {
                 startActivity(custom);
                 break;
         }
-    }
+    }*/
 
 }
