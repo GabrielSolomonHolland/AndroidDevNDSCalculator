@@ -1,5 +1,6 @@
 package com.example.ndscalculator;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -47,22 +48,27 @@ public class MainActivity extends AppCompatActivity {
             case (R.id.calcBTN):
                 Log.i("log", "starting calculator");
                 startActivity(toCalc);
+                break;
             case (R.id.seeEquationsBTN):
                 Log.i("log", "starting equations");
                 startActivity(toEquations);
+                break;
             case (R.id.seeTablesBTN):
                 Log.i("log", "starting tables");
                 startActivity(toTables);
+                break;
         }
     }
 
     //this method is for the calculator landing page.
     //the landing page has this same code but the xml can't read it from there.
-    public void enterCases(View v) {
+    public void enterCases(@NonNull View v) {
         Log.i("log", "Entered switch case for cases");
         switch (v.getId()) {
             case (R.id.case1BTN):
+                Log.i("log","clicked case1");
                 Intent case1 = new Intent(this, Case1.class);
+                Log.i("log","entering intent");
                 startActivity(case1);
                 break;
             case (R.id.case2BTN):
@@ -140,7 +146,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(toHome);
     }
 
-    public String[] getTypesFromWood(String woodType)
+    //this is now in case1
+
+/*    public String[] getTypesFromWood(String woodType)
     {
             //The goal of this monstrosity is to, from the file they selected in the first spinner,
             //to create a second spinner of the options from within that wood type.
@@ -172,6 +180,7 @@ public class MainActivity extends AppCompatActivity {
                     returnArray[i] = resultLine[0];
                     i++;
                 }
+                Log.i("returnArray","Return = " + returnArray);
                 return returnArray;
             }
             catch (Exception e)
@@ -183,7 +192,7 @@ public class MainActivity extends AppCompatActivity {
                 return zoinks;
             }
 
-    }
+    }*/
 
-    
+
 }

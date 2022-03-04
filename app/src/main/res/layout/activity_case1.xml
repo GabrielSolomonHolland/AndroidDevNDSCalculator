@@ -12,27 +12,27 @@
         android:id="@+id/imageView2"
         android:layout_width="282dp"
         android:layout_height="335dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/woodSelect"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.148"
+        app:layout_constraintTop_toBottomOf="@+id/case1Title"
+        app:layout_constraintVertical_bias="0.555"
         app:srcCompat="@drawable/case1cropped" />
 
     <TextView
         android:id="@+id/case1Title"
-        android:layout_width="256dp"
-        android:layout_height="48dp"
+        android:layout_width="224dp"
+        android:layout_height="37dp"
         android:text="Single Beam\nUniformely Distributed Load"
         android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.031" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/wET"
@@ -85,6 +85,7 @@
         android:layout_height="wrap_content"
         android:background="@color/CP1Green"
         android:text="Calculate"
+        android:textColor="@color/CP1Beige"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.32"
@@ -102,24 +103,54 @@
 
     <Spinner
         android:id="@+id/woodSelect"
-        android:layout_width="301dp"
-        android:layout_height="28dp"
+        android:layout_width="240dp"
+        android:layout_height="36dp"
         android:entries="@array/dropDownWoods"
         app:layout_constraintBottom_toBottomOf="@+id/resultTV"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.081"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.56" />
+        app:layout_constraintVertical_bias="0.557" />
 
     <Spinner
         android:id="@+id/spinner2"
-        android:layout_width="299dp"
-        android:layout_height="32dp"
+        android:layout_width="240dp"
+        android:layout_height="36dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintHorizontal_bias="0.08"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.603" />
+        app:layout_constraintVertical_bias="0.605" />
+
+    <Button
+        android:id="@+id/doneSpinner1BTN"
+        android:layout_width="69dp"
+        android:layout_height="39dp"
+        android:backgroundTint="@color/CP1Green"
+        android:onClick="setSpinner2"
+        android:text="done"
+        android:textColor="@color/CP1Beige"
+        app:layout_constraintBottom_toTopOf="@+id/resultTV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.261"
+        app:layout_constraintStart_toEndOf="@+id/woodSelect"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/doneSpinner2BTN"
+        android:layout_width="69dp"
+        android:layout_height="39dp"
+        android:backgroundTint="@color/CP1Green"
+        android:text="done"
+        android:textColor="@color/CP1Beige"
+        app:layout_constraintBottom_toTopOf="@+id/resultTV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.261"
+        app:layout_constraintStart_toEndOf="@+id/woodSelect"
+        app:layout_constraintTop_toBottomOf="@+id/doneSpinner1BTN"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

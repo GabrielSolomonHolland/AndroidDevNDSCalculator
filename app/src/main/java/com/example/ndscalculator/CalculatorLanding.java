@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 
 public class CalculatorLanding extends AppCompatActivity {
 
@@ -13,17 +14,12 @@ public class CalculatorLanding extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.calculator_landing_page);
+
     }
-}
-
-
-
-// code for entering cases, android studio didn't recognize it from here so I moved it to main activity
-    /*public void enterCases(View v)
-    {
-        Log.i("log","Entered switch case for cases");
-        switch(v.getId())
-        {
+    // code for entering cases, android studio didn't recognize it from here so I moved it to main activity
+    public void enterCases(View v) {
+        Log.i("log", "Entered switch case for cases");
+        switch (v.getId()) {
             case (R.id.case1BTN):
                 Intent case1 = new Intent(this, Case1.class);
                 startActivity(case1);
@@ -88,10 +84,11 @@ public class CalculatorLanding extends AppCompatActivity {
                 Intent custom = new Intent(this, CaseCustom.class);
                 startActivity(custom);
                 break;
-            *//*default:
-                Intent custom1 = new Intent(this, CaseCustom.class);
-                startActivity(custom1);
-                break;
 
         }
-    */
+    }
+}
+
+
+
+
