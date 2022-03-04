@@ -14,8 +14,12 @@ public class CalculatorLanding extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.calculator_landing_page);
     }
+}
 
-    public void enterCases(View v)
+
+
+// code for entering cases, android studio didn't recognize it from here so I moved it to main activity
+    /*public void enterCases(View v)
     {
         Log.i("log","Entered switch case for cases");
         switch(v.getId())
@@ -84,17 +88,10 @@ public class CalculatorLanding extends AppCompatActivity {
                 Intent custom = new Intent(this, CaseCustom.class);
                 startActivity(custom);
                 break;
-            /*default:
+            *//*default:
                 Intent custom1 = new Intent(this, CaseCustom.class);
                 startActivity(custom1);
                 break;
-*/
+
         }
-    }
-
-
-    public void returnToCalc(View v)
-    {
-
-    }
-}
+    */

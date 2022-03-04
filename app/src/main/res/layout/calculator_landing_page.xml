@@ -4,9 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/CP1Blue"
     tools:context=".MainActivity">
 
+    <Button
+        android:id="@+id/button"
+        android:layout_width="115dp"
+        android:layout_height="54dp"
+        android:backgroundTint="@color/CP1Green"
+        android:text="Go back"
+        android:textColor="@color/CP1Beige"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
+
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="314dp"
         android:layout_height="530dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -28,8 +42,10 @@
                     android:layout_height="75dp"
                     android:layout_marginRight="25dp"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/CP1Green"
                     android:onClick="enterCases"
-                    android:text="Case 1" />
+                    android:text="Case 1"
+                    android:textColor="@color/CP1Beige" />
 
                 <Button
                     android:id="@+id/case2BTN"
@@ -37,8 +53,10 @@
                     android:layout_height="75dp"
                     android:layout_marginLeft="25dp"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/CP1Green"
                     android:onClick="enterCases"
-                    android:text="Case 2" />
+                    android:text="Case 2"
+                    android:textColor="@color/CP1Beige" />
             </TableRow>
 
             <TableRow
@@ -51,8 +69,10 @@
                     android:layout_height="75dp"
                     android:layout_marginRight="25dp"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/CP1Green"
                     android:onClick="enterCases"
-                    android:text="Case 3" />
+                    android:text="Case 3"
+                    android:textColor="@color/CP1Beige" />
 
                 <Button
                     android:id="@+id/case4BTN"
@@ -60,8 +80,10 @@
                     android:layout_height="75dp"
                     android:layout_marginLeft="25dp"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/CP1Green"
                     android:onClick="enterCases"
-                    android:text="Case 4" />
+                    android:text="Case 4"
+                    android:textColor="@color/CP1Beige" />
             </TableRow>
 
             <TableRow
@@ -74,8 +96,10 @@
                     android:layout_height="75dp"
                     android:layout_marginRight="25dp"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/CP1Green"
                     android:onClick="enterCases"
-                    android:text="Case 5" />
+                    android:text="Case 5"
+                    android:textColor="@color/CP1Beige" />
 
                 <Button
                     android:id="@+id/case6BTN"
@@ -83,8 +107,10 @@
                     android:layout_height="75dp"
                     android:layout_marginLeft="25dp"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/CP1Green"
                     android:onClick="enterCases"
-                    android:text="Case 6" />
+                    android:text="Case 6"
+                    android:textColor="@color/CP1Beige" />
             </TableRow>
 
             <TableRow
@@ -97,8 +123,10 @@
                     android:layout_height="75dp"
                     android:layout_marginRight="25dp"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/CP1Green"
                     android:onClick="enterCases"
-                    android:text="Case 7" />
+                    android:text="Case 7"
+                    android:textColor="@color/CP1Beige" />
 
                 <Button
                     android:id="@+id/case8BTN"
@@ -106,8 +134,10 @@
                     android:layout_height="75dp"
                     android:layout_marginLeft="25dp"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/CP1Green"
                     android:onClick="enterCases"
-                    android:text="Case 8" />
+                    android:text="Case 8"
+                    android:textColor="@color/CP1Beige" />
             </TableRow>
 
             <TableRow
@@ -120,8 +150,10 @@
                     android:layout_height="75dp"
                     android:layout_marginRight="25dp"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/CP1Green"
                     android:onClick="enterCases"
-                    android:text="Case 9" />
+                    android:text="Case 9"
+                    android:textColor="@color/CP1Beige" />
 
                 <Button
                     android:id="@+id/case10BTN"
@@ -129,8 +161,10 @@
                     android:layout_height="75dp"
                     android:layout_marginLeft="25dp"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/CP1Green"
                     android:onClick="enterCases"
-                    android:text="Case 10" />
+                    android:text="Case 10"
+                    android:textColor="@color/CP1Beige" />
             </TableRow>
 
             <TableRow
@@ -143,8 +177,10 @@
                     android:layout_height="75dp"
                     android:layout_marginRight="25dp"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/CP1Green"
                     android:onClick="enterCases"
-                    android:text="Case 11" />
+                    android:text="Case 11"
+                    android:textColor="@color/CP1Beige" />
 
                 <Button
                     android:id="@+id/case12BTN"
@@ -152,8 +188,10 @@
                     android:layout_height="75dp"
                     android:layout_marginLeft="25dp"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/CP1Green"
                     android:onClick="enterCases"
-                    android:text="Case 12" />
+                    android:text="Case 12"
+                    android:textColor="@color/CP1Beige" />
             </TableRow>
 
             <TableRow
@@ -166,8 +204,10 @@
                     android:layout_height="75dp"
                     android:layout_marginRight="25dp"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/CP1Green"
                     android:onClick="enterCases"
-                    android:text="Case 13" />
+                    android:text="Case 13"
+                    android:textColor="@color/CP1Beige" />
 
                 <Button
                     android:id="@+id/case14BTN"
@@ -175,8 +215,10 @@
                     android:layout_height="75dp"
                     android:layout_marginLeft="25dp"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/CP1Green"
                     android:onClick="enterCases"
-                    android:text="Case 14" />
+                    android:text="Case 14"
+                    android:textColor="@color/CP1Beige" />
             </TableRow>
 
             <TableRow
@@ -189,8 +231,10 @@
                     android:layout_height="75dp"
                     android:layout_span="2"
                     android:layout_weight="1"
-                    android:onClick="enterCases"
-                    android:text="Case 15" />
+                    android:backgroundTint="@color/CP1Green"
+                    android:onClick="returnToHome"
+                    android:text="Case 15"
+                    android:textColor="@color/CP1Beige" />
 
             </TableRow>
 
@@ -204,11 +248,26 @@
                     android:layout_height="75dp"
                     android:layout_span="2"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/CP1Green"
                     android:onClick="enterCases"
-                    android:text="custom case" />
+                    android:text="custom case"
+                    android:textColor="@color/CP1Beige" />
             </TableRow>
 
         </TableLayout>
     </ScrollView>
+
+    <TextView
+        android:id="@+id/calcLandTitleTV"
+        android:layout_width="244dp"
+        android:layout_height="72dp"
+        android:text="Calculator Cases"
+        android:textAlignment="center"
+        android:textColor="@color/CP1Beige"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

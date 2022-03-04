@@ -10,12 +10,14 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="341dp"
-        android:layout_height="581dp"
-        android:layout_marginBottom="172dp"
+        android:layout_width="282dp"
+        android:layout_height="335dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.148"
         app:srcCompat="@drawable/case1cropped" />
 
     <TextView
@@ -45,7 +47,7 @@
         app:layout_constraintHorizontal_bias="0.174"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.712" />
+        app:layout_constraintVertical_bias="0.668" />
 
     <EditText
         android:id="@+id/lET"
@@ -60,7 +62,7 @@
         app:layout_constraintHorizontal_bias="0.174"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.778" />
+        app:layout_constraintVertical_bias="0.726" />
 
     <EditText
         android:id="@+id/xET"
@@ -75,7 +77,7 @@
         app:layout_constraintHorizontal_bias="0.174"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.842" />
+        app:layout_constraintVertical_bias="0.784" />
 
     <Button
         android:id="@+id/calculateBTN"
@@ -85,29 +87,39 @@
         android:text="Calculate"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.525"
+        app:layout_constraintHorizontal_bias="0.32"
         app:layout_constraintStart_toEndOf="@+id/lET"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.749" />
+        app:layout_constraintVertical_bias="0.723" />
 
     <TextView
         android:id="@+id/resultTV"
-        android:layout_width="414dp"
-        android:layout_height="108dp"
+        android:layout_width="409dp"
+        android:layout_height="141dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Spinner
         android:id="@+id/woodSelect"
-        android:layout_width="338dp"
-        android:layout_height="30dp"
+        android:layout_width="301dp"
+        android:layout_height="28dp"
         android:entries="@array/dropDownWoods"
         app:layout_constraintBottom_toBottomOf="@+id/resultTV"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.659" />
+        app:layout_constraintVertical_bias="0.56" />
+
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="299dp"
+        android:layout_height="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.603" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

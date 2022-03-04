@@ -1,17 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/CP1Blue"
     tools:context=".MainActivity">
 
     <Button
         android:id="@+id/calcBTN"
         android:layout_width="200dp"
         android:layout_height="100dp"
+        android:background="@color/CP1Brown"
         android:onClick="nav"
         android:text="Calculator"
+        android:textColor="@color/CP1Beige"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/seeEquationsBTN"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -24,8 +29,11 @@
         android:layout_width="200dp"
         android:layout_height="100dp"
         android:layout_marginBottom="136dp"
+        android:background="@color/CP1Brown"
         android:onClick="nav"
         android:text="Tables"
+        android:textColor="@color/CP1Beige"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
@@ -37,8 +45,10 @@
         android:id="@+id/seeEquationsBTN"
         android:layout_width="200dp"
         android:layout_height="100dp"
+        android:background="@color/CP1Brown"
         android:onClick="nav"
         android:text="Equations"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
@@ -47,10 +57,32 @@
         app:layout_constraintVertical_bias="0.449" />
 
     <com.google.android.gms.ads.AdView
-        android:id="@+id/adView"
+        android:id="@+id/mainActivityBanner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="45dp"
-        tools:layout_editor_absoluteY="615dp" />
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-3940256099942544/6300978111"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seeTablesBTN"
+        app:layout_constraintVertical_bias="0.796" />
+
+    <TextView
+        android:id="@+id/mainTitleTV"
+        android:layout_width="197dp"
+        android:layout_height="53dp"
+        android:text="NDS Calculator"
+        android:textAlignment="center"
+        android:textColor="@color/CP1Beige"
+        android:textSize="24sp"
+        ads:layout_constraintBottom_toTopOf="@+id/calcBTN"
+        ads:layout_constraintEnd_toEndOf="parent"
+        ads:layout_constraintStart_toStartOf="parent"
+        ads:layout_constraintTop_toTopOf="parent"
+        ads:layout_constraintVertical_bias="0.4" />
+    <!--ads:adUnitId="ca-app-pub-9877834407809121/5336230778"-->
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
