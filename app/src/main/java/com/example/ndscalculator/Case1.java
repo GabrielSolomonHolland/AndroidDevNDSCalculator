@@ -29,12 +29,12 @@ public class Case1 extends AppCompatActivity {
     public void setSpinner2(View v)
     {
         Log.i("log", "\nEntered setSpinner2");
-        Spinner spinner1 = (Spinner)findViewById(R.id.spinner);
+        Spinner woodSelect = (Spinner)findViewById(R.id.woodSelect);
         Spinner spinner2 = (Spinner)findViewById(R.id.spinner2);
 
         try {
             Log.i("log", "retrieved spinners, pulling selection from 1");
-            String selection1 = spinner1.getSelectedItem().toString();
+            String selection1 = woodSelect.getSelectedItem().toString(); //this is the problem line
             Log.i("log", "selection 1 retrieved, using getTypes");
             String[] spinner2Options = getTypesFromWood(selection1);
             Log.i("log", "\nsuccess retrieving wood array");
