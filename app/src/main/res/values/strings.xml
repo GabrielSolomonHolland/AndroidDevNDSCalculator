@@ -1,5 +1,4 @@
 <resources>
-    <string name="NDS_Calculator">dropDownMenuExample</string>
     <string-array name="dropDownWoods">
         <item></item>
         <item>Douglas Fir-Larch</item>

@@ -9,7 +9,7 @@
     tools:context=".Case1" >
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/case1"
         android:layout_width="278dp"
         android:layout_height="259dp"
         android:layout_marginTop="30dp"
@@ -121,10 +121,10 @@
         android:entries="@array/dropDownWoods"
         app:layout_constraintBottom_toBottomOf="@+id/result1TV"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.217"
+        app:layout_constraintHorizontal_bias="0.229"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/case1Title"
-        app:layout_constraintVertical_bias="0.469" />
+        app:layout_constraintVertical_bias="0.472" />
 
     <Spinner
         android:id="@+id/spinner2"
@@ -150,7 +150,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.205"
         app:layout_constraintStart_toEndOf="@+id/woodSelect"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/case1"
         app:layout_constraintVertical_bias="0.048" />
 
     <Button

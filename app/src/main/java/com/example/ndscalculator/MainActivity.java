@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         AdView madView = findViewById(R.id.mainActivityBanner);
         AdRequest adRequest = new AdRequest.Builder().build();
         madView.loadAd(adRequest);
+        Log.i("log","Ad initialized");
     }
 
     public void nav(View v) {
