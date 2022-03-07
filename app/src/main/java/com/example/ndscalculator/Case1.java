@@ -4,9 +4,13 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import org.w3c.dom.Text;
 
 import java.io.BufferedReader;
 import java.io.DataInputStream;
@@ -76,12 +80,8 @@ public class Case1 extends AppCompatActivity {
 
         //The longest subtype is 14, taking the spinner option and concatenating .txt
         String[] retrieved = new String[14];
-
-        //lots of logs for bug fixing
-        //location = "\\AndroidDevNDSCalculator\\app\\src\\main\\java\\com\\example\\ndscalculator\\".concat(woodType);
         String location = woodType.concat(".txt");
-        Log.i("log","our file/location should be: " + location);
-        Log.i("log","starting file pull attempt");
+        Log.i("log","file is: " + location + ", starting input stream");
 
         try {
             //in case catch fails
@@ -101,7 +101,8 @@ public class Case1 extends AppCompatActivity {
                 String line=scan.nextLine();
                 String[] lineArr = line.split(",");
 
-                retrieved[counter]=lineArr[0];
+                String gradeAndSize = lineArr[0].concat(", ".concat(lineArr[1]));
+                retrieved[counter]=gradeAndSize;
                 counter++;
             }
 
@@ -122,25 +123,78 @@ public class Case1 extends AppCompatActivity {
         Log.i("log","Counted length = " + actualLength + ", about to resize array");
         //resizing/copying the array
         String[] returnArray = new String[actualLength-1];
-        Log.i("log","Made new array, about to copy");
         for(int k=1;k<actualLength;k++)
         {
-            //Log.i("log","copying value: " + retrieved[k]);
             //copy all values except the first, the first is the same as the wood type
             returnArray[k-1] = retrieved[k];
         }
+        Log.i("log","resized");
 
         Log.i("log","Returning the array");
         return returnArray;
     }
 
-}
-//parse through file
-            //Log.i("log","parsing file");
-            /*while ((line = br.readLine()) != null)
-            {
-                String[] lineArr = line.split(",");
-                //add title of line to return list
-                retrieved[counter]=lineArr[0];
+    public String[] getGradeResult(String woodType, String grade)
+    {
+        //most of this is copied from the getWoodType method, slight variation
+        String[] returnArray = new String[9];
+        String location = woodType.concat(".txt");
+        Log.i("log","file is: " + location + ", starting input stream");
+
+        try {
+            DataInputStream inputStream = null;
+            //stack overflow
+            try {
+                inputStream = new DataInputStream(getAssets().open(String.format(location)));
+                Log.i("log","success making input stream");
+            } catch (IOException e) {
+                Log.i("log","input stream failed");
+                e.printStackTrace();
             }
-        br.close();*/
+            Scanner scan = new Scanner(inputStream);
+            while (scan.hasNextLine())
+            {
+                String line=scan.nextLine();
+                String[] lineArr = line.split(",");
+                String gradeAndSize = lineArr[0].concat(", ".concat(lineArr[1]));
+                //find the line they picked in the file that they selected
+                if(grade == gradeAndSize)
+                {
+                    returnArray = lineArr.clone();
+                    break;
+                }
+            }
+        } catch (Exception e) {
+            Log.i("log","failed to read file");
+        }
+        return returnArray;
+    }
+
+    public void calculateCase1(View v)
+    {
+        //make values for result and pull in all attributes from the xml
+        float rResult,mMax,deltaMaxCenter,vx,mx,deltax; //this is what we're calculating
+        EditText wET =(EditText)findViewById(R.id.wET);
+        EditText lET =(EditText)findViewById(R.id.lET);
+        EditText xET =(EditText)findViewById(R.id.xET);
+        TextView resultTV1 = (TextView)findViewById(R.id.result1TV);
+        TextView resultTV2 = (TextView)findViewById(R.id.result2TV);
+        Spinner woodSelect = (Spinner)findViewById(R.id.woodSelect);
+        Spinner gradeSelect = (Spinner)findViewById(R.id.spinner2);
+
+
+        //start getting the values we need
+        Log.i("log","retrieving spinner result data");
+        String woodSelection = woodSelect.getSelectedItem().toString();
+        String gradeSelection = gradeSelect.getSelectedItem().toString();
+        String[] selectedLine = getGradeResult(woodSelection,gradeSelection);
+
+        
+
+
+
+
+
+    }
+
+}

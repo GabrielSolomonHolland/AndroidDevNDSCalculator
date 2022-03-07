@@ -153,18 +153,4 @@
         app:layout_constraintTop_toBottomOf="@+id/case1"
         app:layout_constraintVertical_bias="0.048" />
 
-    <Button
-        android:id="@+id/doneBTN2"
-        android:layout_width="85dp"
-        android:layout_height="38dp"
-        android:backgroundTint="@color/CP1Green"
-        android:text="Done"
-        android:textColor="@color/CP1Beige"
-        app:layout_constraintBottom_toTopOf="@+id/calculateBTN"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.2"
-        app:layout_constraintStart_toEndOf="@+id/spinner2"
-        app:layout_constraintTop_toBottomOf="@+id/doneBTN1"
-        app:layout_constraintVertical_bias="0.0" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
