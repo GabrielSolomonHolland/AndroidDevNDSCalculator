@@ -1,5 +1,6 @@
 package com.example.ndscalculator;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -7,16 +8,12 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import org.w3c.dom.Text;
-
-import java.io.BufferedReader;
 import java.io.DataInputStream;
-import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -40,6 +37,12 @@ public class Case1 extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         woodSelect.setAdapter(adapter);
+    }
+
+    public void returnToCalc(View v)
+    {
+        Intent toCalc = new Intent(this, CalculatorLanding.class);
+        startActivity(toCalc);
     }
 
     public void setSpinner2(View v)
@@ -152,28 +155,35 @@ public class Case1 extends AppCompatActivity {
                 e.printStackTrace();
             }
             Scanner scan = new Scanner(inputStream);
+            Log.i("log","parsing file, looking for: " + grade);
             while (scan.hasNextLine())
             {
                 String line=scan.nextLine();
                 String[] lineArr = line.split(",");
                 String gradeAndSize = lineArr[0].concat(", ".concat(lineArr[1]));
+                Log.i("log","reviewed grade: " + gradeAndSize);
                 //find the line they picked in the file that they selected
-                if(grade == gradeAndSize)
+                if(grade.equals(gradeAndSize))
                 {
-                    returnArray = lineArr.clone();
-                    break;
+                    Log.i("log","found entered value");
+                    Log.i("log","returning array");
+                    return lineArr;
                 }
             }
         } catch (Exception e) {
             Log.i("log","failed to read file");
         }
-        return returnArray;
+        Log.i("log","returning empty array, this is bad");
+        return returnArray; //should be impossible
     }
 
     public void calculateCase1(View v)
     {
+        Log.i("log","Entered calculations");
         //make values for result and pull in all attributes from the xml
-        float rResult,mMax,deltaMaxCenter,vx,mx,deltax; //this is what we're calculating
+        float rVMax,mMax,deltaMaxCenter,vx,mx,deltax,e; //this is what we're calculating
+        float w,l,x; //what we're using
+        Boolean hasX; //x is optional
         EditText wET =(EditText)findViewById(R.id.wET);
         EditText lET =(EditText)findViewById(R.id.lET);
         EditText xET =(EditText)findViewById(R.id.xET);
@@ -181,19 +191,82 @@ public class Case1 extends AppCompatActivity {
         TextView resultTV2 = (TextView)findViewById(R.id.result2TV);
         Spinner woodSelect = (Spinner)findViewById(R.id.woodSelect);
         Spinner gradeSelect = (Spinner)findViewById(R.id.spinner2);
+        Log.i("log","pulled all views from activity");
 
+        //clear views
+        resultTV1.setText("");
+        resultTV2.setText("");
 
-        //start getting the values we need
+        //get the values for calculations
         Log.i("log","retrieving spinner result data");
         String woodSelection = woodSelect.getSelectedItem().toString();
         String gradeSelection = gradeSelect.getSelectedItem().toString();
+
+        Log.i("log","getting grade result");
         String[] selectedLine = getGradeResult(woodSelection,gradeSelection);
 
-        
+        Log.i("log","getting e value");
+        Log.i("log","should get: " + selectedLine[7]);
+        e=Float.parseFloat(selectedLine[7]);
+        Log.i("log","e value recieved was: " + e);
+
+        //make sure they entered values
+        try{
+            Log.i("log","getting w,l,x");
+            w = Float.parseFloat(wET.getText().toString());
+            l = Float.parseFloat(lET.getText().toString());
+
+            Log.i("log","starting initial calculations");
+            rVMax = (w*l)/2;
+            mMax = ((float) Math.pow(l,2)*w)/8; //ask if wl^2 = (w*l)^2 or w*(l^2)
+            Log.i("log","rvmax, mmax complete");
+            deltaMaxCenter = (5*w*((float)Math.pow(l,4)))/(384*e*l);
+
+            //set outputs
+            String output1 = "R=V(max): " + rVMax +
+                    "\n\nM(max): " + mMax +
+                    "\n\nDelta(max)\nat center:\n" + deltaMaxCenter;
+            resultTV1.setText(output1);
+        }
+        catch (Exception except)
+        {
+            Toast.makeText(getApplicationContext(), "L and W are required", Toast.LENGTH_SHORT).show();
+        }
+
+        try{
+            x = Float.parseFloat(xET.getText().toString());
+            w = Float.parseFloat(wET.getText().toString());
+            l = Float.parseFloat(lET.getText().toString());
+
+            vx = w*((l/2)-x);
+            mx = ((w*x)/2)*(l-x);
+
+            //splitting this nonsense up
+            Log.i("log","starting deltax");
+            float deltaxpt1, deltaxpt2;
+            deltaxpt1 = ((w*x)/(24*e*l));
+            deltaxpt2 = ((float)Math.pow(l,3)) * (2*l*(float)Math.pow(x,2)) * ((float)Math.pow(x,3));
+            deltax = deltaxpt1*deltaxpt2;
+            Log.i("log","deltax complete, got:" + deltax);
+            String output2 = "V(x): " + vx +
+                    "\n\nM(x): " + mx +
+                    "\n\nDelta(x): " + deltax;
+            resultTV2.setText(output2);
+
+            if(x>l)
+            {
+                Toast.makeText(getApplicationContext(), "X should not be larger than L", Toast.LENGTH_SHORT).show();
+            }
+        }
+        catch (Exception except)
+        {
+
+        }
+
+        //calculations
 
 
-
-
+        //if they entered an x value (optional)
 
     }
 

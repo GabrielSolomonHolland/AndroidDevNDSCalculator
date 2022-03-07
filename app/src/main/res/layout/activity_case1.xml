@@ -23,11 +23,12 @@
 
     <TextView
         android:id="@+id/case1Title"
-        android:layout_width="224dp"
-        android:layout_height="37dp"
+        android:layout_width="225dp"
+        android:layout_height="45dp"
         android:text="Single Beam\nUniformely Distributed Load"
         android:textAlignment="center"
-        android:textSize="16sp"
+        android:textColor="@color/CP1Beige"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -68,7 +69,7 @@
         android:layout_width="210dp"
         android:layout_height="40dp"
         android:ems="10"
-        android:hint="Enter X Value"
+        android:hint="Enter X Value (optional)"
         android:inputType="numberDecimal"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -80,22 +81,25 @@
 
     <Button
         android:id="@+id/calculateBTN"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/CP1Green"
+        android:layout_width="110dp"
+        android:layout_height="75dp"
+        android:backgroundTint="@color/CP1Green"
+        android:onClick="calculateCase1"
         android:text="Calculate"
         android:textColor="@color/CP1Beige"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.294"
+        app:layout_constraintHorizontal_bias="0.91"
         app:layout_constraintStart_toEndOf="@+id/lET"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.674" />
+        app:layout_constraintVertical_bias="0.689" />
 
     <TextView
         android:id="@+id/result1TV"
         android:layout_width="206dp"
         android:layout_height="166dp"
+        android:textColor="@color/CP1Beige"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.01"
@@ -107,6 +111,8 @@
         android:id="@+id/result2TV"
         android:layout_width="203dp"
         android:layout_height="167dp"
+        android:textColor="@color/CP1Beige"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -139,18 +145,69 @@
 
     <Button
         android:id="@+id/doneBTN1"
-        android:layout_width="85dp"
-        android:layout_height="38dp"
+        android:layout_width="110dp"
+        android:layout_height="75dp"
         android:layout_marginTop="15dp"
         android:backgroundTint="@color/CP1Green"
         android:onClick="setSpinner2"
-        android:text="Done"
+        android:text="Show Sizes"
         android:textColor="@color/CP1Beige"
         app:layout_constraintBottom_toTopOf="@+id/calculateBTN"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.205"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toEndOf="@+id/woodSelect"
         app:layout_constraintTop_toBottomOf="@+id/case1"
-        app:layout_constraintVertical_bias="0.048" />
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/wUnitTV"
+        android:layout_width="42dp"
+        android:layout_height="26dp"
+        android:text="lbs"
+        app:layout_constraintBottom_toTopOf="@+id/result2TV"
+        app:layout_constraintEnd_toStartOf="@+id/calculateBTN"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/lET"
+        app:layout_constraintTop_toBottomOf="@+id/case1"
+        app:layout_constraintVertical_bias="0.516" />
+
+    <TextView
+        android:id="@+id/lUnitTV"
+        android:layout_width="42dp"
+        android:layout_height="26dp"
+        android:text="in"
+        app:layout_constraintBottom_toTopOf="@+id/result2TV"
+        app:layout_constraintEnd_toStartOf="@+id/calculateBTN"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/lET"
+        app:layout_constraintTop_toBottomOf="@+id/case1"
+        app:layout_constraintVertical_bias="0.71" />
+
+    <TextView
+        android:id="@+id/xUnitTV"
+        android:layout_width="42dp"
+        android:layout_height="26dp"
+        android:text="in"
+        app:layout_constraintBottom_toTopOf="@+id/result2TV"
+        app:layout_constraintEnd_toStartOf="@+id/calculateBTN"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/lET"
+        app:layout_constraintTop_toBottomOf="@+id/case1"
+        app:layout_constraintVertical_bias="0.9" />
+
+    <Button
+        android:id="@+id/goBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/CP1Green"
+        android:onClick="returnToCalc"
+        android:text="Go Back"
+        android:textColor="@color/CP1Beige"
+        app:layout_constraintBottom_toTopOf="@+id/case1"
+        app:layout_constraintEnd_toStartOf="@+id/case1Title"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
