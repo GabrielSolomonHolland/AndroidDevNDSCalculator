@@ -183,8 +183,7 @@ public class Case1 extends AppCompatActivity {
         //make values for result and pull in all attributes from the xml
         float rVMax,mMax,deltaMaxCenter,vx,mx,deltax,e; //this is what we're calculating
         float w,l,x; //what we're using
-        Boolean hasX; //x is optional
-        EditText wET =(EditText)findViewById(R.id.wET);
+        EditText wET =(EditText)findViewById(R.id.pET);
         EditText lET =(EditText)findViewById(R.id.lET);
         EditText xET =(EditText)findViewById(R.id.xET);
         TextView resultTV1 = (TextView)findViewById(R.id.result1TV);
@@ -262,12 +261,6 @@ public class Case1 extends AppCompatActivity {
         {
 
         }
-
-        //calculations
-
-
-        //if they entered an x value (optional)
-
     }
 
 }
