@@ -6,4 +6,198 @@
     android:layout_height="match_parent"
     tools:context=".Case7">
 
+    <TextView
+        android:id="@+id/case1Title6"
+        android:layout_width="225dp"
+        android:layout_height="65dp"
+        android:text="Single Beam\nConcentrated Load at Center"
+        android:textAlignment="center"
+        android:textColor="@color/CP1Beige"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/pET6"
+        android:layout_width="210dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:hint="Enter P Value"
+        android:inputType="numberDecimal"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.174"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.62" />
+
+    <EditText
+        android:id="@+id/lET6"
+        android:layout_width="210dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:hint="Enter L Value"
+        android:inputType="numberDecimal"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.174"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.678" />
+
+    <EditText
+        android:id="@+id/xET6"
+        android:layout_width="210dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:hint="Enter X Value (optional)"
+        android:inputType="numberDecimal"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.174"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.736" />
+
+    <Button
+        android:id="@+id/calculateBTN6"
+        android:layout_width="110dp"
+        android:layout_height="75dp"
+        android:backgroundTint="@color/CP1Green"
+        android:text="Calculate"
+        android:textColor="@color/CP1Beige"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.91"
+        app:layout_constraintStart_toEndOf="@+id/lET"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.689" />
+
+    <TextView
+        android:id="@+id/result1TV6"
+        android:layout_width="206dp"
+        android:layout_height="166dp"
+        android:textColor="@color/CP1Beige"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.01"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/xET"
+        app:layout_constraintVertical_bias="0.857" />
+
+    <TextView
+        android:id="@+id/result2TV6"
+        android:layout_width="203dp"
+        android:layout_height="167dp"
+        android:textColor="@color/CP1Beige"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/xET"
+        app:layout_constraintVertical_bias="0.928" />
+
+    <Spinner
+        android:id="@+id/woodSelect6"
+        android:layout_width="250dp"
+        android:layout_height="36dp"
+        android:entries="@array/dropDownWoods"
+        app:layout_constraintBottom_toBottomOf="@+id/result1TV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.229"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/case1Title"
+        app:layout_constraintVertical_bias="0.455" />
+
+    <Spinner
+        android:id="@+id/spinner7"
+        android:layout_width="250dp"
+        android:layout_height="36dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.229"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.565" />
+
+    <Button
+        android:id="@+id/doneBTN5"
+        android:layout_width="110dp"
+        android:layout_height="75dp"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="@color/CP1Green"
+        android:onClick="setSpinner2"
+        android:text="Show Sizes"
+        android:textColor="@color/CP1Beige"
+        app:layout_constraintBottom_toTopOf="@+id/calculateBTN"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.642"
+        app:layout_constraintStart_toEndOf="@+id/woodSelect" />
+
+    <TextView
+        android:id="@+id/wUnitTV6"
+        android:layout_width="42dp"
+        android:layout_height="26dp"
+        android:text="lbs"
+        app:layout_constraintBottom_toTopOf="@+id/result2TV"
+        app:layout_constraintEnd_toStartOf="@+id/calculateBTN"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/lET"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.419" />
+
+    <TextView
+        android:id="@+id/lUnitTV6"
+        android:layout_width="42dp"
+        android:layout_height="26dp"
+        android:text="in"
+        app:layout_constraintBottom_toTopOf="@+id/result2TV"
+        app:layout_constraintEnd_toStartOf="@+id/calculateBTN"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/lET"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.887" />
+
+    <TextView
+        android:id="@+id/xUnitTV6"
+        android:layout_width="42dp"
+        android:layout_height="26dp"
+        android:text="in"
+        app:layout_constraintBottom_toTopOf="@+id/result2TV"
+        app:layout_constraintEnd_toStartOf="@+id/calculateBTN"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/lET"
+        app:layout_constraintTop_toBottomOf="@+id/spinner2"
+        app:layout_constraintVertical_bias="0.423" />
+
+    <Button
+        android:id="@+id/goBack6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/CP1Green"
+        android:onClick="returnToCalc"
+        android:text="Go Back"
+        android:textColor="@color/CP1Beige"
+        app:layout_constraintEnd_toStartOf="@+id/case1Title"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="256dp"
+        android:layout_height="275dp"
+        app:layout_constraintBottom_toTopOf="@+id/woodSelect"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/case1Title"
+        app:layout_constraintVertical_bias="0.513"
+        app:srcCompat="@drawable/case2cropped" />
 </androidx.constraintlayout.widget.ConstraintLayout>
