@@ -7,7 +7,7 @@
     tools:context=".Case11">
 
     <TextView
-        android:id="@+id/case1Title10"
+        android:id="@+id/case11title"
         android:layout_width="225dp"
         android:layout_height="65dp"
         android:text="Single Beam\nConcentrated Load at Center"
@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/pET10"
+        android:id="@+id/pET11"
         android:layout_width="210dp"
         android:layout_height="40dp"
         android:ems="10"
@@ -35,7 +35,7 @@
         app:layout_constraintVertical_bias="0.62" />
 
     <EditText
-        android:id="@+id/lET10"
+        android:id="@+id/lET11"
         android:layout_width="210dp"
         android:layout_height="40dp"
         android:ems="10"
@@ -50,7 +50,7 @@
         app:layout_constraintVertical_bias="0.678" />
 
     <EditText
-        android:id="@+id/xET10"
+        android:id="@+id/xET11"
         android:layout_width="210dp"
         android:layout_height="40dp"
         android:ems="10"
@@ -65,7 +65,7 @@
         app:layout_constraintVertical_bias="0.736" />
 
     <Button
-        android:id="@+id/calculateBTN10"
+        android:id="@+id/calculateBTN11"
         android:layout_width="110dp"
         android:layout_height="75dp"
         android:backgroundTint="@color/CP1Green"
@@ -79,7 +79,7 @@
         app:layout_constraintVertical_bias="0.689" />
 
     <TextView
-        android:id="@+id/result1TV10"
+        android:id="@+id/C11result1TV"
         android:layout_width="206dp"
         android:layout_height="166dp"
         android:textColor="@color/CP1Beige"
@@ -88,11 +88,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.01"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/xET"
+        app:layout_constraintTop_toBottomOf="@+id/xET11"
         app:layout_constraintVertical_bias="0.857" />
 
     <TextView
-        android:id="@+id/result2TV10"
+        android:id="@+id/C11result2TV"
         android:layout_width="203dp"
         android:layout_height="167dp"
         android:textColor="@color/CP1Beige"
@@ -101,15 +101,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/xET"
+        app:layout_constraintTop_toBottomOf="@+id/xET11"
         app:layout_constraintVertical_bias="0.928" />
 
     <Spinner
-        android:id="@+id/woodSelect10"
+        android:id="@+id/woodSelect11"
         android:layout_width="250dp"
         android:layout_height="36dp"
         android:entries="@array/dropDownWoods"
-        app:layout_constraintBottom_toBottomOf="@+id/result1TV"
+        app:layout_constraintBottom_toBottomOf="@+id/11result1TV"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.229"
         app:layout_constraintStart_toStartOf="parent"
@@ -150,11 +150,11 @@
         app:layout_constraintEnd_toStartOf="@+id/calculateBTN"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/lET"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/imageView11"
         app:layout_constraintVertical_bias="0.419" />
 
     <TextView
-        android:id="@+id/lUnitTV10"
+        android:id="@+id/lUnitTV11"
         android:layout_width="42dp"
         android:layout_height="26dp"
         android:text="in"
@@ -162,42 +162,42 @@
         app:layout_constraintEnd_toStartOf="@+id/calculateBTN"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/lET"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/imageView11"
         app:layout_constraintVertical_bias="0.887" />
 
     <TextView
-        android:id="@+id/xUnitTV10"
+        android:id="@+id/xUnitTV11"
         android:layout_width="42dp"
         android:layout_height="26dp"
         android:text="in"
-        app:layout_constraintBottom_toTopOf="@+id/result2TV"
-        app:layout_constraintEnd_toStartOf="@+id/calculateBTN"
+        app:layout_constraintBottom_toTopOf="@+id/result2TV11"
+        app:layout_constraintEnd_toStartOf="@+id/calculateBTN11"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/lET"
-        app:layout_constraintTop_toBottomOf="@+id/spinner2"
+        app:layout_constraintStart_toEndOf="@+id/lET11"
+        app:layout_constraintTop_toBottomOf="@+id/spinner11"
         app:layout_constraintVertical_bias="0.423" />
 
     <Button
-        android:id="@+id/goBack10"
+        android:id="@+id/goBack11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/CP1Green"
         android:onClick="returnToCalc"
         android:text="Go Back"
         android:textColor="@color/CP1Beige"
-        app:layout_constraintEnd_toStartOf="@+id/case1Title"
+        app:layout_constraintEnd_toStartOf="@+id/case11title"
         app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView10"
+        android:id="@+id/imageView11"
         android:layout_width="256dp"
         android:layout_height="275dp"
-        app:layout_constraintBottom_toTopOf="@+id/woodSelect"
+        app:layout_constraintBottom_toTopOf="@+id/woodSelect11"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/case1Title"
+        app:layout_constraintTop_toBottomOf="@+id/case11title"
         app:layout_constraintVertical_bias="0.513"
         app:srcCompat="@drawable/case2cropped" />
 </androidx.constraintlayout.widget.ConstraintLayout>
