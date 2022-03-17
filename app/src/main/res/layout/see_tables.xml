@@ -61,10 +61,10 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="80dp"
-        android:layout_height="60dp"
+        android:layout_width="98dp"
+        android:layout_height="61dp"
         android:backgroundTint="@color/CP1Green"
-        android:text="Button"
+        android:text="Go Back"
         android:textColor="@color/CP1Beige"
         app:layout_constraintBottom_toTopOf="@+id/tablesWoodSelectSPNR"
         app:layout_constraintEnd_toStartOf="@+id/seeTablesTitle"
