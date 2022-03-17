@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/CP1Blue"
     android:visibility="visible"
-    tools:context=".Case1" >
+    tools:context=".Case2" >
 
     <TextView
         android:id="@+id/case1Title"
