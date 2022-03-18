@@ -9,27 +9,19 @@
     tools:context=".MainActivity">
 
     <Spinner
-        android:id="@+id/tablesWoodSelectSPNR"
+        android:id="@+id/spinner17"
         android:layout_width="250dp"
         android:layout_height="36dp"
-        android:layout_marginTop="56dp"
         ads:layout_constraintEnd_toEndOf="parent"
         ads:layout_constraintHorizontal_bias="0.496"
         ads:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/recyclerView"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteY="556dp" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
         android:layout_width="414dp"
         android:layout_height="498dp"
-        app:layout_constraintBottom_toTopOf="@+id/adView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.666"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.916" />
+        tools:layout_editor_absoluteX="-4dp"
+        tools:layout_editor_absoluteY="1dp" />
 
     <com.google.android.gms.ads.AdView
         android:id="@+id/adView"
@@ -43,49 +35,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.958" />
-
-    <TextView
-        android:id="@+id/seeTablesTitle"
-        android:layout_width="214dp"
-        android:layout_height="55dp"
-        android:text="See Tables"
-        android:textAlignment="center"
-        android:textColor="@color/CP1Beige"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/tablesWoodSelectSPNR"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.295" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="80dp"
-        android:layout_height="60dp"
-        android:backgroundTint="@color/CP1Green"
-        android:text="Button"
-        android:textColor="@color/CP1Beige"
-        app:layout_constraintBottom_toTopOf="@+id/tablesWoodSelectSPNR"
-        app:layout_constraintEnd_toStartOf="@+id/seeTablesTitle"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="120dp"
-        android:layout_height="75dp"
-        android:backgroundTint="@color/CP1Green"
-        android:text="Show Table"
-        android:textColor="@color/CP1Beige"
-        app:layout_constraintBottom_toTopOf="@+id/recyclerView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.609"
-        app:layout_constraintStart_toEndOf="@+id/tablesWoodSelectSPNR"
-        app:layout_constraintTop_toBottomOf="@+id/seeTablesTitle"
-        app:layout_constraintVertical_bias="0.3" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 <!--ca-app-pub-9877834407809121/1572680359 is the ad ID for this banner-->
