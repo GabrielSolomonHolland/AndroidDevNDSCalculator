@@ -44,7 +44,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.958" />
 
-<<<<<<< Updated upstream
     <TextView
         android:id="@+id/seeTablesTitle"
         android:layout_width="214dp"
@@ -90,6 +89,3 @@
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 <!--ca-app-pub-9877834407809121/1572680359 is the ad ID for this banner-->
-=======
-</androidx.constraintlayout.widget.ConstraintLayout>
->>>>>>> Stashed changes
