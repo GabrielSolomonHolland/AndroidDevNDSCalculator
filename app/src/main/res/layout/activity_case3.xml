@@ -47,7 +47,7 @@
         app:srcCompat="@drawable/case3cropped" />
 
     <TextView
-        android:id="@+id/case3Title"
+        android:id="@+id/case1Title"
         android:layout_width="225dp"
         android:layout_height="45dp"
         android:text="Single Beam\nUniformely Distributed Load"

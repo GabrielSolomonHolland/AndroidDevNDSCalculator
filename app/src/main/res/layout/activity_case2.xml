@@ -9,7 +9,7 @@
     tools:context=".Case2" >
 
     <TextView
-        android:id="@+id/case2Title"
+        android:id="@+id/case1Title"
         android:layout_width="225dp"
         android:layout_height="65dp"
         android:text="Single Beam\nConcentrated Load at Center"
