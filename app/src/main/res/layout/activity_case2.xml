@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     android:background="@color/CP1Blue"
     android:visibility="visible"
     tools:context=".Case2" >
@@ -22,7 +23,7 @@
         app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/woodSelect"
-        app:layout_constraintVertical_bias="0.877" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <EditText
         android:id="@+id/pET2"
@@ -57,7 +58,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/deltaMaxETA2"
+        android:id="@+id/deltaMaxETC2"
         android:layout_width="240dp"
         android:layout_height="40dp"
         android:ems="10"
@@ -65,10 +66,11 @@
         android:inputType="numberDecimal"
         android:textAlignment="center"
         android:textColor="@color/CP1Beige"
+        app:layout_constraintBottom_toTopOf="@+id/xET2"
         app:layout_constraintEnd_toStartOf="@+id/calculateBTNA3"
         app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="468dp" />
+        app:layout_constraintTop_toBottomOf="@+id/pET2" />
 
     <TextView
         android:id="@+id/case1Title"
@@ -94,23 +96,25 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.689" />
+        app:layout_constraintVertical_bias="0.657" />
 
     <TextView
         android:id="@+id/result1TV"
-        android:layout_width="206dp"
-        android:layout_height="166dp"
+        android:layout_width="190dp"
+        android:layout_height="140dp"
+        android:layout_marginBottom="52dp"
         android:textColor="@color/CP1Beige"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.01"
+        app:layout_constraintHorizontal_bias="0.009"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/result2TV"
-        android:layout_width="203dp"
-        android:layout_height="167dp"
+        android:layout_width="190dp"
+        android:layout_height="140dp"
+        android:layout_marginBottom="52dp"
         android:textColor="@color/CP1Beige"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -128,7 +132,7 @@
         app:layout_constraintHorizontal_bias="0.192"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/case1Title"
-        app:layout_constraintVertical_bias="0.458" />
+        app:layout_constraintVertical_bias="0.482" />
 
     <Spinner
         android:id="@+id/spinner2"
@@ -139,7 +143,7 @@
         app:layout_constraintHorizontal_bias="0.192"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.564" />
+        app:layout_constraintVertical_bias="0.551" />
 
     <Button
         android:id="@+id/doneBTN1"
@@ -181,4 +185,22 @@
         app:layout_constraintVertical_bias="0.513"
         app:srcCompat="@drawable/case2cropped" />
 
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="46dp"
+        android:layout_marginBottom="2dp"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-3940256099942544/6300978111"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/result1TV" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--ca-app-pub-9877834407809121/9392364581-->
