@@ -38,7 +38,7 @@
         android:layout_width="120dp"
         android:layout_height="40dp"
         android:ems="10"
-        android:hint="Enter &quot;P&quot; Value"
+        android:hint="P Value (lbs)"
         android:inputType="numberDecimal"
         android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/result1TV"
@@ -53,7 +53,7 @@
         android:layout_width="120dp"
         android:layout_height="40dp"
         android:ems="10"
-        android:hint="Enter &quot;L&quot; Value"
+        android:hint="L Value (in)"
         android:inputType="numberDecimal"
         android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/result1TV"
@@ -178,7 +178,7 @@
         android:layout_width="120dp"
         android:layout_height="40dp"
         android:ems="10"
-        android:hint='Enter "a" value'
+        android:hint='a Value (in)'
         android:inputType="numberDecimal"
         app:layout_constraintBottom_toTopOf="@+id/bET"
         app:layout_constraintEnd_toStartOf="@+id/calculateBTNA3"
@@ -193,7 +193,7 @@
         android:layout_height="40dp"
         android:layout_marginTop="52dp"
         android:ems="10"
-        android:hint='Enter "b" value'
+        android:hint='b Value (in)'
         android:inputType="numberDecimal"
         app:layout_constraintBottom_toTopOf="@+id/xET"
         app:layout_constraintEnd_toStartOf="@+id/calculateBTNA3"

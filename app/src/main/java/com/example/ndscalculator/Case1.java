@@ -197,70 +197,80 @@ public class Case1 extends AppCompatActivity {
         resultTV1.setText("");
         resultTV2.setText("");
 
-        //get the values for calculations
-        Log.i("log","retrieving spinner result data");
-        String woodSelection = woodSelect.getSelectedItem().toString();
-        String gradeSelection = gradeSelect.getSelectedItem().toString();
-
-        Log.i("log","getting grade result");
-        String[] selectedLine = getGradeResult(woodSelection,gradeSelection);
-
-        Log.i("log","getting e value");
-        Log.i("log","should get: " + selectedLine[7]);
-        e=Float.parseFloat(selectedLine[7]);
-        Log.i("log","e value recieved was: " + e);
-
-        //make sure they entered values
-        try{
-            Log.i("log","getting w,l");
-            w = Float.parseFloat(wET.getText().toString());
-            l = Float.parseFloat(lET.getText().toString());
-            deltaMax = Float.parseFloat(deltaMaxET.getText().toString());
-
-            Log.i("log","starting initial calculations");
-            rVMax = (w*l)/2;
-            mMax = (l*l*w)/8; //l^2 * w
-            Log.i("log","rvmax, mmax complete");
-            i_required = (5*w*l*l*l*l)/(384*e*deltaMax);
-
-            //set outputs
-            String output1 = "R=V(max): " + rVMax +
-                    "\n\nM(max): " + mMax +
-                    "\n\ni required:\n" + i_required;
-            resultTV1.setText(output1);
-        }
-        catch (Exception except)
+        try
         {
-            Toast.makeText(getApplicationContext(), "L, W, and deltaMax are required", Toast.LENGTH_SHORT).show();
-        }
+            //get the values for calculations
+            Log.i("log","retrieving spinner result data");
+            String woodSelection = woodSelect.getSelectedItem().toString();
+            String gradeSelection = gradeSelect.getSelectedItem().toString();
 
-        try{
-            x = Float.parseFloat(xET.getText().toString());
-            w = Float.parseFloat(wET.getText().toString());
-            l = Float.parseFloat(lET.getText().toString());
+            Log.i("log","getting grade result");
+            String[] selectedLine = getGradeResult(woodSelection,gradeSelection);
 
-            vx = w*((l/2)-x);
-            mx = ((w*x)/2)*(l-x);
+            Log.i("log","getting e value");
+            Log.i("log","should get: " + selectedLine[7]);
+            e=Float.parseFloat(selectedLine[7]);
+            Log.i("log","e value recieved was: " + e);
 
-            //splitting this nonsense up
-            Log.i("log","starting deltax");
-            deltax = ((w*x)/(24*e*l))*(((float)Math.pow(l,3)) - (2*l*(float)Math.pow(x,2)) + ((float)Math.pow(x,3)));
+            //make sure they entered values
+            try{
+                Log.i("log","getting w,l");
+                w = Float.parseFloat(wET.getText().toString());
+                l = Float.parseFloat(lET.getText().toString());
+                deltaMax = Float.parseFloat(deltaMaxET.getText().toString());
 
-            Log.i("log","deltax complete, got:" + deltax);
-            String output2 = "V(x): " + vx +
-                    "\n\nM(x): " + mx +
-                    "\n\nDelta(x): " + deltax;
-            resultTV2.setText(output2);
+                Log.i("log","starting initial calculations");
+                rVMax = (w*l)/2;
+                mMax = (l*l*w)/8; //l^2 * w
+                Log.i("log","rvmax, mmax complete");
+                i_required = (5*w*l*l*l*l)/(384*e*deltaMax);
 
-            if(x>l)
-            {
-                Toast.makeText(getApplicationContext(), "X should not be larger than L", Toast.LENGTH_SHORT).show();
+                //set outputs
+                String output1 = "R=V(max): " + rVMax +
+                        "\n\nM(max): " + mMax +
+                        "\n\ni required:\n" + i_required;
+                resultTV1.setText(output1);
             }
+            catch (Exception except)
+            {
+                Toast.makeText(getApplicationContext(), "L, W, and deltaMax are required", Toast.LENGTH_SHORT).show();
+            }
+
+            try{
+                x = Float.parseFloat(xET.getText().toString());
+                w = Float.parseFloat(wET.getText().toString());
+                l = Float.parseFloat(lET.getText().toString());
+
+                vx = w*((l/2)-x);
+                mx = ((w*x)/2)*(l-x);
+
+                //splitting this nonsense up
+                Log.i("log","starting deltax");
+                deltax = ((w*x)/(24*e*l))*(((float)Math.pow(l,3)) - (2*l*(float)Math.pow(x,2)) + ((float)Math.pow(x,3)));
+
+                Log.i("log","deltax complete, got:" + deltax);
+                String output2 = "V(x): " + vx +
+                        "\n\nM(x): " + mx +
+                        "\n\nDelta(x): " + deltax;
+                resultTV2.setText(output2);
+
+                if(x>l)
+                {
+                    Toast.makeText(getApplicationContext(), "X should not be larger than L", Toast.LENGTH_SHORT).show();
+                }
+            }
+            catch (Exception except)
+            {
+
+            }
+
         }
-        catch (Exception except)
+        catch(Exception E)
         {
 
         }
+
+
     }
 
 }

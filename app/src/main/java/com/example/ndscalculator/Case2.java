@@ -172,7 +172,7 @@ public class Case2 extends AppCompatActivity {
         //make values for result and pull in all attributes from the xml
         float rVMax, mMax, deltaMaxCenter, vx, mx, deltax, e; //this is what we're calculating
         float p, l, x; //what we're using
-        EditText wET = (EditText) findViewById(R.id.wET);
+        EditText pET = (EditText) findViewById(R.id.pET);
         EditText lET = (EditText) findViewById(R.id.lET);
         EditText xET = (EditText) findViewById(R.id.xET);
         TextView resultTV1 = (TextView) findViewById(R.id.result1TV);
@@ -201,7 +201,7 @@ public class Case2 extends AppCompatActivity {
         //make sure they entered values
         try {
             Log.i("log", "getting w,l,x");
-            p = Float.parseFloat(wET.getText().toString());
+            p = Float.parseFloat(pET.getText().toString());
             l = Float.parseFloat(lET.getText().toString());
 
             Log.i("log", "starting initial calculations");
@@ -221,7 +221,7 @@ public class Case2 extends AppCompatActivity {
 
         try {
             x = Float.parseFloat(xET.getText().toString());
-            p = Float.parseFloat(wET.getText().toString());
+            p = Float.parseFloat(pET.getText().toString());
             l = Float.parseFloat(lET.getText().toString());
 
             vx = p * ((l / 2) - x);
