@@ -11,14 +11,13 @@
         android:id="@+id/xUnitTV2"
         android:layout_width="48dp"
         android:layout_height="27dp"
-        android:layout_marginBottom="140dp"
         android:text="in"
-        app:layout_constraintBottom_toTopOf="@+id/result2TV"
+        app:layout_constraintBottom_toTopOf="@+id/calculateBTN"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/aET"
         app:layout_constraintTop_toBottomOf="@+id/doneBTN"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.243" />
 
     <TextView
         android:id="@+id/xUnitTV16"
@@ -192,8 +191,8 @@
         app:layout_constraintEnd_toStartOf="@+id/calculateBTN"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/lET"
-        app:layout_constraintTop_toBottomOf="@+id/case3"
-        app:layout_constraintVertical_bias="0.795" />
+        app:layout_constraintTop_toBottomOf="@+id/wUnitTV"
+        app:layout_constraintVertical_bias="0.333" />
 
     <TextView
         android:id="@+id/xUnitTV"
@@ -202,10 +201,10 @@
         android:text="in"
         app:layout_constraintBottom_toTopOf="@+id/result1TV"
         app:layout_constraintEnd_toStartOf="@+id/calculateBTN"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/lET"
-        app:layout_constraintTop_toBottomOf="@+id/spinner2"
-        app:layout_constraintVertical_bias="0.668" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/xET"
+        app:layout_constraintTop_toBottomOf="@+id/xUnitTV16"
+        app:layout_constraintVertical_bias="0.373" />
 
     <Button
         android:id="@+id/goBack"
