@@ -13,9 +13,9 @@
         android:layout_width="278dp"
         android:layout_height="259dp"
         android:layout_marginTop="30dp"
-        android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/woodSelect"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/case1Title"
         app:layout_constraintVertical_bias="0.0"
@@ -126,13 +126,13 @@
         android:id="@+id/woodSelect"
         android:layout_width="250dp"
         android:layout_height="36dp"
-        android:layout_marginTop="300dp"
         android:entries="@array/dropDownWoods"
         app:layout_constraintBottom_toBottomOf="@+id/result1TV"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.217"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/case1Title"></Spinner>
+        app:layout_constraintTop_toBottomOf="@+id/case1"
+        app:layout_constraintVertical_bias="0.019"></Spinner>
 
     <Spinner
         android:id="@+id/spinner2"

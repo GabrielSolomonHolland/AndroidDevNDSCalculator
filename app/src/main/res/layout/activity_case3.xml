@@ -42,7 +42,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/case1Title"
+        app:layout_constraintTop_toBottomOf="@+id/case3Title"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/case3cropped" />
 
@@ -69,10 +69,10 @@
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.121"
+        app:layout_constraintHorizontal_bias="0.122"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner2"
-        app:layout_constraintVertical_bias="0.034" />
+        app:layout_constraintVertical_bias="0.143" />
 
     <EditText
         android:id="@+id/lET"
@@ -84,10 +84,10 @@
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.121"
+        app:layout_constraintHorizontal_bias="0.122"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/case3"
-        app:layout_constraintVertical_bias="0.368" />
+        app:layout_constraintVertical_bias="0.462" />
 
     <EditText
         android:id="@+id/xET"
@@ -99,10 +99,10 @@
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.172"
+        app:layout_constraintHorizontal_bias="0.174"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.735" />
+        app:layout_constraintVertical_bias="0.782" />
 
     <Button
         android:id="@+id/calculateBTN"
@@ -179,7 +179,7 @@
         app:layout_constraintEnd_toStartOf="@+id/calculateBTN"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/lET"
-        app:layout_constraintTop_toBottomOf="@+id/case1"
+        app:layout_constraintTop_toBottomOf="@+id/case3"
         app:layout_constraintVertical_bias="0.516" />
 
     <TextView
@@ -192,7 +192,7 @@
         app:layout_constraintEnd_toStartOf="@+id/calculateBTN"
         app:layout_constraintHorizontal_bias="0.885"
         app:layout_constraintStart_toEndOf="@+id/lET"
-        app:layout_constraintTop_toBottomOf="@+id/case1"
+        app:layout_constraintTop_toBottomOf="@+id/case3"
         app:layout_constraintVertical_bias="0.71" />
 
     <TextView
@@ -203,7 +203,7 @@
         android:text="in"
         app:layout_constraintBottom_toTopOf="@+id/result2TV"
         app:layout_constraintEnd_toStartOf="@+id/calculateBTN"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.904"
         app:layout_constraintStart_toEndOf="@+id/lET"
         app:layout_constraintTop_toBottomOf="@+id/wUnitTV"
         app:layout_constraintVertical_bias="1.0" />
@@ -216,8 +216,8 @@
         android:onClick="returnToCalc"
         android:text="Go Back"
         android:textColor="@color/CP1Beige"
-        app:layout_constraintBottom_toTopOf="@+id/case1"
-        app:layout_constraintEnd_toStartOf="@+id/case1Title"
+        app:layout_constraintBottom_toTopOf="@+id/case3"
+        app:layout_constraintEnd_toStartOf="@+id/case3Title"
         app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
