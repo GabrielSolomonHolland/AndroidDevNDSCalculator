@@ -173,7 +173,7 @@ public class Case2 extends AppCompatActivity {
             //make values for result and pull in all attributes from the xml
             float rVMax, mMax, deltaMaxCenter, vx, mx, deltax, e; //this is what we're calculating
             float p, l, x; //what we're using
-            EditText wET = (EditText) findViewById(R.id.pET);
+            EditText wET = (EditText) findViewById(R.id.wET);
             EditText lET = (EditText) findViewById(R.id.lET);
             EditText xET = (EditText) findViewById(R.id.xET);
             TextView resultTV1 = (TextView) findViewById(R.id.result1TV);

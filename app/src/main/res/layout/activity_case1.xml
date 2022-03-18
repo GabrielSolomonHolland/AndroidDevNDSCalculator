@@ -35,50 +35,66 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/pET"
-        android:layout_width="210dp"
+        android:id="@+id/wET"
+        android:layout_width="120dp"
         android:layout_height="40dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginStart="26dp"
         android:ems="10"
-        android:hint="Enter W Value"
+        android:hint="W Value (lbs)"
         android:inputType="numberDecimal"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/lET"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.174"
+        android:textColor="@color/CP1Beige"
+        app:layout_constraintBottom_toBottomOf="@+id/deltaMaxET"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner2"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.245" />
+
+    <EditText
+        android:id="@+id/deltaMaxET"
+        android:layout_width="240dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="432dp"
+        android:ems="10"
+        android:hint="Delta(Max) Value"
+        android:inputType="numberDecimal"
+        android:textAlignment="center"
+        android:textColor="@color/CP1Beige"
+        app:layout_constraintEnd_toStartOf="@+id/calculateBTN"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/case1Title" />
 
     <EditText
         android:id="@+id/lET"
-        android:layout_width="210dp"
+        android:layout_width="120dp"
         android:layout_height="40dp"
         android:ems="10"
-        android:hint="Enter L Value"
+        android:hint="L Value (in)"
         android:inputType="numberDecimal"
         android:textAlignment="center"
+        android:textColor="@color/CP1Beige"
         app:layout_constraintBottom_toTopOf="@+id/xET"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.174"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/calculateBTN"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/wET"
         app:layout_constraintTop_toBottomOf="@+id/spinner2"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.245" />
 
     <EditText
         android:id="@+id/xET"
-        android:layout_width="210dp"
+        android:layout_width="240dp"
         android:layout_height="40dp"
         android:ems="10"
-        android:hint="Enter X Value (optional)"
+        android:hint=" X Value (in) (optional)"
         android:inputType="numberDecimal"
         android:textAlignment="center"
+        android:textColor="@color/CP1Beige"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.174"
+        app:layout_constraintEnd_toStartOf="@+id/calculateBTN"
+        app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.746" />
+        app:layout_constraintTop_toBottomOf="@+id/deltaMaxET"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/calculateBTN"
@@ -91,10 +107,10 @@
         android:textColor="@color/CP1Beige"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.91"
-        app:layout_constraintStart_toEndOf="@+id/lET"
+        app:layout_constraintHorizontal_bias="0.619"
+        app:layout_constraintStart_toEndOf="@+id/spinner2"
         app:layout_constraintTop_toBottomOf="@+id/doneBTN1"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.062" />
 
     <TextView
         android:id="@+id/result1TV"
@@ -130,7 +146,7 @@
         android:entries="@array/dropDownWoods"
         app:layout_constraintBottom_toBottomOf="@+id/result1TV"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.217"
+        app:layout_constraintHorizontal_bias="0.161"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/case1Title"
         app:layout_constraintVertical_bias="0.005" />
@@ -142,7 +158,7 @@
         android:layout_marginBottom="100dp"
         app:layout_constraintBottom_toTopOf="@+id/result1TV"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.217"
+        app:layout_constraintHorizontal_bias="0.161"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/woodSelect"
         app:layout_constraintVertical_bias="0.111" />
@@ -163,42 +179,6 @@
         app:layout_constraintStart_toEndOf="@+id/woodSelect"
         app:layout_constraintTop_toBottomOf="@+id/case1"
         app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/wUnitTV"
-        android:layout_width="42dp"
-        android:layout_height="26dp"
-        android:text="lbs"
-        app:layout_constraintBottom_toTopOf="@+id/result2TV"
-        app:layout_constraintEnd_toStartOf="@+id/calculateBTN"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/lET"
-        app:layout_constraintTop_toBottomOf="@+id/case1"
-        app:layout_constraintVertical_bias="0.516" />
-
-    <TextView
-        android:id="@+id/lUnitTV"
-        android:layout_width="42dp"
-        android:layout_height="26dp"
-        android:text="in"
-        app:layout_constraintBottom_toTopOf="@+id/result2TV"
-        app:layout_constraintEnd_toStartOf="@+id/calculateBTN"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/lET"
-        app:layout_constraintTop_toBottomOf="@+id/case1"
-        app:layout_constraintVertical_bias="0.705" />
-
-    <TextView
-        android:id="@+id/xUnitTV"
-        android:layout_width="42dp"
-        android:layout_height="26dp"
-        android:text="in"
-        app:layout_constraintBottom_toTopOf="@+id/result2TV"
-        app:layout_constraintEnd_toStartOf="@+id/calculateBTN"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/lET"
-        app:layout_constraintTop_toBottomOf="@+id/case1"
-        app:layout_constraintVertical_bias="0.931" />
 
     <Button
         android:id="@+id/goBack"

@@ -181,11 +181,12 @@ public class Case1 extends AppCompatActivity {
     {
         Log.i("log","Entered calculations");
         //make values for result and pull in all attributes from the xml
-        float rVMax,mMax,deltaMaxCenter,vx,mx,deltax,e; //this is what we're calculating
-        float w,l,x; //what we're using
-        EditText wET =(EditText)findViewById(R.id.pET);
+        float rVMax,mMax,vx,mx,deltax,i_required; //this is what we're calculating
+        float w,l,x, deltaMax, e; //what we're using
+        EditText wET =(EditText)findViewById(R.id.wET);
         EditText lET =(EditText)findViewById(R.id.lET);
         EditText xET =(EditText)findViewById(R.id.xET);
+        EditText deltaMaxET = (EditText)findViewById((R.id.deltaMaxET));
         TextView resultTV1 = (TextView)findViewById(R.id.result1TV);
         TextView resultTV2 = (TextView)findViewById(R.id.result2TV);
         Spinner woodSelect = (Spinner)findViewById(R.id.woodSelect);
@@ -211,25 +212,26 @@ public class Case1 extends AppCompatActivity {
 
         //make sure they entered values
         try{
-            Log.i("log","getting w,l,x");
+            Log.i("log","getting w,l");
             w = Float.parseFloat(wET.getText().toString());
             l = Float.parseFloat(lET.getText().toString());
+            deltaMax = Float.parseFloat(deltaMaxET.getText().toString());
 
             Log.i("log","starting initial calculations");
             rVMax = (w*l)/2;
-            mMax = ((float) Math.pow(l,2)*w)/8; //ask if wl^2 = (w*l)^2 or w*(l^2)
+            mMax = (l*l*w)/8; //l^2 * w
             Log.i("log","rvmax, mmax complete");
-            deltaMaxCenter = (5*w*((float)Math.pow(l,4)))/(384*e*l);
+            i_required = (5*w*l*l*l*l)/(384*e*deltaMax);
 
             //set outputs
             String output1 = "R=V(max): " + rVMax +
                     "\n\nM(max): " + mMax +
-                    "\n\nDelta(max)\nat center:\n" + deltaMaxCenter;
+                    "\n\ni required:\n" + i_required;
             resultTV1.setText(output1);
         }
         catch (Exception except)
         {
-            Toast.makeText(getApplicationContext(), "L and W are required", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "L, W, and deltaMax are required", Toast.LENGTH_SHORT).show();
         }
 
         try{
@@ -242,10 +244,8 @@ public class Case1 extends AppCompatActivity {
 
             //splitting this nonsense up
             Log.i("log","starting deltax");
-            float deltaxpt1, deltaxpt2;
-            deltaxpt1 = ((w*x)/(24*e*l));
-            deltaxpt2 = ((float)Math.pow(l,3)) * (2*l*(float)Math.pow(x,2)) * ((float)Math.pow(x,3));
-            deltax = deltaxpt1*deltaxpt2;
+            deltax = ((w*x)/(24*e*l))*(((float)Math.pow(l,3)) - (2*l*(float)Math.pow(x,2)) + ((float)Math.pow(x,3)));
+
             Log.i("log","deltax complete, got:" + deltax);
             String output2 = "V(x): " + vx +
                     "\n\nM(x): " + mx +
