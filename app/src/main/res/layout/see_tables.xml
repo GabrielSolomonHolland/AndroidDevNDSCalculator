@@ -8,21 +8,6 @@
     android:background="@color/CP1Blue"
     tools:context=".MainActivity">
 
-    <Spinner
-        android:id="@+id/spinner17"
-        android:layout_width="250dp"
-        android:layout_height="36dp"
-        ads:layout_constraintEnd_toEndOf="parent"
-        ads:layout_constraintHorizontal_bias="0.496"
-        ads:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="556dp" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="414dp"
-        android:layout_height="498dp"
-        tools:layout_editor_absoluteX="-4dp"
-        tools:layout_editor_absoluteY="1dp" />
-
     <com.google.android.gms.ads.AdView
         android:id="@+id/adView"
         android:layout_width="wrap_content"
