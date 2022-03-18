@@ -143,7 +143,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/xET"
-        app:layout_constraintVertical_bias="0.981" />
+        app:layout_constraintVertical_bias="0.928" />
 
     <Spinner
         android:id="@+id/woodSelect"
