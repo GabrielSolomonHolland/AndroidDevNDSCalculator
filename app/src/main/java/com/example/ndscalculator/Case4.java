@@ -12,6 +12,12 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+
 import java.io.DataInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -27,9 +33,20 @@ public class Case4 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_case4);
+        
+        /*Log.i("log","About to initialize ads");
+        MobileAds.initialize(this,new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete (InitializationStatus initializationStatus){
+            }
+        });
+        AdView madView = findViewById(R.id.AC1Banner);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        madView.loadAd(adRequest);
+        Log.i("log","Ad initialized");*/
 
         Log.i("log","setting dropDown view");
-        Spinner woodSelect = (Spinner)findViewById(R.id.woodSelect);
+        Spinner woodSelect = (Spinner)findViewById(R.id.woodSelecta4);
 
         //make our spinner/array adapter
         Log.i("log", "\nentering array adapter");
@@ -50,8 +67,8 @@ public class Case4 extends AppCompatActivity {
     {
 
         Log.i("log", "\nEntered setSpinner2");
-        Spinner woodSelect = (Spinner)findViewById(R.id.woodSelect);
-        Spinner spinner2 = (Spinner)findViewById(R.id.spinner2);
+        Spinner woodSelect = (Spinner)findViewById(R.id.woodSelecta4);
+        Spinner spinner2 = (Spinner)findViewById(R.id.spinnera4);
 
         try {
             //Log.i("log", "retrieved spinners, pulling selection from 1");
@@ -182,85 +199,93 @@ public class Case4 extends AppCompatActivity {
     {
         Log.i("log","Entered calculations");
         //make values for result and pull in all attributes from the xml
-        float rVMax,mMax,deltaMaxCenter,vx,mx,deltax,e; //this is what we're calculating
-        float p,l,x; //what we're using
+        float rVMax,mMax,vx,mx,deltax,i_required; //this is what we're calculating
+        float p,l,x, deltaMax, e; //what we're using
         EditText pET =(EditText)findViewById(R.id.pET);
         EditText lET =(EditText)findViewById(R.id.lET);
         EditText xET =(EditText)findViewById(R.id.xET);
+        EditText deltaMaxET = (EditText)findViewById((R.id.deltaMaxET));
         TextView resultTV1 = (TextView)findViewById(R.id.result1TV);
         TextView resultTV2 = (TextView)findViewById(R.id.result2TV);
-        Spinner woodSelect = (Spinner)findViewById(R.id.woodSelect);
-        Spinner gradeSelect = (Spinner)findViewById(R.id.spinner2);
+        Spinner woodSelect = (Spinner)findViewById(R.id.woodSelecta4);
+        Spinner gradeSelect = (Spinner)findViewById(R.id.spinnera4);
         Log.i("log","pulled all views from activity");
 
         //clear views
         resultTV1.setText("");
         resultTV2.setText("");
 
-        //get the values for calculations
-        Log.i("log","retrieving spinner result data");
-        String woodSelection = woodSelect.getSelectedItem().toString();
-        String gradeSelection = gradeSelect.getSelectedItem().toString();
-
-        Log.i("log","getting grade result");
-        String[] selectedLine = getGradeResult(woodSelection,gradeSelection);
-
-        Log.i("log","getting e value");
-        Log.i("log","should get: " + selectedLine[7]);
-        e=Float.parseFloat(selectedLine[7]);
-        Log.i("log","e value recieved was: " + e);
-
-        //make sure they entered values
-        try{
-            Log.i("log","getting w,l,x");
-            p = Float.parseFloat(pET.getText().toString());
-            l = Float.parseFloat(lET.getText().toString());
-
-            Log.i("log","starting initial calculations");
-            rVMax = (p*l)/2;
-            mMax = ((float) Math.pow(l,2)*p)/8; //ask if wl^2 = (w*l)^2 or w*(l^2)
-            Log.i("log","rvmax, mmax complete");
-            deltaMaxCenter = (5*p*((float)Math.pow(l,4)))/(384*e*l);
-
-            //set outputs
-            String output1 = "R=V(max): " + rVMax +
-                    "\n\nM(max): " + mMax +
-                    "\n\nDelta(max)\nat center:\n" + deltaMaxCenter;
-            resultTV1.setText(output1);
-        }
-        catch (Exception except)
+        try
         {
-            Toast.makeText(getApplicationContext(), "L and W are required", Toast.LENGTH_SHORT).show();
-        }
+            //get the values for calculations
+            Log.i("log","retrieving spinner result data");
+            String woodSelection = woodSelect.getSelectedItem().toString();
+            String gradeSelection = gradeSelect.getSelectedItem().toString();
 
-        try{
-            x = Float.parseFloat(xET.getText().toString());
-            p = Float.parseFloat(pET.getText().toString());
-            l = Float.parseFloat(lET.getText().toString());
+            Log.i("log","getting grade result");
+            String[] selectedLine = getGradeResult(woodSelection,gradeSelection);
 
-            vx = p*((l/2)-x);
-            mx = ((p*x)/2)*(l-x);
+            Log.i("log","getting e value");
+            Log.i("log","should get: " + selectedLine[7]);
+            e=Float.parseFloat(selectedLine[7]);
+            Log.i("log","e value recieved was: " + e);
 
-            //splitting this nonsense up
-            Log.i("log","starting deltax");
-            float deltaxpt1, deltaxpt2;
-            deltaxpt1 = ((p*x)/(24*e*l));
-            deltaxpt2 = ((float)Math.pow(l,3)) * (2*l*(float)Math.pow(x,2)) * ((float)Math.pow(x,3));
-            deltax = deltaxpt1*deltaxpt2;
-            Log.i("log","deltax complete, got:" + deltax);
-            String output2 = "V(x): " + vx +
-                    "\n\nM(x): " + mx +
-                    "\n\nDelta(x): " + deltax;
-            resultTV2.setText(output2);
+            //make sure they entered values
+            try{
+                Log.i("log","getting w,l");
+                w = Float.parseFloat(pET.getText().toString());
+                l = Float.parseFloat(lET.getText().toString());
+                deltaMax = Float.parseFloat(deltaMaxET.getText().toString());
 
-            if(x>l)
-            {
-                Toast.makeText(getApplicationContext(), "X should not be larger than L", Toast.LENGTH_SHORT).show();
+                Log.i("log","starting initial calculations");
+                rVMax = (w*l)/2;
+                mMax = (l*l*w)/8; //l^2 * w
+                Log.i("log","rvmax, mmax complete");
+                i_required = (5*w*l*l*l*l)/(384*e*deltaMax);
+
+                //set outputs
+                String output1 = "R=V(max): " + rVMax +
+                        "\nM(max): " + mMax +
+                        "\ni required:\n" + i_required;
+                resultTV1.setText(output1);
             }
-        }
-        catch (Exception except)
-        {
+            catch (Exception except)
+            {
+                Toast.makeText(getApplicationContext(), "L, W, and deltaMax are required", Toast.LENGTH_SHORT).show();
+            }
 
+            try{
+                x = Float.parseFloat(xET.getText().toString());
+                p = Float.parseFloat(pET.getText().toString());
+                l = Float.parseFloat(lET.getText().toString());
+
+                vx = p*((l/2)-x);
+                mx = ((p*x)/2)*(l-x);
+
+                //splitting this nonsense up
+                Log.i("log","starting deltax");
+                deltax = ((w*x)/(24*e*l))*(((float)Math.pow(l,3)) - (2*l*(float)Math.pow(x,2)) + ((float)Math.pow(x,3)));
+
+                Log.i("log","deltax complete, got:" + deltax);
+                String output2 = "V(x): " + vx +
+                        "\nM(x): " + mx +
+                        "\nDelta(x): " + deltax;
+                resultTV2.setText(output2);
+
+                if(x>l)
+                {
+                    Toast.makeText(getApplicationContext(), "X should not be larger than L", Toast.LENGTH_SHORT).show();
+                }
+            }
+            catch (Exception except)
+            {
+
+            }
+
+        }
+        catch(Exception E)
+        {
+            Toast.makeText(getApplicationContext(), "Grade must be selected", Toast.LENGTH_SHORT).show();
         }
     }
 }

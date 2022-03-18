@@ -87,6 +87,11 @@ public class CalculatorLanding extends AppCompatActivity {
 
         }
     }
+    public void returnToHome(View v)
+    {
+        Intent toHome = new Intent(this, MainActivity.class);
+        startActivity(toHome);
+    }
 }
 
 

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/CP1Blue"
     tools:context=".Case4">
 
     <TextView
@@ -20,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/pET3"
+        android:id="@+id/pETa4"
         android:layout_width="210dp"
         android:layout_height="40dp"
         android:ems="10"
@@ -35,7 +36,7 @@
         app:layout_constraintVertical_bias="0.62" />
 
     <EditText
-        android:id="@+id/lET3"
+        android:id="@+id/lETa4"
         android:layout_width="210dp"
         android:layout_height="40dp"
         android:ems="10"
@@ -50,7 +51,7 @@
         app:layout_constraintVertical_bias="0.678" />
 
     <EditText
-        android:id="@+id/xET3"
+        android:id="@+id/xETa4"
         android:layout_width="210dp"
         android:layout_height="40dp"
         android:ems="10"
@@ -69,12 +70,13 @@
         android:layout_width="110dp"
         android:layout_height="75dp"
         android:backgroundTint="@color/CP1Green"
+        android:onClick="calculateCase4"
         android:text="Calculate"
         android:textColor="@color/CP1Beige"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/lET3"
+        app:layout_constraintStart_toEndOf="@+id/lETa4"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.689" />
 
@@ -88,7 +90,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.01"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/xET3"
+        app:layout_constraintTop_toBottomOf="@+id/xETa4"
         app:layout_constraintVertical_bias="0.857" />
 
     <TextView
@@ -101,11 +103,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/xET3"
+        app:layout_constraintTop_toBottomOf="@+id/xETa4"
         app:layout_constraintVertical_bias="0.928" />
 
     <Spinner
-        android:id="@+id/woodSelect3"
+        android:id="@+id/woodSelecta4"
         android:layout_width="250dp"
         android:layout_height="36dp"
         android:entries="@array/dropDownWoods"
@@ -117,7 +119,7 @@
         app:layout_constraintVertical_bias="0.513" />
 
     <Spinner
-        android:id="@+id/spinner4"
+        android:id="@+id/spinnera4"
         android:layout_width="250dp"
         android:layout_height="36dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -131,7 +133,6 @@
         android:id="@+id/doneBTN2"
         android:layout_width="110dp"
         android:layout_height="75dp"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="21dp"
         android:layout_marginBottom="16dp"
         android:backgroundTint="@color/CP1Green"
@@ -140,10 +141,10 @@
         android:textColor="@color/CP1Beige"
         app:layout_constraintBottom_toTopOf="@+id/calculateBTN3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/woodSelect3"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/woodSelecta4"
         app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/wUnitTV3"
@@ -155,7 +156,7 @@
         android:text="lbs"
         app:layout_constraintBottom_toTopOf="@+id/xUnitTV3"
         app:layout_constraintEnd_toStartOf="@+id/calculateBTN3"
-        app:layout_constraintStart_toEndOf="@+id/lET3"
+        app:layout_constraintStart_toEndOf="@+id/lETa4"
         app:layout_constraintTop_toBottomOf="@+id/lUnitTV3" />
 
     <TextView
@@ -166,8 +167,8 @@
         android:layout_marginEnd="14dp"
         android:text="in"
         app:layout_constraintEnd_toStartOf="@+id/calculateBTN3"
-        app:layout_constraintStart_toEndOf="@+id/pET3"
-        app:layout_constraintTop_toBottomOf="@+id/spinner4" />
+        app:layout_constraintStart_toEndOf="@+id/pETa4"
+        app:layout_constraintTop_toBottomOf="@+id/spinnera4" />
 
     <TextView
         android:id="@+id/xUnitTV3"
@@ -179,7 +180,7 @@
         app:layout_constraintBottom_toTopOf="@+id/result2TV3"
         app:layout_constraintEnd_toStartOf="@+id/calculateBTN3"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/xET3" />
+        app:layout_constraintStart_toEndOf="@+id/xETa4" />
 
     <Button
         android:id="@+id/goBack3"
