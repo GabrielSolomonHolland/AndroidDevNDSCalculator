@@ -267,10 +267,7 @@ public class Case1 extends AppCompatActivity {
         }
         catch(Exception E)
         {
-
+            Toast.makeText(getApplicationContext(), "Grade must be selected", Toast.LENGTH_SHORT).show();
         }
-
-
     }
-
 }
