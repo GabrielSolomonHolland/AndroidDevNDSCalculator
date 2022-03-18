@@ -44,6 +44,7 @@ public class Case1 extends AppCompatActivity {
         madView.loadAd(adRequest);
         Log.i("log","Ad initialized");
 
+
         Log.i("log","setting dropDown view");
         Spinner woodSelect = (Spinner)findViewById(R.id.woodSelect);
 
