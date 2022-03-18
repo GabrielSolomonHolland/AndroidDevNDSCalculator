@@ -183,8 +183,8 @@ public class Case4 extends AppCompatActivity {
         Log.i("log","Entered calculations");
         //make values for result and pull in all attributes from the xml
         float rVMax,mMax,deltaMaxCenter,vx,mx,deltax,e; //this is what we're calculating
-        float w,l,x; //what we're using
-        EditText wET =(EditText)findViewById(R.id.wET);
+        float p,l,x; //what we're using
+        EditText pET =(EditText)findViewById(R.id.pET);
         EditText lET =(EditText)findViewById(R.id.lET);
         EditText xET =(EditText)findViewById(R.id.xET);
         TextView resultTV1 = (TextView)findViewById(R.id.result1TV);
@@ -213,14 +213,14 @@ public class Case4 extends AppCompatActivity {
         //make sure they entered values
         try{
             Log.i("log","getting w,l,x");
-            w = Float.parseFloat(wET.getText().toString());
+            p = Float.parseFloat(pET.getText().toString());
             l = Float.parseFloat(lET.getText().toString());
 
             Log.i("log","starting initial calculations");
-            rVMax = (w*l)/2;
-            mMax = ((float) Math.pow(l,2)*w)/8; //ask if wl^2 = (w*l)^2 or w*(l^2)
+            rVMax = (p*l)/2;
+            mMax = ((float) Math.pow(l,2)*p)/8; //ask if wl^2 = (w*l)^2 or w*(l^2)
             Log.i("log","rvmax, mmax complete");
-            deltaMaxCenter = (5*w*((float)Math.pow(l,4)))/(384*e*l);
+            deltaMaxCenter = (5*p*((float)Math.pow(l,4)))/(384*e*l);
 
             //set outputs
             String output1 = "R=V(max): " + rVMax +
@@ -235,16 +235,16 @@ public class Case4 extends AppCompatActivity {
 
         try{
             x = Float.parseFloat(xET.getText().toString());
-            w = Float.parseFloat(wET.getText().toString());
+            p = Float.parseFloat(pET.getText().toString());
             l = Float.parseFloat(lET.getText().toString());
 
-            vx = w*((l/2)-x);
-            mx = ((w*x)/2)*(l-x);
+            vx = p*((l/2)-x);
+            mx = ((p*x)/2)*(l-x);
 
             //splitting this nonsense up
             Log.i("log","starting deltax");
             float deltaxpt1, deltaxpt2;
-            deltaxpt1 = ((w*x)/(24*e*l));
+            deltaxpt1 = ((p*x)/(24*e*l));
             deltaxpt2 = ((float)Math.pow(l,3)) * (2*l*(float)Math.pow(x,2)) * ((float)Math.pow(x,3));
             deltax = deltaxpt1*deltaxpt2;
             Log.i("log","deltax complete, got:" + deltax);
