@@ -1,9 +1,270 @@
-<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Case3">
+    android:background="@color/CP1Blue"
+    android:visibility="visible"
+    tools:context=".Case3" >
+
+    <TextView
+        android:id="@+id/xUnitTV2"
+        android:layout_width="48dp"
+        android:layout_height="27dp"
+        android:layout_marginBottom="140dp"
+        android:text="in"
+        app:layout_constraintBottom_toTopOf="@+id/result2TV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/aET"
+        app:layout_constraintTop_toBottomOf="@+id/doneBTN"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/xUnitTV16"
+        android:layout_width="42dp"
+        android:layout_height="26dp"
+        android:layout_marginBottom="16dp"
+        android:text="in"
+        app:layout_constraintBottom_toTopOf="@+id/calculateBTN"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/aET"
+        app:layout_constraintTop_toBottomOf="@+id/xUnitTV2"
+        app:layout_constraintVertical_bias="0.928" />
+
+    <ImageView
+        android:id="@+id/case3"
+        android:layout_width="278dp"
+        android:layout_height="259dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/case3Title"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/case3cropped" />
+
+    <TextView
+        android:id="@+id/case3Title"
+        android:layout_width="225dp"
+        android:layout_height="45dp"
+        android:text="Simple Beam\nUniformely Distributed Load"
+        android:textAlignment="center"
+        android:textColor="@color/CP1Beige"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/pET"
+        android:layout_width="125dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:hint="Enter &quot;P&quot; Value"
+        android:inputType="numberDecimal"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.121"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner2"
+        app:layout_constraintVertical_bias="0.034" />
+
+    <EditText
+        android:id="@+id/lET"
+        android:layout_width="125dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:hint="Enter &quot;L&quot; Value"
+        android:inputType="numberDecimal"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.122"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/case3"
+        app:layout_constraintVertical_bias="0.369" />
+
+    <EditText
+        android:id="@+id/xET"
+        android:layout_width="210dp"
+        android:layout_height="42dp"
+        android:ems="10"
+        android:hint="Enter &quot;X&quot; Value (optional)"
+        android:inputType="numberDecimal"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.174"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.746" />
+
+    <Button
+        android:id="@+id/calculateBTN"
+        android:layout_width="110dp"
+        android:layout_height="75dp"
+        android:backgroundTint="@color/CP1Green"
+        android:onClick="calculateCase3"
+        android:text="Calculate"
+        android:textColor="@color/CP1Beige"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.886"
+        app:layout_constraintStart_toEndOf="@+id/lET"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.783" />
+
+    <TextView
+        android:id="@+id/result1TV"
+        android:layout_width="200dp"
+        android:layout_height="140dp"
+        android:textColor="@color/CP1Beige"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.009"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/xET"
+        app:layout_constraintVertical_bias="0.979" />
+
+    <TextView
+        android:id="@+id/result2TV"
+        android:layout_width="200dp"
+        android:layout_height="140dp"
+        android:textColor="@color/CP1Beige"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/xET"
+        app:layout_constraintVertical_bias="0.981" />
+
+    <Spinner
+        android:id="@+id/woodSelect"
+        android:layout_width="250dp"
+        android:layout_height="36dp"
+        android:entries="@array/dropDownWoods"
+        app:layout_constraintBottom_toBottomOf="@+id/result1TV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.099"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/case3"
+        app:layout_constraintVertical_bias="0.019" />
+
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="250dp"
+        android:layout_height="36dp"
+        android:layout_marginBottom="336dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.099"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/woodSelect"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/wUnitTV"
+        android:layout_width="42dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="92dp"
+        android:text="lbs"
+        app:layout_constraintBottom_toTopOf="@+id/xUnitTV"
+        app:layout_constraintEnd_toStartOf="@+id/calculateBTN"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/lET"
+        app:layout_constraintTop_toBottomOf="@+id/case3"
+        app:layout_constraintVertical_bias="0.034" />
+
+    <TextView
+        android:id="@+id/lUnitTV"
+        android:layout_width="42dp"
+        android:layout_height="26dp"
+        android:layout_marginBottom="64dp"
+        android:text="in"
+        app:layout_constraintBottom_toTopOf="@+id/result2TV"
+        app:layout_constraintEnd_toStartOf="@+id/calculateBTN"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/lET"
+        app:layout_constraintTop_toBottomOf="@+id/case3"
+        app:layout_constraintVertical_bias="0.795" />
+
+    <TextView
+        android:id="@+id/xUnitTV"
+        android:layout_width="42dp"
+        android:layout_height="26dp"
+        android:text="in"
+        app:layout_constraintBottom_toTopOf="@+id/result1TV"
+        app:layout_constraintEnd_toStartOf="@+id/calculateBTN"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/lET"
+        app:layout_constraintTop_toBottomOf="@+id/spinner2"
+        app:layout_constraintVertical_bias="0.668" />
+
+    <Button
+        android:id="@+id/goBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/CP1Green"
+        android:onClick="returnToCalc"
+        android:text="Go Back"
+        android:textColor="@color/CP1Beige"
+        app:layout_constraintBottom_toTopOf="@+id/case3"
+        app:layout_constraintEnd_toStartOf="@+id/case3Title"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/aET"
+        android:layout_width="125dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:ems="10"
+        android:hint='Enter "a" value'
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/bET"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.013"
+        app:layout_constraintStart_toEndOf="@+id/wUnitTV"
+        app:layout_constraintTop_toBottomOf="@+id/spinner2"
+        app:layout_constraintVertical_bias="0.769" />
+
+    <EditText
+        android:id="@+id/bET"
+        android:layout_width="125dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:hint='Enter "b" value'
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/calculateBTN"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.107"
+        app:layout_constraintStart_toEndOf="@+id/lUnitTV"
+        app:layout_constraintTop_toTopOf="@+id/wUnitTV"
+        app:layout_constraintVertical_bias="0.822" />
+
+    <Button
+        android:id="@+id/doneBTN"
+        android:layout_width="110dp"
+        android:layout_height="75dp"
+        android:layout_marginBottom="120dp"
+        android:backgroundTint="@color/CP1Green"
+        android:onClick="setSpinner2"
+        android:text="Show Sizes"
+        android:textColor="@color/CP1Beige"
+        app:layout_constraintBottom_toTopOf="@+id/calculateBTN"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.542"
+        app:layout_constraintStart_toEndOf="@+id/woodSelect"
+        app:layout_constraintTop_toBottomOf="@+id/case3"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
