@@ -12,6 +12,12 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+
 import java.io.DataInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -26,6 +32,17 @@ public class Case1 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_case1);
+
+        Log.i("log","About to initialize ads");
+        MobileAds.initialize(this,new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete (InitializationStatus initializationStatus){
+            }
+        });
+        AdView madView = findViewById(R.id.AC1Banner);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        madView.loadAd(adRequest);
+        Log.i("log","Ad initialized");
 
         Log.i("log","setting dropDown view");
         Spinner woodSelect = (Spinner)findViewById(R.id.woodSelect);
@@ -227,8 +244,8 @@ public class Case1 extends AppCompatActivity {
 
                 //set outputs
                 String output1 = "R=V(max): " + rVMax +
-                        "\n\nM(max): " + mMax +
-                        "\n\ni required:\n" + i_required;
+                        "\nM(max): " + mMax +
+                        "\ni required:\n" + i_required;
                 resultTV1.setText(output1);
             }
             catch (Exception except)
@@ -250,8 +267,8 @@ public class Case1 extends AppCompatActivity {
 
                 Log.i("log","deltax complete, got:" + deltax);
                 String output2 = "V(x): " + vx +
-                        "\n\nM(x): " + mx +
-                        "\n\nDelta(x): " + deltax;
+                        "\nM(x): " + mx +
+                        "\nDelta(x): " + deltax;
                 resultTV2.setText(output2);
 
                 if(x>l)
