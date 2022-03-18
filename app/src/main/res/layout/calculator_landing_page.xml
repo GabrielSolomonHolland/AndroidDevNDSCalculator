@@ -45,7 +45,7 @@
                     android:layout_weight="1"
                     android:backgroundTint="@color/CP1Green"
                     android:onClick="enterCases"
-                    android:text="Uniform dist."
+                    android:text="Simple Beam Uniform dist. load"
                     android:textColor="@color/CP1Beige"
                     tools:ignore="UsingOnClickInXml" />
 
@@ -57,7 +57,7 @@
                     android:layout_weight="1"
                     android:backgroundTint="@color/CP1Green"
                     android:onClick="enterCases"
-                    android:text="Case 2"
+                    android:text="Simple beam concen. load at center"
                     android:textColor="@color/CP1Beige" />
             </TableRow>
 
@@ -73,7 +73,7 @@
                     android:layout_weight="1"
                     android:backgroundTint="@color/CP1Green"
                     android:onClick="enterCases"
-                    android:text="Case 3"
+                    android:text="Simple beam concentrated load at point"
                     android:textColor="@color/CP1Beige" />
 
                 <Button
@@ -84,7 +84,7 @@
                     android:layout_weight="1"
                     android:backgroundTint="@color/CP1Green"
                     android:onClick="enterCases"
-                    android:text="Case 4"
+                    android:text="two equal conc. loads. sym placed"
                     android:textColor="@color/CP1Beige" />
             </TableRow>
 
@@ -100,7 +100,7 @@
                     android:layout_weight="1"
                     android:backgroundTint="@color/CP1Green"
                     android:onClick="enterCases"
-                    android:text="Case 5"
+                    android:text="cantilever uniform dist. load"
                     android:textColor="@color/CP1Beige" />
 
                 <Button
@@ -111,7 +111,7 @@
                     android:layout_weight="1"
                     android:backgroundTint="@color/CP1Green"
                     android:onClick="enterCases"
-                    android:text="Case 6"
+                    android:text="cantilever concen. load at free end"
                     android:textColor="@color/CP1Beige" />
             </TableRow>
 
@@ -127,7 +127,7 @@
                     android:layout_weight="1"
                     android:backgroundTint="@color/CP1Green"
                     android:onClick="enterCases"
-                    android:text="Case 7"
+                    android:text="cantilever concen. load at point"
                     android:textColor="@color/CP1Beige" />
 
                 <Button
@@ -138,7 +138,7 @@
                     android:layout_weight="1"
                     android:backgroundTint="@color/CP1Green"
                     android:onClick="enterCases"
-                    android:text="Case 8"
+                    android:text="beam overhang 1 support uni dist load"
                     android:textColor="@color/CP1Beige" />
             </TableRow>
 
@@ -154,7 +154,7 @@
                     android:layout_weight="1"
                     android:backgroundTint="@color/CP1Green"
                     android:onClick="enterCases"
-                    android:text="Case 9"
+                    android:text="beam overhang 1 support conc load at end of overhang"
                     android:textColor="@color/CP1Beige" />
 
                 <Button
@@ -165,7 +165,7 @@
                     android:layout_weight="1"
                     android:backgroundTint="@color/CP1Green"
                     android:onClick="enterCases"
-                    android:text="Case 10"
+                    android:text="cont. beam with equal overhang uni distr load"
                     android:textColor="@color/CP1Beige" />
             </TableRow>
 
