@@ -68,10 +68,10 @@
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.121"
+        app:layout_constraintHorizontal_bias="0.087"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner2"
-        app:layout_constraintVertical_bias="0.034" />
+        app:layout_constraintVertical_bias="0.035" />
 
     <EditText
         android:id="@+id/lET"
@@ -83,7 +83,7 @@
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.122"
+        app:layout_constraintHorizontal_bias="0.087"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/case3"
         app:layout_constraintVertical_bias="0.369" />
@@ -179,7 +179,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/lET"
         app:layout_constraintTop_toBottomOf="@+id/case3"
-        app:layout_constraintVertical_bias="0.034" />
+        app:layout_constraintVertical_bias="0.042" />
 
     <TextView
         android:id="@+id/lUnitTV"
@@ -192,7 +192,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/lET"
         app:layout_constraintTop_toBottomOf="@+id/wUnitTV"
-        app:layout_constraintVertical_bias="0.333" />
+        app:layout_constraintVertical_bias="0.355" />
 
     <TextView
         android:id="@+id/xUnitTV"
