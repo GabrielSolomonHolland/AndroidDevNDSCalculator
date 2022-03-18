@@ -24,7 +24,6 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Case4 extends AppCompatActivity {
-
     String[] dropDownWoods = new String[]{"Douglas Fir-Larch","Douglas Fir-South",
             "Eastern Softwoods", "Eastern White Pine", "Hem-Fir", "Redwood",
             "Spruce-Pine-Fir", "Spruce-Pine-Fir (South)", "Western Woods"};
@@ -33,7 +32,7 @@ public class Case4 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_case4);
-        
+
         /*Log.i("log","About to initialize ads");
         MobileAds.initialize(this,new OnInitializationCompleteListener() {
             @Override
@@ -44,6 +43,7 @@ public class Case4 extends AppCompatActivity {
         AdRequest adRequest = new AdRequest.Builder().build();
         madView.loadAd(adRequest);
         Log.i("log","Ad initialized");*/
+
 
         Log.i("log","setting dropDown view");
         Spinner woodSelect = (Spinner)findViewById(R.id.woodSelecta4);
@@ -207,8 +207,8 @@ public class Case4 extends AppCompatActivity {
         EditText deltaMaxET = (EditText)findViewById((R.id.deltaMaxET));
         TextView resultTV1 = (TextView)findViewById(R.id.result1TV);
         TextView resultTV2 = (TextView)findViewById(R.id.result2TV);
-        Spinner woodSelect = (Spinner)findViewById(R.id.woodSelecta4);
-        Spinner gradeSelect = (Spinner)findViewById(R.id.spinnera4);
+        Spinner woodSelect = (Spinner)findViewById(R.id.woodSelect);
+        Spinner gradeSelect = (Spinner)findViewById(R.id.spinner2);
         Log.i("log","pulled all views from activity");
 
         //clear views
@@ -233,15 +233,15 @@ public class Case4 extends AppCompatActivity {
             //make sure they entered values
             try{
                 Log.i("log","getting w,l");
-                w = Float.parseFloat(pET.getText().toString());
+                p = Float.parseFloat(pET.getText().toString());
                 l = Float.parseFloat(lET.getText().toString());
                 deltaMax = Float.parseFloat(deltaMaxET.getText().toString());
 
                 Log.i("log","starting initial calculations");
-                rVMax = (w*l)/2;
-                mMax = (l*l*w)/8; //l^2 * w
+                rVMax = p;
+                mMax = (l*l*p)/8; //l^2 * w
                 Log.i("log","rvmax, mmax complete");
-                i_required = (5*w*l*l*l*l)/(384*e*deltaMax);
+                i_required = (5*p*l*l*l*l)/(384*e*deltaMax);
 
                 //set outputs
                 String output1 = "R=V(max): " + rVMax +
@@ -264,7 +264,7 @@ public class Case4 extends AppCompatActivity {
 
                 //splitting this nonsense up
                 Log.i("log","starting deltax");
-                deltax = ((w*x)/(24*e*l))*(((float)Math.pow(l,3)) - (2*l*(float)Math.pow(x,2)) + ((float)Math.pow(x,3)));
+                deltax = ((p*x)/(24*e*l))*(((float)Math.pow(l,3)) - (2*l*(float)Math.pow(x,2)) + ((float)Math.pow(x,3)));
 
                 Log.i("log","deltax complete, got:" + deltax);
                 String output2 = "V(x): " + vx +
