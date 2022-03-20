@@ -41,7 +41,7 @@
                     android:id="@+id/case1BTN"
                     android:layout_width="48dp"
                     android:layout_height="75dp"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginRight="1dp"
                     android:layout_weight="1"
                     android:backgroundTint="@color/CP1Green"
                     android:onClick="enterCases"
@@ -53,7 +53,7 @@
                     android:id="@+id/case2BTN"
                     android:layout_width="48dp"
                     android:layout_height="75dp"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="1dp"
                     android:layout_weight="1"
                     android:backgroundTint="@color/CP1Green"
                     android:onClick="enterCases"
@@ -68,8 +68,8 @@
                 <Button
                     android:id="@+id/case3BTN"
                     android:layout_width="48dp"
-                    android:layout_height="75dp"
-                    android:layout_marginRight="10dp"
+                    android:layout_height="85dp"
+                    android:layout_marginRight="1dp"
                     android:layout_weight="1"
                     android:backgroundTint="@color/CP1Green"
                     android:onClick="enterCases"
@@ -79,12 +79,12 @@
                 <Button
                     android:id="@+id/case4BTN"
                     android:layout_width="48dp"
-                    android:layout_height="75dp"
-                    android:layout_marginLeft="10dp"
+                    android:layout_height="85dp"
+                    android:layout_marginLeft="1dp"
                     android:layout_weight="1"
                     android:backgroundTint="@color/CP1Green"
                     android:onClick="enterCases"
-                    android:text="two equal conc. loads. sym placed"
+                    android:text="two equal conc. loads. symetrically placed"
                     android:textColor="@color/CP1Beige" />
             </TableRow>
 
@@ -96,7 +96,7 @@
                     android:id="@+id/case5BTN"
                     android:layout_width="48dp"
                     android:layout_height="75dp"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginRight="1dp"
                     android:layout_weight="1"
                     android:backgroundTint="@color/CP1Green"
                     android:onClick="enterCases"
@@ -107,7 +107,7 @@
                     android:id="@+id/case6BTN"
                     android:layout_width="48dp"
                     android:layout_height="75dp"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="1dp"
                     android:layout_weight="1"
                     android:backgroundTint="@color/CP1Green"
                     android:onClick="enterCases"
@@ -123,7 +123,7 @@
                     android:id="@+id/case7BTN"
                     android:layout_width="48dp"
                     android:layout_height="75dp"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginRight="1dp"
                     android:layout_weight="1"
                     android:backgroundTint="@color/CP1Green"
                     android:onClick="enterCases"
@@ -134,7 +134,7 @@
                     android:id="@+id/case8BTN"
                     android:layout_width="48dp"
                     android:layout_height="75dp"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="1dp"
                     android:layout_weight="1"
                     android:backgroundTint="@color/CP1Green"
                     android:onClick="enterCases"
@@ -150,18 +150,18 @@
                     android:id="@+id/case9BTN"
                     android:layout_width="48dp"
                     android:layout_height="75dp"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginRight="1dp"
                     android:layout_weight="1"
                     android:backgroundTint="@color/CP1Green"
                     android:onClick="enterCases"
-                    android:text="beam overhang 1 support conc load at end of overhang"
+                    android:text="beam overhang 1 spprt conc load at end overhang"
                     android:textColor="@color/CP1Beige" />
 
                 <Button
                     android:id="@+id/case10BTN"
                     android:layout_width="48dp"
                     android:layout_height="75dp"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="1dp"
                     android:layout_weight="1"
                     android:backgroundTint="@color/CP1Green"
                     android:onClick="enterCases"
@@ -176,23 +176,23 @@
                 <Button
                     android:id="@+id/case11BTN"
                     android:layout_width="48dp"
-                    android:layout_height="75dp"
-                    android:layout_marginRight="10dp"
+                    android:layout_height="85dp"
+                    android:layout_marginRight="1dp"
                     android:layout_weight="1"
                     android:backgroundTint="@color/CP1Green"
                     android:onClick="enterCases"
-                    android:text="Case 11"
+                    android:text="Cont beam w/ equal over hngs. uni dist load"
                     android:textColor="@color/CP1Beige" />
 
                 <Button
                     android:id="@+id/case12BTN"
                     android:layout_width="48dp"
-                    android:layout_height="75dp"
-                    android:layout_marginLeft="10dp"
+                    android:layout_height="85dp"
+                    android:layout_marginLeft="1dp"
                     android:layout_weight="1"
                     android:backgroundTint="@color/CP1Green"
                     android:onClick="enterCases"
-                    android:text="Case 12"
+                    android:text="cont. beam 2 eql span. eql conc loads @center of each span"
                     android:textColor="@color/CP1Beige" />
             </TableRow>
 
@@ -203,23 +203,23 @@
                 <Button
                     android:id="@+id/case13BTN"
                     android:layout_width="48dp"
-                    android:layout_height="75dp"
-                    android:layout_marginRight="10dp"
+                    android:layout_height="85dp"
+                    android:layout_marginRight="1dp"
                     android:layout_weight="1"
                     android:backgroundTint="@color/CP1Green"
                     android:onClick="enterCases"
-                    android:text="Case 13"
+                    android:text="cont. beam of 2 eql spans. Uni dist load"
                     android:textColor="@color/CP1Beige" />
 
                 <Button
                     android:id="@+id/case14BTN"
                     android:layout_width="48dp"
-                    android:layout_height="75dp"
-                    android:layout_marginLeft="10dp"
+                    android:layout_height="85dp"
+                    android:layout_marginLeft="1dp"
                     android:layout_weight="1"
                     android:backgroundTint="@color/CP1Green"
                     android:onClick="enterCases"
-                    android:text="Case 14"
+                    android:text="cont. beambeam of 3 equal spans. Uni dist. load"
                     android:textColor="@color/CP1Beige" />
             </TableRow>
 
@@ -230,12 +230,12 @@
                 <Button
                     android:id="@+id/case15BTN"
                     android:layout_width="293dp"
-                    android:layout_height="75dp"
+                    android:layout_height="85dp"
                     android:layout_span="2"
                     android:layout_weight="1"
                     android:backgroundTint="@color/CP1Green"
                     android:onClick="returnToHome"
-                    android:text="Case 15"
+                    android:text="continuous beam of 4 equal spans. Uniformly distributed load"
                     android:textColor="@color/CP1Beige" />
 
             </TableRow>
