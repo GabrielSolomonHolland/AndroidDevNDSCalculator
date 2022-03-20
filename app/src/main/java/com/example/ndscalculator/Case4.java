@@ -199,26 +199,29 @@ public class Case4 extends AppCompatActivity {
     {
         Log.i("log","Entered calculations");
         //make values for result and pull in all attributes from the xml
-        float rVMax,mMax,vx,mx,deltax,i_required; //this is what we're calculating
-        float p,l,x, deltaMax, e; //what we're using
-        EditText pET =(EditText)findViewById(R.id.pET);
-        EditText lET =(EditText)findViewById(R.id.lET);
-        EditText xET =(EditText)findViewById(R.id.xET);
-        EditText deltaMaxET = (EditText)findViewById((R.id.deltaMaxET));
-        TextView resultTV1 = (TextView)findViewById(R.id.result1TV);
-        TextView resultTV2 = (TextView)findViewById(R.id.result2TV);
-        Spinner woodSelect = (Spinner)findViewById(R.id.woodSelect);
-        Spinner gradeSelect = (Spinner)findViewById(R.id.spinner2);
+        float rVMax,mMax,mx,deltax,i_required,ireq1,ireq2; //this is what we're calculating
+        float p,l,x, deltaMax, e, a; //what we're using
+        EditText pET =(EditText)findViewById(R.id.pET4);
+        EditText lET =(EditText)findViewById(R.id.lET4);
+        EditText xET =(EditText)findViewById(R.id.xET4);
+        EditText aET =(EditText)findViewById(R.id.aET4);
+        EditText deltaMaxET = (EditText)findViewById((R.id.deltaXETa4));
+        TextView resultTV1 = (TextView)findViewById(R.id.result1TV4);
+        TextView resultTV2 = (TextView)findViewById(R.id.result2TV4);
+        Spinner woodSelect = (Spinner)findViewById(R.id.woodSelecta4);
+        Spinner gradeSelect = (Spinner)findViewById(R.id.spinnera4);
         Log.i("log","pulled all views from activity");
 
         //clear views
+        Log.i("log","about to clear setText");
         resultTV1.setText("");
         resultTV2.setText("");
 
         try
         {
+
             //get the values for calculations
-            Log.i("log","retrieving spinner result data");
+            Log.i("log","retrieving spinner result data, starting first try/catch");
             String woodSelection = woodSelect.getSelectedItem().toString();
             String gradeSelection = gradeSelect.getSelectedItem().toString();
 
@@ -230,27 +233,29 @@ public class Case4 extends AppCompatActivity {
             e=Float.parseFloat(selectedLine[7]);
             Log.i("log","e value recieved was: " + e);
 
-            //make sure they entered values
+            //make sure they entered values, changing datatypes 3 times :/
             try{
-                Log.i("log","getting w,l");
+                Log.i("log","getting w,l, deltaMax, a, b");
                 p = Float.parseFloat(pET.getText().toString());
                 l = Float.parseFloat(lET.getText().toString());
                 deltaMax = Float.parseFloat(deltaMaxET.getText().toString());
+                a = Float.parseFloat(aET.getText().toString());
 
                 Log.i("log","starting initial calculations");
                 rVMax = p;
-                mMax = (l*l*p)/8; //l^2 * w
+                mMax = (p*a);
                 Log.i("log","rvmax, mmax complete");
-                i_required = (5*p*l*l*l*l)/(384*e*deltaMax);
+                i_required = ((p*a)/(24*e*deltaMax))*((3*l*l)-(4*a*a));
 
                 //set outputs
                 String output1 = "R=V(max): " + rVMax +
                         "\nM(max): " + mMax +
-                        "\ni required:\n" + i_required;
+                        "\ni required (at center):\n" + i_required;
                 resultTV1.setText(output1);
             }
             catch (Exception except)
             {
+                Log.i("log","Could not do non x value calculations");
                 Toast.makeText(getApplicationContext(), "L, W, and deltaMax are required", Toast.LENGTH_SHORT).show();
             }
 
@@ -258,19 +263,21 @@ public class Case4 extends AppCompatActivity {
                 x = Float.parseFloat(xET.getText().toString());
                 p = Float.parseFloat(pET.getText().toString());
                 l = Float.parseFloat(lET.getText().toString());
+                deltaMax = Float.parseFloat(deltaMaxET.getText().toString());
+                a = Float.parseFloat(aET.getText().toString());
 
-                vx = p*((l/2)-x);
-                mx = ((p*x)/2)*(l-x);
+                mx = p*x;
 
-                //splitting this nonsense up
                 Log.i("log","starting deltax");
-                deltax = ((p*x)/(24*e*l))*(((float)Math.pow(l,3)) - (2*l*(float)Math.pow(x,2)) + ((float)Math.pow(x,3)));
+                ireq1 = ((p*x)/(24*e*l))*(((float)Math.pow(l,3)) - (2*l*(float)Math.pow(x,2)) + ((float)Math.pow(x,3)));
+                ireq2 =((p*a)/(6*deltaMax*e)) * ((3*l*x)-(3 * x * x) - (a*a));
 
-                Log.i("log","deltax complete, got:" + deltax);
-                String output2 = "V(x): " + vx +
-                        "\nM(x): " + mx +
-                        "\nDelta(x): " + deltax;
+                String output2 =
+                        "M(x) (x<a): " + mx +
+                        "\ni required (x<a): " + ireq1 +
+                        "\ni required (x>a & <l-a): " + ireq2;
                 resultTV2.setText(output2);
+                Log.i("log","x calculations complete");
 
                 if(x>l)
                 {
@@ -279,9 +286,9 @@ public class Case4 extends AppCompatActivity {
             }
             catch (Exception except)
             {
+                Log.i("log","Could not do x value calculations");
 
             }
-
         }
         catch(Exception E)
         {
