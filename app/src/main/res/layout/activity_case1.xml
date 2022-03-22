@@ -13,10 +13,10 @@
         android:id="@+id/case1"
         android:layout_width="278dp"
         android:layout_height="259dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/woodSelect"
+        android:layout_marginTop="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/result2TV"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/case1Title"
         app:layout_constraintVertical_bias="0.0"
@@ -40,6 +40,8 @@
         android:layout_width="120dp"
         android:layout_height="40dp"
         android:layout_marginStart="26dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="36dp"
         android:ems="10"
         android:hint="W Value (lbs)"
         android:inputType="numberDecimal"
@@ -55,7 +57,6 @@
         android:layout_width="240dp"
         android:layout_height="40dp"
         android:layout_marginStart="26dp"
-        android:layout_marginTop="4dp"
         android:layout_marginEnd="25dp"
         android:ems="10"
         android:hint="Delta(Max) Value"
@@ -72,6 +73,8 @@
         android:id="@+id/lET"
         android:layout_width="120dp"
         android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="28dp"
         android:ems="10"
         android:hint="L Value (in)"
         android:inputType="numberDecimal"
@@ -88,7 +91,7 @@
         android:id="@+id/xET"
         android:layout_width="240dp"
         android:layout_height="40dp"
-        android:layout_marginBottom="192dp"
+        android:layout_marginBottom="184dp"
         android:ems="10"
         android:hint=" X Value (in) (optional)"
         android:inputType="numberDecimal"
@@ -97,7 +100,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/calculateBTNA3"
         app:layout_constraintHorizontal_bias="0.509"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/deltaMaxET" />
 
     <Button
         android:id="@+id/calculateBTNA3"
@@ -119,24 +123,26 @@
         android:id="@+id/result1TV"
         android:layout_width="190dp"
         android:layout_height="140dp"
+        android:layout_marginTop="1dp"
         android:textColor="@color/CP1Beige"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.009"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/xET"
-        app:layout_constraintVertical_bias="0.019" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/result2TV"
         android:layout_width="190dp"
         android:layout_height="140dp"
+        android:layout_marginTop="1dp"
         android:textColor="@color/CP1Beige"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.995"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/xET"
         app:layout_constraintVertical_bias="0.0" />
@@ -145,25 +151,27 @@
         android:id="@+id/woodSelect"
         android:layout_width="250dp"
         android:layout_height="36dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="1dp"
         android:entries="@array/dropDownWoods"
-        app:layout_constraintBottom_toBottomOf="@+id/result1TV"
+        app:layout_constraintBottom_toTopOf="@+id/spinner2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.161"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/case1Title"
-        app:layout_constraintVertical_bias="0.497" />
+        app:layout_constraintTop_toBottomOf="@+id/case1" />
 
     <Spinner
         android:id="@+id/spinner2"
         android:layout_width="250dp"
         android:layout_height="36dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="128dp"
         app:layout_constraintBottom_toTopOf="@+id/result1TV"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.161"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/woodSelect"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.133" />
 
     <Button
         android:id="@+id/doneBTN1"
@@ -201,14 +209,14 @@
         android:id="@+id/AC1Banner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="45dp"
+        android:layout_marginEnd="46dp"
         ads:adSize="BANNER"
         ads:adUnitId="ca-app-pub-3940256099942544/6300978111"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/result1TV"
-        app:layout_constraintVertical_bias="0.991" />
+        app:layout_constraintTop_toBottomOf="@+id/result1TV" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
