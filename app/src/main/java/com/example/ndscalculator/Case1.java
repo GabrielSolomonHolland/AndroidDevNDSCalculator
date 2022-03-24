@@ -44,17 +44,31 @@ public class Case1 extends AppCompatActivity {
         madView.loadAd(adRequest);
         Log.i("log","Ad initialized");
 
-
         Log.i("log","setting dropDown view");
         Spinner woodSelect = (Spinner)findViewById(R.id.woodSelect);
 
         //make our spinner/array adapter
-        Log.i("log", "\nentering array adapter");
+        Log.i("log", "\nentering array adapter for wood select");
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, dropDownWoods);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         woodSelect.setAdapter(adapter);
+
+
+        //setting the deltaMax spinner adapter/content
+        Log.i("log", "entering array adapter for deltaMax");
+
+        //pull in spinner and make data for entries
+        Spinner deltaMaxSpinner = (Spinner)findViewById(R.id.deltaMaxSpinner);
+        String[] deltaMaxOptions = new String[]{"240","180","360"};
+
+        //make adapter
+        ArrayAdapter<String> DeltaMaxAdapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, deltaMaxOptions);
+        DeltaMaxAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        deltaMaxSpinner.setAdapter(DeltaMaxAdapter);
+        Log.i("log","Finished adapter for deltaMax, options should be set");
     }
 
     public void returnToCalc(View v)
@@ -204,11 +218,12 @@ public class Case1 extends AppCompatActivity {
         EditText wET =(EditText)findViewById(R.id.pET);
         EditText lET =(EditText)findViewById(R.id.lET);
         EditText xET =(EditText)findViewById(R.id.xET);
-        EditText deltaMaxET = (EditText)findViewById((R.id.deltaMaxET));
+        //EditText deltaMaxET = (EditText)findViewById((R.id.deltaMaxET));
         TextView resultTV1 = (TextView)findViewById(R.id.result1TV);
         TextView resultTV2 = (TextView)findViewById(R.id.result2TV);
         Spinner woodSelect = (Spinner)findViewById(R.id.woodSelect);
         Spinner gradeSelect = (Spinner)findViewById(R.id.spinner2);
+        Spinner deltaMaxSpinner = (Spinner)findViewById(R.id.deltaMaxSpinner);
         Log.i("log","pulled all views from activity");
 
         //clear views
@@ -232,10 +247,15 @@ public class Case1 extends AppCompatActivity {
 
             //make sure they entered values
             try{
+                //pull info from edit texts
                 Log.i("log","getting w,l");
                 w = Float.parseFloat(wET.getText().toString());
                 l = Float.parseFloat(lET.getText().toString());
-                deltaMax = Float.parseFloat(deltaMaxET.getText().toString());
+
+                //get deltaMax from spinner
+                Log.i("log","getting deltaMax from spinner");
+                deltaMax = Float.parseFloat(deltaMaxSpinner.getSelectedItem().toString());
+
 
                 Log.i("log","starting initial calculations");
                 rVMax = (w*l)/2;
