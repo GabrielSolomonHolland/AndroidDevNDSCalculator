@@ -254,7 +254,7 @@ public class Case1 extends AppCompatActivity {
 
                 //get deltaMax from spinner
                 Log.i("log","getting deltaMax from spinner");
-                deltaMax = Float.parseFloat(deltaMaxSpinner.getSelectedItem().toString());
+                deltaMax = l/(Float.parseFloat(deltaMaxSpinner.getSelectedItem().toString()));
 
 
                 Log.i("log","starting initial calculations");
