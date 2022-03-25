@@ -11,15 +11,15 @@
         android:id="@+id/aET4"
         android:layout_width="120dp"
         android:layout_height="40dp"
+        android:layout_marginBottom="26dp"
         android:ems="10"
         android:hint='a Value (in)'
         android:inputType="numberDecimal"
-        app:layout_constraintBottom_toTopOf="@+id/deltaXETa4"
+        app:layout_constraintBottom_toTopOf="@+id/result1TV4"
         app:layout_constraintEnd_toStartOf="@+id/calculateBTN4"
         app:layout_constraintHorizontal_bias="0.193"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinnera4"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/deltaXTV" />
 
     <EditText
         android:id="@+id/lET4"
@@ -29,58 +29,42 @@
         android:hint="L Value (in)"
         android:inputType="numberDecimal"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/deltaXETa4"
+        app:layout_constraintBottom_toTopOf="@+id/deltaMaxSpinner"
         app:layout_constraintEnd_toStartOf="@+id/calculateBTN4"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/aET4"
-        app:layout_constraintTop_toBottomOf="@+id/spinnera4"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/spinnera4" />
 
     <EditText
         android:id="@+id/xET4"
-        android:layout_width="240dp"
-        android:layout_height="42dp"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="26dp"
+        android:layout_marginBottom="26dp"
         android:ems="10"
         android:hint="Enter &quot;X&quot; Value (optional)"
         android:inputType="numberDecimal"
         android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.204"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.753" />
+        app:layout_constraintBottom_toTopOf="@+id/result1TV4"
+        app:layout_constraintEnd_toStartOf="@+id/calculateBTN4"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/aET4"
+        app:layout_constraintTop_toBottomOf="@+id/deltaMaxSpinner" />
 
     <EditText
         android:id="@+id/pET4"
         android:layout_width="120dp"
         android:layout_height="40dp"
+        android:layout_marginStart="35dp"
         android:ems="10"
         android:hint="P Value (lbs)"
         android:inputType="numberDecimal"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/xET4"
-        app:layout_constraintEnd_toStartOf="@+id/calculateBTN4"
+        app:layout_constraintBottom_toTopOf="@+id/deltaXTV"
+        app:layout_constraintEnd_toStartOf="@+id/lET4"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/deltaXETa4"
-        app:layout_constraintTop_toBottomOf="@+id/lET4"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <EditText
-        android:id="@+id/deltaXETa4"
-        android:layout_width="120dp"
-        android:layout_height="42dp"
-        android:layout_marginBottom="212dp"
-        android:ems="10"
-        android:hint="delta max (in)"
-        android:inputType="numberDecimal"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.12"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lET"
-        app:layout_constraintVertical_bias="0.005" />
+        app:layout_constraintTop_toBottomOf="@+id/spinnera4" />
 
     <TextView
         android:id="@+id/case4Title"
@@ -90,6 +74,7 @@
         android:textAlignment="center"
         android:textColor="@color/CP1Beige"
         android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -99,12 +84,14 @@
         android:id="@+id/calculateBTN4"
         android:layout_width="110dp"
         android:layout_height="75dp"
+        android:layout_marginStart="26dp"
         android:backgroundTint="@color/CP1Green"
         android:onClick="calculateCase4"
         android:text="Calculate"
         android:textColor="@color/CP1Beige"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/lET4"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.689" />
 
@@ -123,35 +110,39 @@
         android:id="@+id/result2TV4"
         android:layout_width="203dp"
         android:layout_height="167dp"
+        android:layout_marginTop="26dp"
         android:textColor="@color/CP1Beige"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/xET4" />
 
     <Spinner
         android:id="@+id/woodSelecta4"
         android:layout_width="250dp"
         android:layout_height="36dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="16dp"
         android:entries="@array/dropDownWoods"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.217"
+        app:layout_constraintBottom_toTopOf="@+id/spinnera4"
+        app:layout_constraintEnd_toStartOf="@+id/doneBTN4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.513" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
     <Spinner
         android:id="@+id/spinnera4"
         android:layout_width="250dp"
         android:layout_height="36dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.217"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/lET4"
+        app:layout_constraintEnd_toStartOf="@+id/doneBTN4"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.565" />
+        app:layout_constraintTop_toBottomOf="@+id/woodSelecta4" />
 
     <Button
         android:id="@+id/doneBTN4"
@@ -165,7 +156,6 @@
         android:textColor="@color/CP1Beige"
         app:layout_constraintBottom_toTopOf="@+id/calculateBTN4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/woodSelecta4"
         app:layout_constraintTop_toBottomOf="@+id/imageView4"
         app:layout_constraintVertical_bias="0.0" />
@@ -186,13 +176,35 @@
         android:id="@+id/imageView4"
         android:layout_width="256dp"
         android:layout_height="275dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/case4Title"
-        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/case4cropped" />
+
+    <Spinner
+        android:id="@+id/deltaMaxSpinner"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="26dp"
+        app:layout_constraintBottom_toTopOf="@+id/xET4"
+        app:layout_constraintEnd_toStartOf="@+id/calculateBTN4"
+        app:layout_constraintStart_toEndOf="@+id/deltaXTV"
+        app:layout_constraintTop_toBottomOf="@+id/lET4" />
+
+    <TextView
+        android:id="@+id/deltaXTV"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="35dp"
+        android:gravity="center_vertical"
+        android:text="Delta Max: "
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/aET4"
+        app:layout_constraintEnd_toStartOf="@+id/deltaMaxSpinner"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pET4" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

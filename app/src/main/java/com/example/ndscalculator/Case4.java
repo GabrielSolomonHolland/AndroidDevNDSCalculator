@@ -55,6 +55,20 @@ public class Case4 extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         woodSelect.setAdapter(adapter);
+
+        //setting the deltaMax spinner adapter/content
+        Log.i("log", "entering array adapter for deltaMax");
+
+        //pull in spinner and make data for entries
+        Spinner deltaMaxSpinner = (Spinner)findViewById(R.id.deltaMaxSpinner);
+        String[] deltaMaxOptions = new String[]{"240","180","360"};
+
+        //make adapter
+        ArrayAdapter<String> DeltaMaxAdapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, deltaMaxOptions);
+        DeltaMaxAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        deltaMaxSpinner.setAdapter(DeltaMaxAdapter);
+        Log.i("log","Finished adapter for deltaMax, options should be set");
     }
 
     public void returnToCalc(View v)
@@ -205,11 +219,12 @@ public class Case4 extends AppCompatActivity {
         EditText lET =(EditText)findViewById(R.id.lET4);
         EditText xET =(EditText)findViewById(R.id.xET4);
         EditText aET =(EditText)findViewById(R.id.aET4);
-        EditText deltaMaxET = (EditText)findViewById((R.id.deltaXETa4));
+        //EditText deltaMaxET = (EditText)findViewById((R.id.deltaXETa4));
         TextView resultTV1 = (TextView)findViewById(R.id.result1TV4);
         TextView resultTV2 = (TextView)findViewById(R.id.result2TV4);
         Spinner woodSelect = (Spinner)findViewById(R.id.woodSelecta4);
         Spinner gradeSelect = (Spinner)findViewById(R.id.spinnera4);
+        Spinner deltaMaxSpinner = (Spinner)findViewById(R.id.deltaMaxSpinner);
         Log.i("log","pulled all views from activity");
 
         //clear views
@@ -238,8 +253,9 @@ public class Case4 extends AppCompatActivity {
                 Log.i("log","getting w,l, deltaMax, a, b");
                 p = Float.parseFloat(pET.getText().toString());
                 l = Float.parseFloat(lET.getText().toString());
-                deltaMax = Float.parseFloat(deltaMaxET.getText().toString());
+                //deltaMax = Float.parseFloat(deltaMaxET.getText().toString());
                 a = Float.parseFloat(aET.getText().toString());
+                deltaMax = l/(Float.parseFloat(deltaMaxSpinner.getSelectedItem().toString()));
 
                 Log.i("log","starting initial calculations");
                 rVMax = p;
@@ -263,8 +279,9 @@ public class Case4 extends AppCompatActivity {
                 x = Float.parseFloat(xET.getText().toString());
                 p = Float.parseFloat(pET.getText().toString());
                 l = Float.parseFloat(lET.getText().toString());
-                deltaMax = Float.parseFloat(deltaMaxET.getText().toString());
+                //deltaMax = Float.parseFloat(deltaMaxET.getText().toString());
                 a = Float.parseFloat(aET.getText().toString());
+                deltaMax = l/(Float.parseFloat(deltaMaxSpinner.getSelectedItem().toString()));
 
                 mx = p*x;
 
