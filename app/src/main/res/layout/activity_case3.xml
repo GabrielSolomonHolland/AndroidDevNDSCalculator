@@ -42,7 +42,7 @@
         android:inputType="numberDecimal"
         android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/result1TV"
-        app:layout_constraintEnd_toStartOf="@+id/calculateBTNA3"
+        app:layout_constraintEnd_toStartOf="@+id/calculateBTNA2"
         app:layout_constraintHorizontal_bias="0.084"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner2"
@@ -57,7 +57,7 @@
         android:inputType="numberDecimal"
         android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/result1TV"
-        app:layout_constraintEnd_toStartOf="@+id/calculateBTNA3"
+        app:layout_constraintEnd_toStartOf="@+id/calculateBTNA2"
         app:layout_constraintHorizontal_bias="0.084"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner2"
@@ -94,7 +94,7 @@
         app:layout_constraintVertical_bias="0.005" />
 
     <Button
-        android:id="@+id/calculateBTNA3"
+        android:id="@+id/calculateBTNA2"
         android:layout_width="110dp"
         android:layout_height="75dp"
         android:backgroundTint="@color/CP1Green"
@@ -181,7 +181,7 @@
         android:hint='a Value (in)'
         android:inputType="numberDecimal"
         app:layout_constraintBottom_toTopOf="@+id/bET"
-        app:layout_constraintEnd_toStartOf="@+id/calculateBTNA3"
+        app:layout_constraintEnd_toStartOf="@+id/calculateBTNA2"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/pET"
         app:layout_constraintTop_toBottomOf="@+id/spinner2"
@@ -196,7 +196,7 @@
         android:hint='b Value (in)'
         android:inputType="numberDecimal"
         app:layout_constraintBottom_toTopOf="@+id/xET"
-        app:layout_constraintEnd_toStartOf="@+id/calculateBTNA3"
+        app:layout_constraintEnd_toStartOf="@+id/calculateBTNA2"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/lET"
         app:layout_constraintTop_toBottomOf="@+id/spinner2"
@@ -211,7 +211,7 @@
         android:onClick="setSpinner2"
         android:text="Show Sizes"
         android:textColor="@color/CP1Beige"
-        app:layout_constraintBottom_toTopOf="@+id/calculateBTNA3"
+        app:layout_constraintBottom_toTopOf="@+id/calculateBTNA2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.542"
         app:layout_constraintStart_toEndOf="@+id/woodSelect"

@@ -56,6 +56,21 @@ public class Case2 extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         woodSelect.setAdapter(adapter);
+
+
+        //setting the deltaMax spinner adapter/content
+        Log.i("log", "entering array adapter for deltaMax");
+
+        //pull in spinner and make data for entries
+        Spinner deltaMaxSpinner = (Spinner)findViewById(R.id.deltaMaxSpinner);
+        String[] deltaMaxOptions = new String[]{"240","180","360"};
+
+        //make adapter
+        ArrayAdapter<String> DeltaMaxAdapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, deltaMaxOptions);
+        DeltaMaxAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        deltaMaxSpinner.setAdapter(DeltaMaxAdapter);
+        Log.i("log","Finished adapter for deltaMax, options should be set");
     }
 
     public void returnToCalc(View v) {
@@ -192,15 +207,16 @@ public class Case2 extends AppCompatActivity {
         float rVMax, mMax, mx, deltax; //this is what we're calculating
 
         //NOTE NOTE NOTE I am setting i to a default value here, might be wrong need to ask daniel
-        float p, l, x, e, i=1/240, deltamax; //what we're using
+        float p, l, x, e, i=1/240, deltaMax; //what we're using
         EditText pET = (EditText) findViewById(R.id.pET2);
         EditText lET = (EditText) findViewById(R.id.lET2);
         EditText xET = (EditText) findViewById(R.id.xET2);
-        EditText deltaMaxET = (EditText) findViewById(R.id.deltaMaxETC2);
+        //EditText deltaMaxET = (EditText) findViewById(R.id.deltaMaxETC2);
         TextView resultTV1 = (TextView) findViewById(R.id.result1TV);
         TextView resultTV2 = (TextView) findViewById(R.id.result2TV);
         Spinner woodSelect = (Spinner) findViewById(R.id.woodSelect);
         Spinner gradeSelect = (Spinner) findViewById(R.id.spinner2);
+        Spinner deltaMaxSpinner = (Spinner)findViewById(R.id.deltaMaxSpinner);
         Log.i("log", "pulled all views from activity");
 
         //clear views
@@ -230,15 +246,16 @@ public class Case2 extends AppCompatActivity {
             try {
                 p = Float.parseFloat(pET.getText().toString());
                 l = Float.parseFloat(lET.getText().toString());
-                deltamax = Float.parseFloat(deltaMaxET.getText().toString());
+                deltaMax = l/(Float.parseFloat(deltaMaxSpinner.getSelectedItem().toString()));
+
                 Log.i("log", "starting initial calculations");
 
                 rVMax = p/2;
-                mMax = (float)((p*l)/4);
+                mMax = ((p*l)/4);
                 Log.i("log", "rvmax, mmax complete. setting output");
 
                 //this is labeled as delta max but daniel requested i instead
-                i = (p * l *l *l) / (48 * e * deltamax);
+                i = (p * l *l *l) / (48 * e * deltaMax);
 
                 //set outputs
                 String output1 = "R=V(max): " + rVMax +
@@ -254,14 +271,15 @@ public class Case2 extends AppCompatActivity {
                 l = Float.parseFloat(lET.getText().toString());
                 //deltax = Float.parseFloat(deltaMaxET.getText().toString());
                 x = Float.parseFloat(xET.getText().toString());
+                deltaMax = l/(Float.parseFloat(deltaMaxSpinner.getSelectedItem().toString()));
 
                 mx = ((p * x) / 2);
 
                 Log.i("log", "starting deltax");
-                deltax = ((p*x)/(48*e*i))*((3*l*l)-(4*x*x));
+                float i_required = ((p*x)/(48*e*deltaMax))*((3*l*l)-(4*x*x));
 
                 String output2 = "M(x) (x<1/2):\n" + mx +
-                        "\nDelta(x) (x<1/2):\n" + deltax;
+                        "\ni required (x<1/2):\n" + i_required;
                 resultTV2.setText(output2);
 
                 if (x > l) {

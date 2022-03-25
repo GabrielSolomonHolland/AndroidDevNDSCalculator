@@ -56,6 +56,20 @@ public class Case6 extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         woodSelect.setAdapter(adapter);
+
+        //setting the deltaMax spinner adapter/content
+        Log.i("log", "entering array adapter for deltaMax");
+
+        //pull in spinner and make data for entries
+        Spinner deltaMaxSpinner = (Spinner)findViewById(R.id.deltaMaxSpinner);
+        String[] deltaMaxOptions = new String[]{"240","180","360"};
+
+        //make adapter
+        ArrayAdapter<String> DeltaMaxAdapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, deltaMaxOptions);
+        DeltaMaxAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        deltaMaxSpinner.setAdapter(DeltaMaxAdapter);
+        Log.i("log","Finished adapter for deltaMax, options should be set");
     }
 
     public void returnToCalc(View v) {
@@ -189,18 +203,19 @@ public class Case6 extends AppCompatActivity {
         Log.i("log", "Entered calculations");
 
         //make values for result and pull in all attributes from the xml
-        float rVMax, mMax, mx, deltax; //this is what we're calculating
+        float rVMax, mMax, mx, i_req; //this is what we're calculating
 
         //NOTE NOTE NOTE I am setting i to a default value here, might be wrong need to ask daniel
-        float p, l, x, e, i=1/240, deltamax; //what we're using
+        float p, l, x, e, i=1/240, deltaMax; //what we're using
         EditText pET = (EditText) findViewById(R.id.pET6);
         EditText lET = (EditText) findViewById(R.id.lET6);
         EditText xET = (EditText) findViewById(R.id.xET6);
-        EditText deltaMaxET = (EditText) findViewById(R.id.deltaMaxETC6);
+        //EditText deltaMaxET = (EditText) findViewById(R.id.deltaMaxETC6);
         TextView resultTV1 = (TextView) findViewById(R.id.result1TV);
         TextView resultTV2 = (TextView) findViewById(R.id.result2TV);
         Spinner woodSelect = (Spinner) findViewById(R.id.woodSelect);
         Spinner gradeSelect = (Spinner) findViewById(R.id.spinner2);
+        Spinner deltaMaxSpinner = (Spinner)findViewById(R.id.deltaMaxSpinner);
         Log.i("log", "pulled all views from activity");
 
         //clear views
@@ -223,6 +238,7 @@ public class Case6 extends AppCompatActivity {
             Log.i("log", "e value recieved was: " + e);
 
 
+
             Log.i("log", "getting w,l,x");
 
 
@@ -230,7 +246,8 @@ public class Case6 extends AppCompatActivity {
             try {
                 p = Float.parseFloat(pET.getText().toString());
                 l = Float.parseFloat(lET.getText().toString());
-                deltamax = Float.parseFloat(deltaMaxET.getText().toString());
+                //deltamax = Float.parseFloat(deltaMaxET.getText().toString());
+                deltaMax = l/(Float.parseFloat(deltaMaxSpinner.getSelectedItem().toString()));
                 Log.i("log", "starting initial calculations");
 
                 rVMax = p;
@@ -238,7 +255,7 @@ public class Case6 extends AppCompatActivity {
                 Log.i("log", "rvmax, mmax complete. setting output");
 
                 //this is labeled as delta max but daniel requested i instead
-                i = (p * l *l *l) / (3 * e * deltamax);
+                i = (p * l *l *l) / (3 * e * deltaMax);
 
                 //set outputs
                 String output1 = "R=V(max): " + rVMax +
@@ -254,11 +271,12 @@ public class Case6 extends AppCompatActivity {
                 l = Float.parseFloat(lET.getText().toString());
                 //deltax = Float.parseFloat(deltaMaxET.getText().toString());
                 x = Float.parseFloat(xET.getText().toString());
+                deltaMax = l/(Float.parseFloat(deltaMaxSpinner.getSelectedItem().toString()));
 
                 mx = (p * x);
 
                 Log.i("log", "starting deltax");
-                float i_req = (p/(6*e*deltamax))*((2*l*l*l)-(3*l*l)*x+(x*x*x));
+                i_req = (p/(6*e*deltaMax))*((2*l*l*l)-(3*l*l)*x+(x*x*x));
 
                 String output2 = "M(x) (x<1/2):\n" + mx +
                         "\ni required:\n" + i_req;
