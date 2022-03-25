@@ -233,12 +233,12 @@ public class Case6 extends AppCompatActivity {
                 deltamax = Float.parseFloat(deltaMaxET.getText().toString());
                 Log.i("log", "starting initial calculations");
 
-                rVMax = p/2;
-                mMax = (float)((p*l)/4);
+                rVMax = p;
+                mMax = p*l;
                 Log.i("log", "rvmax, mmax complete. setting output");
 
                 //this is labeled as delta max but daniel requested i instead
-                i = (p * l *l *l) / (48 * e * deltamax);
+                i = (p * l *l *l) / (3 * e * deltamax);
 
                 //set outputs
                 String output1 = "R=V(max): " + rVMax +
@@ -255,13 +255,13 @@ public class Case6 extends AppCompatActivity {
                 //deltax = Float.parseFloat(deltaMaxET.getText().toString());
                 x = Float.parseFloat(xET.getText().toString());
 
-                mx = ((p * x) / 2);
+                mx = (p * x);
 
                 Log.i("log", "starting deltax");
-                deltax = ((p*x)/(48*e*i))*((3*l*l)-(4*x*x));
+                float i_req = (p/(6*e*deltamax))*((2*l*l*l)-(3*l*l)*x+(x*x*x));
 
                 String output2 = "M(x) (x<1/2):\n" + mx +
-                        "\nDelta(x) (x<1/2):\n" + deltax;
+                        "\ni required:\n" + i_req;
                 resultTV2.setText(output2);
 
                 if (x > l) {
