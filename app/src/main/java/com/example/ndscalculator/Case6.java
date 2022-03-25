@@ -40,10 +40,10 @@ public class Case6 extends AppCompatActivity {
             public void onInitializationComplete (InitializationStatus initializationStatus){
             }
         });
-        /*AdView madView = findViewById(R.id.AC2Banner);
+        AdView madView = findViewById(R.id.AC6Banner);
         AdRequest adRequest = new AdRequest.Builder().build();
         madView.loadAd(adRequest);
-        Log.i("log","Ad initialized");*/
+        Log.i("log","Ad initialized");
 
 
         Log.i("log", "setting dropDown view");
