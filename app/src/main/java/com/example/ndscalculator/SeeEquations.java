@@ -12,7 +12,8 @@ import android.widget.Spinner;
 
 public class SeeEquations extends AppCompatActivity {
     String[] dropDownCase = new String[]{"Case 1", "Case 2", "Case 3", "Case 4",
-    "Case 5", "Case 6", "Case 7"};
+    "Case 5", "Case 6", "Case 7", "Case 8", "Case 9", "Case 10", "Case 11", "Case 12",
+    "Case 13", "Case 14", "Case 15"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +61,31 @@ public class SeeEquations extends AppCompatActivity {
                 case ("Case 7"):
                     equations.setImageResource(R.drawable.case7);
                     break;
+                case ("Case 8"):
+                    equations.setImageResource(R.drawable.case8);
+                    break;
+                case ("Case 9"):
+                    equations.setImageResource(R.drawable.case9);
+                    break;
+                case ("Case 10"):
+                    equations.setImageResource(R.drawable.case10);
+                    break;
+                case ("Case 11"):
+                    equations.setImageResource(R.drawable.case11);
+                    break;
+                case ("Case 12"):
+                    equations.setImageResource(R.drawable.case12);
+                    break;
+                case ("Case 13"):
+                    equations.setImageResource(R.drawable.case13);
+                    break;
+                case ("Case 14"):
+                    equations.setImageResource(R.drawable.case14);
+                    break;
+                case ("Case 15"):
+                    equations.setImageResource(R.drawable.case15);
+                    break;
+
             }
         } catch (Exception e) {
         Log.i("log","Could not load image");
