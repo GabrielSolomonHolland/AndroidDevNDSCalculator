@@ -29,7 +29,7 @@
         android:layout_marginBottom="131dp"
         android:backgroundTint="@color/CP1Green"
         android:onClick="returnHome"
-        android:text="Return"
+        android:text="Go Back"
         android:textColor="@color/CP1Beige"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/changeBTN"
