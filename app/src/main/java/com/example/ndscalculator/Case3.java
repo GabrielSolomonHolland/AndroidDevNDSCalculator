@@ -37,6 +37,21 @@ public class Case3 extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         woodSelect.setAdapter(adapter);
+
+
+        //setting the deltaMax spinner adapter/content
+        Log.i("log", "entering array adapter for deltaMax");
+
+        //pull in spinner and make data for entries
+        Spinner deltaMaxSpinner = (Spinner)findViewById(R.id.deltaMaxSpinnerA3);
+        String[] deltaMaxOptions = new String[]{"240","180","360"};
+
+        //make adapter
+        ArrayAdapter<String> DeltaMaxAdapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, deltaMaxOptions);
+        DeltaMaxAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        deltaMaxSpinner.setAdapter(DeltaMaxAdapter);
+        Log.i("log","Finished adapter for deltaMax, options should be set");
     }
 
     public void returnToCalc(View v) {
@@ -169,15 +184,18 @@ public class Case3 extends AppCompatActivity {
     public void calculateCase3(View v) {
         Log.i("log", "Entered calculations");
         //make values for result and pull in all attributes from the xml
-        float rVMax, mMax, deltaMaxCenter, vx, mx, deltax, e; //this is what we're calculating
-        float w, l, x; //what we're using
-        EditText wET = (EditText) findViewById(R.id.pET);
+        float r1, r2, mMax, mx, i_req_2, deltaa, i_required; //this is what we're calculating
+        float p, l, x, a, b, deltaMax, e; //what we're using
+        EditText pET = (EditText) findViewById(R.id.pET);
         EditText lET = (EditText) findViewById(R.id.lET);
         EditText xET = (EditText) findViewById(R.id.xET);
+        EditText aET = (EditText) findViewById(R.id.aET);
+        EditText bET = (EditText) findViewById(R.id.bET);
         TextView resultTV1 = (TextView) findViewById(R.id.result1TV);
         TextView resultTV2 = (TextView) findViewById(R.id.result2TV);
         Spinner woodSelect = (Spinner) findViewById(R.id.woodSelect);
         Spinner gradeSelect = (Spinner) findViewById(R.id.spinner2);
+        Spinner deltaMaxSpinner = (Spinner)findViewById(R.id.deltaMaxSpinnerA3);
         Log.i("log", "pulled all views from activity");
 
         //clear views
@@ -197,45 +215,66 @@ public class Case3 extends AppCompatActivity {
         e = Float.parseFloat(selectedLine[7]);
         Log.i("log", "e value recieved was: " + e);
 
+
         //make sure they entered values
         try {
             Log.i("log", "getting w,l,x");
-            w = Float.parseFloat(wET.getText().toString());
+            p = Float.parseFloat(pET.getText().toString());
             l = Float.parseFloat(lET.getText().toString());
+            a = Float.parseFloat(aET.getText().toString());
+            b = Float.parseFloat(bET.getText().toString());
+
+            //get deltaMax from spinner
+            Log.i("log","getting deltaMax from spinner");
+            deltaMax = l/(Float.parseFloat(deltaMaxSpinner.getSelectedItem().toString()));
 
             Log.i("log", "starting initial calculations");
-            rVMax = (w * l) / 2;
-            mMax = ((float) Math.pow(l, 2) * w) / 8; //ask if wl^2 = (w*l)^2 or w*(l^2)
-            Log.i("log", "rvmax, mmax complete");
-            deltaMaxCenter = (5 * w * ((float) Math.pow(l, 4))) / (384 * e * l);
+            r1 = (p*b)/l;
+            r2 = (p*a)/l;
+            mMax = (p*a*b)/l;
 
-            //set outputs
-            String output1 = "R=V(max): " + rVMax +
-                    "\n\nM(max): " + mMax +
-                    "\n\nDelta(max)\nat center:\n" + deltaMaxCenter;
+            Log.i("log", "r1,r2,mMax done. Starting i_required");
+
+            //this equation sux
+            i_required = (float)(((p*a*b)*(2*b+a)*(Math.sqrt((3*a)*(2*b+a))))/(27*e*l*deltaMax));
+
+            deltaa = ((p*a*a*b*b)/(3*e*deltaMax*l));
+
+            //set output 1
+            String output1 = "R1 = v1 (max when a<b): " + r1 +
+                    "\nR2=v2 (max when a>b):  " + r2 +
+                    "\nm Max (at point of load): " + mMax +
+                    "\ni required: " + i_required;
+
+
+            //we are going to set deltaa both times because this is getting rather long
+            String output2 = "Delta(A): " + deltaa;
             resultTV1.setText(output1);
+            resultTV2.setText(output2);
+
         } catch (Exception except) {
-            Toast.makeText(getApplicationContext(), "L and W are required", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "L, W, A, B, deltaMax are required", Toast.LENGTH_SHORT).show();
         }
 
         try {
-            x = Float.parseFloat(xET.getText().toString());
-            w = Float.parseFloat(wET.getText().toString());
+            p = Float.parseFloat(pET.getText().toString());
             l = Float.parseFloat(lET.getText().toString());
+            a = Float.parseFloat(aET.getText().toString());
+            b = Float.parseFloat(bET.getText().toString());
+            x = Float.parseFloat(xET.getText().toString());
 
-            vx = w * ((l / 2) - x);
-            mx = ((w * x) / 2) * (l - x);
+            //get deltaMax from spinner
+            Log.i("log","getting deltaMax from spinner");
+            deltaMax = l/(Float.parseFloat(deltaMaxSpinner.getSelectedItem().toString()));
 
-            //splitting this nonsense up
-            Log.i("log", "starting deltax");
-            float deltaxpt1, deltaxpt2;
-            deltaxpt1 = ((w * x) / (24 * e * l));
-            deltaxpt2 = ((float) Math.pow(l, 3)) * (2 * l * (float) Math.pow(x, 2)) * ((float) Math.pow(x, 3));
-            deltax = deltaxpt1 * deltaxpt2;
-            Log.i("log", "deltax complete, got:" + deltax);
-            String output2 = "V(x): " + vx +
-                    "\n\nM(x): " + mx +
-                    "\n\nDelta(x): " + deltax;
+            mx = (p*b*x)/l;
+            i_req_2 = ((p*b*x)/(6*e*l*deltaMax)*((l*l)-(b*b)-(x*x)));
+            deltaa = ((p*a*a*b*b)/(3*e*deltaMax*l));
+
+
+            String output2 = "M(x) (x<a): " + mx +
+                    "\ni required (x<a): " + i_req_2 +
+                    "\nDelta(A) (at point of load): " + deltaa;
             resultTV2.setText(output2);
 
             if (x > l) {
