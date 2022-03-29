@@ -14,17 +14,16 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="293dp"
-        android:layout_marginBottom="653dp"
+        android:layout_marginBottom="24dp"
         android:backgroundTint="@color/CP1Green"
         android:onClick="returnToHome"
         android:text="Go Back"
         android:textColor="@color/CP1Beige"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView"
