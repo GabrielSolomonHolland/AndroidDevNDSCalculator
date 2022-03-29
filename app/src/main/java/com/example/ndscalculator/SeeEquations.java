@@ -11,9 +11,22 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 
 public class SeeEquations extends AppCompatActivity {
-    String[] dropDownCase = new String[]{"Case 1", "Case 2", "Case 3", "Case 4",
-    "Case 5", "Case 6", "Case 7", "Case 8", "Case 9", "Case 10", "Case 11", "Case 12",
-    "Case 13", "Case 14", "Case 15"};
+    String[] dropDownCase = new String[]{
+            "Simple Beam: uniformly distributed load",
+            "Simple Beam: concentrated load at center",
+            "Simple Beam: concentrated load at any point",
+            "Simple Beam: two equal concentrated load symmetrically placed",
+            "Cantilever Beam: uniformly distributed load",
+            "Cantilever beam: concentrated load at free end",
+            "Cantilever Beam: concentrated load at any point",
+            "Beam Overhanging One Support: uniformly distributed load",
+            "Beam Overhanging One Support: concentrated load at end of overhang",
+            "Continuous Beam with Equal Overhangs: uniformly distributed load",
+            "Continuous Beam with Equal Overhangs: equal concentrated loads at ends of overhang",
+            "Continuous Beam of Two Equal Spans: equal concentrated loads at the center of each span",
+            "Continuous Beam of Two Equal Spans: uniformly distributed load",
+            "Continuous Beam of Three Equal Spans: uniformly distributed load",
+            "Continuous Beam of Four Equal Spans: uniformly distributed load"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,49 +53,49 @@ public class SeeEquations extends AppCompatActivity {
         ImageView equations = findViewById(R.id.equationsImage);
         try {
             switch (caseSelect.getSelectedItem().toString()) {
-                case ("Case 1"):
+                case ("Simple Beam: uniformly distributed load"):
                     equations.setImageResource(R.drawable.case1);
                     break;
-                case ("Case 2"):
+                case ("Simple Beam: concentrated load at center"):
                     equations.setImageResource(R.drawable.case2);
                     break;
-                case ("Case 3"):
+                case ("Simple Beam: concentrated load at any point"):
                     equations.setImageResource(R.drawable.case3);
                     break;
-                case ("Case 4"):
+                case ("Simple Beam: two equal concentrated load symmetrically placed"):
                     equations.setImageResource(R.drawable.case4);
                     break;
-                case ("Case 5"):
+                case ("Cantilever Beam: uniformly distributed load"):
                     equations.setImageResource(R.drawable.case5);
                     break;
-                case ("Case 6"):
+                case ("Cantilever beam: concentrated load at free end"):
                     equations.setImageResource(R.drawable.case6);
                     break;
-                case ("Case 7"):
+                case ("Cantilever Beam: concentrated load at any point"):
                     equations.setImageResource(R.drawable.case7);
                     break;
-                case ("Case 8"):
+                case ("Beam Overhanging One Support: uniformly distributed load"):
                     equations.setImageResource(R.drawable.case8);
                     break;
-                case ("Case 9"):
+                case ("Beam Overhanging One Support: concentrated load at end of overhang"):
                     equations.setImageResource(R.drawable.case9);
                     break;
-                case ("Case 10"):
+                case ("Continuous Beam with Equal Overhangs: uniformly distributed load"):
                     equations.setImageResource(R.drawable.case10);
                     break;
-                case ("Case 11"):
+                case ("Continuous Beam with Equal Overhangs: equal concentrated loads at ends of overhang"):
                     equations.setImageResource(R.drawable.case11);
                     break;
-                case ("Case 12"):
+                case ("Continuous Beam of Two Equal Spans: equal concentrated loads at the center of each span"):
                     equations.setImageResource(R.drawable.case12);
                     break;
-                case ("Case 13"):
+                case ("Continuous Beam of Two Equal Spans: uniformly distributed load"):
                     equations.setImageResource(R.drawable.case13);
                     break;
-                case ("Case 14"):
+                case ("Continuous Beam of Three Equal Spans: uniformly distributed load"):
                     equations.setImageResource(R.drawable.case14);
                     break;
-                case ("Case 15"):
+                case ("Continuous Beam of Four Equal Spans: uniformly distributed load"):
                     equations.setImageResource(R.drawable.case15);
                     break;
 

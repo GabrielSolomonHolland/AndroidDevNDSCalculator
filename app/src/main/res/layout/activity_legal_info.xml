@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/CP1Blue"
+    tools:context=".legalInfo">
+
+    <Button
+        android:id="@+id/goBackBTNLegal"
+        android:layout_width="116dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="293dp"
+        android:layout_marginBottom="653dp"
+        android:backgroundTint="@color/CP1Green"
+        android:onClick="returnToHome"
+        android:text="Go Back"
+        android:textColor="@color/CP1Beige"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="343dp"
+        android:layout_height="561dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="55dp"
+        android:text="This is based on the National Design Specification wood values. To our knowledge this is not copywritten and therefore we are using it as such and under the idea of free use.\n\nThis calculator is using equations as specifed in publicly available American Wood Council resources. \n\nAny miscalculations or false values we are not responsible for. We retain no liability for anything that goes wrong as result of any miscalulations from this app.\n\nEverything is completed to the best of our abilities but there may be errors. Please double check calculations before repeatedly using a feature.\n\n All code is publicly available on Github @GabrielSolomonHolland. If you spot a miscalculation, have a question, or if we are mistaken about copyright, please let us know at gabrielsolomonholland@gmail.com"
+        android:textColor="@color/CP1Beige"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/goBackBTNLegal" />
+</androidx.constraintlayout.widget.ConstraintLayout>

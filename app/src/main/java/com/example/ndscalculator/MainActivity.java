@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         Intent toCalc = new Intent(this, CalculatorLanding.class);
         Intent toEquations = new Intent(this, SeeEquations.class);
         Intent toTables = new Intent(this, SeeTables.class);
+        Intent toLegal = new Intent(this,legalInfo.class);
         Log.i("log","Created intents, entering switch case for button clicks");
         switch (v.getId()) {
             case (R.id.calcBTN):
@@ -58,6 +59,9 @@ public class MainActivity extends AppCompatActivity {
                 Log.i("log", "starting tables");
                 startActivity(toTables);
                 break;
+            case (R.id.goToLegalBTN):
+                Log.i("log","Starting legal");
+                startActivity(toLegal);
         }
     }
 
