@@ -111,15 +111,14 @@
         android:id="@+id/result1TV"
         android:layout_width="200dp"
         android:layout_height="140dp"
-        android:layout_marginTop="2dp"
+        android:layout_marginTop="20dp"
         android:textColor="@color/CP1Beige"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.014"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/xET"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/xET" />
 
     <TextView
         android:id="@+id/result2TV"
