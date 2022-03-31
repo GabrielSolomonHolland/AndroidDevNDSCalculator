@@ -272,9 +272,9 @@ public class Case3 extends AppCompatActivity {
             deltaa = ((p*a*a*b*b)/(3*e*deltaMax*l));
 
 
-            String output2 = "M(x) (x<a): " + mx +
-                    "\ni required (x<a): " + i_req_2 +
-                    "\nDelta(A) (at point of load): " + deltaa;
+            String output2 = "M(x) (x<a):\n" + mx +
+                    "\ni required (x<a):\n" + i_req_2 +
+                    "\nDelta(A) (at point of load):\n" + deltaa;
             resultTV2.setText(output2);
 
             if (x > l) {

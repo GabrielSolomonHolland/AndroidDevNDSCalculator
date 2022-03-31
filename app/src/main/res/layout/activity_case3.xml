@@ -11,7 +11,7 @@
         android:id="@+id/deltaMaxSpinnerA3"
         android:layout_width="120dp"
         android:layout_height="40dp"
-        android:layout_marginEnd="29dp"
+        android:layout_marginEnd="30dp"
         app:layout_constraintBottom_toTopOf="@+id/xET"
         app:layout_constraintEnd_toStartOf="@+id/calculateBTNA2"
         app:layout_constraintStart_toEndOf="@+id/A3DeltaMaxTV"
@@ -20,8 +20,8 @@
     <ImageView
         android:id="@+id/case3"
         android:layout_width="260dp"
-        android:layout_height="241dp"
-        android:layout_marginTop="7dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="1dp"
         app:layout_constraintBottom_toTopOf="@+id/doneBTNA3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
@@ -32,15 +32,18 @@
     <TextView
         android:id="@+id/case3Title"
         android:layout_width="225dp"
-        android:layout_height="70dp"
-        android:layout_marginBottom="8dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="92dp"
+        android:layout_marginBottom="1dp"
         android:text="Simple Beam\nConcentrated Load at any\npoint"
         android:textAlignment="center"
         android:textColor="@color/CP1Beige"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/case3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/goBack"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
@@ -52,10 +55,10 @@
         android:hint="P Value (lbs)"
         android:inputType="numberDecimal"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/bET"
+        app:layout_constraintBottom_toTopOf="@+id/lET"
+        app:layout_constraintEnd_toStartOf="@+id/aET"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner2"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner2" />
 
     <EditText
         android:id="@+id/lET"
@@ -76,12 +79,14 @@
         android:layout_width="240dp"
         android:layout_height="42dp"
         android:layout_marginStart="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="155dp"
+        android:layout_marginBottom="4dp"
         android:ems="10"
         android:hint="Enter &quot;X&quot; Value (optional)"
         android:inputType="numberDecimal"
         android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/result1TV"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/deltaMaxSpinnerA3" />
 
@@ -106,14 +111,15 @@
         android:id="@+id/result1TV"
         android:layout_width="200dp"
         android:layout_height="140dp"
+        android:layout_marginTop="2dp"
         android:textColor="@color/CP1Beige"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.009"
+        app:layout_constraintHorizontal_bias="0.014"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/xET"
-        app:layout_constraintVertical_bias="0.979" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/result2TV"
@@ -152,6 +158,8 @@
         android:id="@+id/goBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
         android:backgroundTint="@color/CP1Green"
         android:onClick="returnToCalc"
         android:text="Go Back"
@@ -214,6 +222,7 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/xET"
         app:layout_constraintEnd_toStartOf="@+id/deltaMaxSpinnerA3"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lET" />
 
