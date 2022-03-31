@@ -10,7 +10,7 @@
     tools:context=".Case5" >
 
     <ImageView
-        android:id="@+id/case1"
+        android:id="@+id/case5"
         android:layout_width="278dp"
         android:layout_height="259dp"
         android:layout_marginTop="5dp"
@@ -19,11 +19,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/case1Title"
-        app:srcCompat="@drawable/case1cropped" />
+        app:layout_constraintTop_toBottomOf="@+id/case5Title"
+        app:srcCompat="@drawable/case5cropped" />
 
     <TextView
-        android:id="@+id/case1Title"
+        android:id="@+id/case5Title"
         android:layout_width="225dp"
         android:layout_height="45dp"
         android:layout_marginTop="5dp"
@@ -32,7 +32,7 @@
         android:textAlignment="center"
         android:textColor="@color/CP1Beige"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/case1"
+        app:layout_constraintBottom_toTopOf="@+id/case5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -143,7 +143,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.161"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/case1" />
+        app:layout_constraintTop_toBottomOf="@+id/case5" />
 
     <Spinner
         android:id="@+id/spinner2"
@@ -171,7 +171,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toEndOf="@+id/woodSelect"
-        app:layout_constraintTop_toBottomOf="@+id/case1"
+        app:layout_constraintTop_toBottomOf="@+id/case5"
         app:layout_constraintVertical_bias="0.042" />
 
     <Button
@@ -183,8 +183,8 @@
         android:onClick="returnToCalc"
         android:text="Go Back"
         android:textColor="@color/CP1Beige"
-        app:layout_constraintBottom_toTopOf="@+id/case1"
-        app:layout_constraintEnd_toStartOf="@+id/case1Title"
+        app:layout_constraintBottom_toTopOf="@+id/case5"
+        app:layout_constraintEnd_toStartOf="@+id/case5Title"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

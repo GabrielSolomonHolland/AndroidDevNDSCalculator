@@ -213,12 +213,11 @@ public class Case5 extends AppCompatActivity {
     {
         Log.i("log","Entered calculations");
         //make values for result and pull in all attributes from the xml
-        float rVMax,mMax,vx,mx,deltax,i_required; //this is what we're calculating
+        float rVMax,mMax,vx,mx, i_req_2,i_required; //this is what we're calculating
         float w,l,x, deltaMax, e; //what we're using
         EditText wET =(EditText)findViewById(R.id.pET);
         EditText lET =(EditText)findViewById(R.id.lET);
         EditText xET =(EditText)findViewById(R.id.xET);
-        //EditText deltaMaxET = (EditText)findViewById((R.id.deltaMaxET));
         TextView resultTV1 = (TextView)findViewById(R.id.result1TV);
         TextView resultTV2 = (TextView)findViewById(R.id.result2TV);
         Spinner woodSelect = (Spinner)findViewById(R.id.woodSelect);
@@ -258,10 +257,10 @@ public class Case5 extends AppCompatActivity {
 
 
                 Log.i("log","starting initial calculations");
-                rVMax = (w*l)/2;
-                mMax = (l*l*w)/8; //l^2 * w
+                rVMax = w*l;
+                mMax = (l*l*w)/2; //l^2 * w
                 Log.i("log","rvmax, mmax complete");
-                i_required = (5*w*l*l*l*l)/(384*e*deltaMax);
+                i_required = (w*l*l*l*l)/(8*e*deltaMax);
 
                 //set outputs
                 String output1 = "R=V(max): " + rVMax +
@@ -279,17 +278,19 @@ public class Case5 extends AppCompatActivity {
                 w = Float.parseFloat(wET.getText().toString());
                 l = Float.parseFloat(lET.getText().toString());
 
-                vx = w*((l/2)-x);
-                mx = ((w*x)/2)*(l-x);
+                //get deltaMax from spinner
+                Log.i("log","getting deltaMax from spinner");
+                deltaMax = l/(Float.parseFloat(deltaMaxSpinner.getSelectedItem().toString()));
 
-                //splitting this nonsense up
+                vx = w*x;
+                mx = (w*x*x)/2;
+
                 Log.i("log","starting deltax");
-                deltax = ((w*x)/(24*e*l))*(((float)Math.pow(l,3)) - (2*l*(float)Math.pow(x,2)) + ((float)Math.pow(x,3)));
+                i_req_2 = ((w)/(24*e*deltaMax))*(((float)Math.pow(x,4)) - (4*x*(float)Math.pow(l,3)) + (3*(float)Math.pow(l,4)));
 
-                Log.i("log","deltax complete, got:" + deltax);
                 String output2 = "V(x): " + vx +
                         "\nM(x): " + mx +
-                        "\nDelta(x): " + deltax;
+                        "\nsomething?: " + i_req_2;
                 resultTV2.setText(output2);
 
                 if(x>l)
