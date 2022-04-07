@@ -282,9 +282,8 @@ public class Case1 extends AppCompatActivity {
                 vx = w*((l/2)-x);
                 mx = ((w*x)/2)*(l-x);
 
-                //splitting this nonsense up
                 Log.i("log","starting deltax");
-                deltax = ((w*x)/(24*e*l))*(((float)Math.pow(l,3)) - (2*l*(float)Math.pow(x,2)) + ((float)Math.pow(x,3)));
+                deltax = ((w*x)/(24*e*l))*(((float)Math.pow(l,3)) - (2*l*x*x) + ((float)Math.pow(x,3)));
 
                 Log.i("log","deltax complete, got:" + deltax);
                 String output2 = "V(x): " + vx +
