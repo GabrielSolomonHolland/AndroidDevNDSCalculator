@@ -38,12 +38,12 @@ public class Case5 extends AppCompatActivity {
             @Override
             public void onInitializationComplete (InitializationStatus initializationStatus){
             }
-        });
+        });/*
         AdView madView = findViewById(R.id.AC5Banner);
         AdRequest adRequest = new AdRequest.Builder().build();
         madView.loadAd(adRequest);
         Log.i("log","Ad initialized");
-
+*/
         Log.i("log","setting dropDown view");
         Spinner woodSelect = (Spinner)findViewById(R.id.woodSelect);
 

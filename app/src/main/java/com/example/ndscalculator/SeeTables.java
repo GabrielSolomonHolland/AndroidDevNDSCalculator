@@ -7,7 +7,11 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.GridLayout;
+import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -43,7 +47,7 @@ public class SeeTables extends AppCompatActivity {
         Log.i("log", "Ad initialized");
 
         Log.i("log", "setting dropDown view");
-        Spinner woodSelect = (Spinner) findViewById(R.id.tableSpinner);
+        Spinner woodSelect = (Spinner) findViewById(R.id.seeTablesSpinner);
 
         //make our spinner/array adapter
         Log.i("log", "\nentering array adapter for wood select");
@@ -75,11 +79,57 @@ public class SeeTables extends AppCompatActivity {
         startActivity(toMain);
     }
 
-    public void setSpinner2(View v) {
+    public void showTable(View v){
+        Button showTable = findViewById(R.id.seeTablesShowTableBTN);
+
+
+
+    }
+
+    public void setImage(View v) {
+        Spinner caseSelect = (Spinner) findViewById(R.id.seeTablesSpinner);
+        ImageView tables = findViewById(R.id.seeTableIImageView);
+        try {
+            switch (caseSelect.getSelectedItem().toString()) {
+                case ("Douglas Fir-Larch"):
+                    tables.setImageResource(R.drawable.douglas_fir_larch);
+                    break;
+                case ("Douglas Fir-South"):
+                    tables.setImageResource(R.drawable.douglas_fir_south);
+                    break;
+                case ("Eastern Softwoods"):
+                    tables.setImageResource(R.drawable.eastern_softwoods);
+                    break;
+                case ("Eastern White Pine"):
+                    tables.setImageResource(R.drawable.eastern_white_pine);
+                    break;
+                case ("Hem-Fir"):
+                    tables.setImageResource(R.drawable.hem_fir);
+                    break;
+                case ("Redwood"):
+                    tables.setImageResource(R.drawable.redwood);
+                    break;
+                case ("Spruce-Pine-Fir"):
+                    tables.setImageResource(R.drawable.spruce_pine_fir);
+                    break;
+                case ("Spruce-Pine-Fir (South)"):
+                    tables.setImageResource(R.drawable.spruce_pine_fir__south_);
+                    break;
+                case ("Western Woods"):
+                    tables.setImageResource(R.drawable.western_woods);
+                    break;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            Log.i("log", "Could not load image");
+        }
+    }
+
+    public void setTableSpinner2(View v) {
 
         Log.i("log", "\nEntered setSpinner2");
         Spinner woodSelect = (Spinner) findViewById(R.id.woodSelect);
-        Spinner spinner2 = (Spinner) findViewById(R.id.tableSpinner);
+        Spinner spinner2 = (Spinner) findViewById(R.id.seeTablesSpinner);
 
         try {
             //Log.i("log", "retrieved spinners, pulling selection from 1");
@@ -160,41 +210,5 @@ public class SeeTables extends AppCompatActivity {
         return returnArray;
     }
 
-    public String[] getGradeResult(String woodType, String grade) {
-        //most of this is copied from the getWoodType method, slight variation
-        String[] returnArray = new String[9];
-        String location = woodType.concat(".txt");
-        Log.i("log", "file is: " + location + ", starting input stream");
-
-        try {
-            DataInputStream inputStream = null;
-            //stack overflow
-            try {
-                inputStream = new DataInputStream(getAssets().open(String.format(location)));
-                Log.i("log", "success making input stream");
-            } catch (IOException e) {
-                Log.i("log", "input stream failed");
-                e.printStackTrace();
-            }
-            Scanner scan = new Scanner(inputStream);
-            Log.i("log", "parsing file, looking for: " + grade);
-            while (scan.hasNextLine()) {
-                String line = scan.nextLine();
-                String[] lineArr = line.split(",");
-                String gradeAndSize = lineArr[0].concat(", ".concat(lineArr[1]));
-                Log.i("log", "reviewed grade: " + gradeAndSize);
-                //find the line they picked in the file that they selected
-                if (grade.equals(gradeAndSize)) {
-                    Log.i("log", "found entered value");
-                    Log.i("log", "returning array");
-                    return lineArr;
-                }
-            }
-        } catch (Exception e) {
-            Log.i("log", "failed to read file");
-        }
-        Log.i("log", "returning empty array, this is bad");
-        return returnArray; //should be impossible
-    }
 }
 

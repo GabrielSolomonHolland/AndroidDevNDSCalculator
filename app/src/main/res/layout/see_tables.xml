@@ -6,13 +6,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/CP1Blue"
-    tools:context=".MainActivity">
+    tools:context=".SeeTables">
 
     <Spinner
-        android:id="@+id/tableSpinner"
+        android:id="@+id/seeTablesSpinner"
         android:layout_width="351dp"
         android:layout_height="69dp"
-        android:layout_marginStart="57dp"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="72dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -47,21 +47,20 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="23dp"
         android:layout_marginEnd="16dp"
+        android:onClick="setImage"
         android:text="Show Table"
         ads:layout_constraintEnd_toEndOf="parent"
-        ads:layout_constraintTop_toBottomOf="@+id/tableSpinner" />
+        ads:layout_constraintTop_toBottomOf="@+id/seeTablesSpinner" />
 
     <ImageView
-        android:id="@+id/seeTablesImage"
-        android:layout_width="284dp"
-        android:layout_height="308dp"
-        android:layout_marginStart="63dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="64dp"
-        ads:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/seeTableIImageView"
+        android:layout_width="352dp"
+        android:layout_height="349dp"
+        android:layout_marginStart="29dp"
         ads:layout_constraintStart_toStartOf="parent"
         ads:layout_constraintTop_toBottomOf="@+id/seeTablesShowTableBTN"
-        ads:srcCompat="@drawable/case1cropped" />
+        ads:srcCompat="@drawable/douglas_fir_larch" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 <!--ca-app-pub-9877834407809121/1572680359 is the ad ID for this banner-->
