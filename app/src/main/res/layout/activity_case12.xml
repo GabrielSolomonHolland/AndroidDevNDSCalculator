@@ -2,8 +2,177 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/CP1Blue"
     tools:context=".Case12">
 
+    <ImageView
+        android:id="@+id/c12image"
+        android:layout_width="278dp"
+        android:layout_height="259dp"
+        android:layout_marginStart="66dp"
+        android:layout_marginBottom="14dp"
+        app:layout_constraintBottom_toTopOf="@+id/c12woodSelect"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/case12cropped" />
+
+    <Button
+        android:id="@+id/c12backBTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:backgroundTint="@color/CP1Green"
+        android:onClick="returnToCalc"
+        android:text="Go Back"
+        android:textColor="@color/CP1Beige"
+        app:layout_constraintBottom_toTopOf="@+id/c12image"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/c12title"
+        android:layout_width="225dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="3dp"
+        android:gravity="center"
+        android:text="Continuous Beam of Two Equal Spans, equal concentrated loads at the center of each span"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/c12image"
+        app:layout_constraintStart_toEndOf="@+id/c12backBTN" />
+
+    <Spinner
+        android:id="@+id/c12woodSelect"
+        android:layout_width="257dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginBottom="9dp"
+        app:layout_constraintBottom_toTopOf="@+id/c12Spinner"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Spinner
+        android:id="@+id/c12Spinner"
+        android:layout_width="257dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/c12wValue"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/c12sizeBTN"
+        android:layout_width="110dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/CP1Green"
+        android:text="show Sizes"
+        android:textColor="@color/CP1Beige"
+        app:layout_constraintBottom_toTopOf="@+id/c12calculateBTN"
+        app:layout_constraintStart_toEndOf="@+id/c12woodSelect" />
+
+    <Button
+        android:id="@+id/c12calculateBTN"
+        android:layout_width="110dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="53dp"
+        android:backgroundTint="@color/CP1Green"
+        android:text="Calculate"
+        android:textColor="@color/CP1Beige"
+        app:layout_constraintBottom_toTopOf="@+id/c12results2"
+        app:layout_constraintStart_toEndOf="@+id/c12deltaSpinner" />
+
+    <TextView
+        android:id="@+id/c12results1"
+        android:layout_width="190dp"
+        android:layout_height="120dp"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/CP1Beige"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/c12adBanner"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/c12results2"
+        android:layout_width="190dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/CP1Beige"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/c12adBanner"
+        app:layout_constraintStart_toEndOf="@+id/c12results1" />
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/c12adBanner"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-3940256099942544/6300978111"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:layout_marginEnd="46dp"
+        android:layout_marginBottom="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/c12delta"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="32dp"
+        android:gravity="center_vertical"
+        android:text="Delta Max: "
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/c12xValue"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Spinner
+        android:id="@+id/c12deltaSpinner"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/c12xValue"
+        app:layout_constraintStart_toEndOf="@+id/c12delta" />
+
+    <EditText
+        android:id="@+id/c12wValue"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="8dp"
+        android:ems="10"
+        android:hint="W Value (lbs)"
+        android:inputType="numberDecimal"
+        android:textColor="@color/CP1Beige"
+        app:layout_constraintBottom_toTopOf="@+id/c12delta"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/c12LValue"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="8dp"
+        android:ems="10"
+        android:hint="L Value (in)"
+        android:inputType="numberDecimal"
+        android:textColor="@color/CP1Beige"
+        app:layout_constraintBottom_toTopOf="@+id/c12deltaSpinner"
+        app:layout_constraintStart_toEndOf="@+id/c12wValue" />
+
+    <EditText
+        android:id="@+id/c12xValue"
+        android:layout_width="240dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="32dp"
+        android:ems="10"
+        android:hint=" X Value (in) (optional)"
+        android:inputType="numberDecimal"
+        android:textColor="@color/CP1Beige"
+        app:layout_constraintBottom_toTopOf="@+id/c12results1"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,8 +2,201 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/CP1Blue"
     tools:context=".Case7">
 
+    <ImageView
+        android:id="@+id/case7image"
+        android:layout_width="278dp"
+        android:layout_height="259dp"
+        android:layout_marginStart="66dp"
+        android:layout_marginEnd="67dp"
+        android:layout_marginBottom="14dp"
+        app:layout_constraintBottom_toTopOf="@+id/c7woodSelect"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/c7backBTN"
+        app:srcCompat="@drawable/case7cropped" />
+
+    <Button
+        android:id="@+id/c7backBTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="15dp"
+        android:backgroundTint="@color/CP1Green"
+        android:onClick="returnToCalc"
+        android:text="Go Back"
+        android:textColor="@color/CP1Beige"
+        app:layout_constraintBottom_toTopOf="@+id/case7image"
+        app:layout_constraintEnd_toStartOf="@+id/case7title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/case7title"
+        android:layout_width="225dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="76dp"
+        android:layout_marginBottom="3dp"
+        android:gravity="center"
+        android:text="Cantilever Beam, concentrated load at any point"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/case7image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/c7backBTN"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/c7woodSelect"
+        android:layout_width="257dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="9dp"
+        app:layout_constraintBottom_toTopOf="@+id/c7spinner"
+        app:layout_constraintEnd_toStartOf="@+id/c7sizesBTN"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/case7image" />
+
+    <Spinner
+        android:id="@+id/c7spinner"
+        android:layout_width="257dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintEnd_toStartOf="@+id/c7sizesBTN"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/c7woodSelect" />
+
+    <Button
+        android:id="@+id/c7sizesBTN"
+        android:layout_width="110dp"
+        android:layout_height="75dp"
+        android:backgroundTint="@color/CP1Green"
+        android:text="show Sizes"
+        android:textColor="@color/CP1Beige"
+        tools:layout_editor_absoluteX="296dp"
+        tools:layout_editor_absoluteY="328dp" />
+
+    <Button
+        android:id="@+id/c7calculateBTN"
+        android:layout_width="110dp"
+        android:layout_height="75dp"
+        android:backgroundTint="@color/CP1Green"
+        android:text="Calculate"
+        android:textColor="@color/CP1Beige"
+        tools:layout_editor_absoluteX="296dp"
+        tools:layout_editor_absoluteY="419dp" />
+
+    <TextView
+        android:id="@+id/c7results1"
+        android:layout_width="190dp"
+        android:layout_height="120dp"
+        android:layout_marginEnd="26dp"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/CP1Beige"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/c7adBanner"
+        app:layout_constraintEnd_toStartOf="@+id/c7results2"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/c7results2"
+        android:layout_width="190dp"
+        android:layout_height="120dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="8dp"
+        android:textColor="@color/CP1Beige"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/c7adBanner"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/c7adBanner"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-3940256099942544/6300978111"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:layout_marginEnd="46dp"
+        android:layout_marginBottom="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/c7delta"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="32dp"
+        android:gravity="center_vertical"
+        android:text="Delta Max: "
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/c7xValue"
+        app:layout_constraintEnd_toStartOf="@+id/c7deltaSpinner"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Spinner
+        android:id="@+id/c7deltaSpinner"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/c7xValue"
+        app:layout_constraintEnd_toStartOf="@+id/c7calculateBTN"
+        app:layout_constraintStart_toEndOf="@+id/c7delta" />
+
+    <EditText
+        android:id="@+id/c7wValue"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="1dp"
+        android:ems="10"
+        android:hint="W Value (lbs)"
+        android:inputType="numberDecimal"
+        android:textColor="@color/CP1Beige"
+        app:layout_constraintEnd_toStartOf="@+id/c7LValue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/c7spinner" />
+
+    <EditText
+        android:id="@+id/c7LValue"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="24dp"
+        android:ems="10"
+        android:hint="L Value (in)"
+        android:inputType="numberDecimal"
+        android:textColor="@color/CP1Beige"
+        app:layout_constraintEnd_toStartOf="@+id/c7calculateBTN"
+        app:layout_constraintStart_toEndOf="@+id/c7wValue"
+        app:layout_constraintTop_toBottomOf="@+id/c7spinner" />
+
+    <EditText
+        android:id="@+id/c7xValue"
+        android:layout_width="240dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="139dp"
+        android:ems="10"
+        android:hint=" X Value (in) (optional)"
+        android:inputType="numberDecimal"
+        android:textColor="@color/CP1Beige"
+        app:layout_constraintBottom_toTopOf="@+id/c7results1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

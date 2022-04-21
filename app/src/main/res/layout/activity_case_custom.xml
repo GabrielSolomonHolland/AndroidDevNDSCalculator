@@ -4,6 +4,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/CP1Blue"
     tools:context=".CaseCustom">
 
+    <TextView
+        android:id="@+id/messageTV"
+        android:layout_width="408dp"
+        android:layout_height="257dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="154dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="61dp"
+        android:text="Currently at this moment the developers are unaware of how they will be implementing the custom cases. We are currently looking into different solutions for this problem and trying to come up with a plan. Please be patient while we try to find a solution that is user friendly. In the meantime please enjoy the rest that this app has to offer, and we hope that this app has helped some in some difficult calculation."
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/customBackBTN"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/customBackBTN"
+        android:layout_width="250dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginEnd="81dp"
+        android:layout_marginBottom="159dp"
+        android:backgroundTint="@color/CP1Green"
+        android:onClick="returnToCalc"
+        android:text="Go Back"
+        android:textColor="@color/CP1Beige"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
