@@ -36,6 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:backgroundTint="@color/CP1Green"
         android:onClick="returnToMain"
         android:text="Go Back"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,11 +46,13 @@
         android:id="@+id/seeTablesShowTableBTN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="23dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/CP1Green"
         android:onClick="setImage"
         android:text="Show Table"
         ads:layout_constraintEnd_toEndOf="parent"
+        ads:layout_constraintHorizontal_bias="0.9"
+        ads:layout_constraintStart_toStartOf="parent"
         ads:layout_constraintTop_toBottomOf="@+id/seeTablesSpinner" />
 
     <ImageView
@@ -57,7 +60,11 @@
         android:layout_width="352dp"
         android:layout_height="349dp"
         android:layout_marginStart="29dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="30dp"
         android:scaleType="fitXY"
+        ads:layout_constraintEnd_toEndOf="parent"
+        ads:layout_constraintHorizontal_bias="1.0"
         ads:layout_constraintStart_toStartOf="parent"
         ads:layout_constraintTop_toBottomOf="@+id/seeTablesShowTableBTN"
         ads:srcCompat="@drawable/douglas_fir_larch" />
