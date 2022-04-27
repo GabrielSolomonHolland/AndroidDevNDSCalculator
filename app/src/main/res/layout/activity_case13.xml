@@ -13,9 +13,12 @@
         android:layout_width="278dp"
         android:layout_height="259dp"
         android:layout_marginStart="66dp"
+        android:layout_marginEnd="67dp"
         android:layout_marginBottom="14dp"
         app:layout_constraintBottom_toTopOf="@+id/c13woodSelect"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/c13backBTN"
         app:srcCompat="@drawable/case13cropped" />
 
     <Button
@@ -35,12 +38,16 @@
         android:layout_width="225dp"
         android:layout_height="45dp"
         android:layout_marginStart="15dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="76dp"
         android:layout_marginBottom="3dp"
         android:gravity="center"
         android:text="Continous Beams of Two Equal Spans, uniformly distributed load"
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/c13image"
-        app:layout_constraintStart_toEndOf="@+id/c13backBTN" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/c13backBTN"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
         android:id="@+id/c13woodSelect"
