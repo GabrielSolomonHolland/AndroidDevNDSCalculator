@@ -161,4 +161,20 @@
         android:textColor="@color/CP1Beige"
         app:layout_constraintBottom_toTopOf="@+id/c9results1"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextNumberDecimal2"
+        android:layout_width="102dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="12dp"
+        android:ems="10"
+        android:hint="A Value"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/c9results2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/c9deltaSpinner"
+        app:layout_constraintTop_toBottomOf="@+id/c9calculateBTN" />
 </androidx.constraintlayout.widget.ConstraintLayout>
