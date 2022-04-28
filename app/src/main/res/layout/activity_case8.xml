@@ -75,6 +75,7 @@
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="16dp"
         android:backgroundTint="@color/CP1Green"
+        android:onClick="setSpinner2"
         android:text="show Sizes"
         android:textColor="@color/CP1Beige"
         app:layout_constraintBottom_toTopOf="@+id/case8calculateBTN"
@@ -88,6 +89,7 @@
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="152dp"
         android:backgroundTint="@color/CP1Green"
+        android:onClick="calculateCase1"
         android:text="Calculate"
         android:textColor="@color/CP1Beige"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -99,12 +101,15 @@
         android:id="@+id/c8results1"
         android:layout_width="190dp"
         android:layout_height="120dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="26dp"
+        android:layout_marginBottom="4dp"
         android:textColor="@color/CP1Beige"
         android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/c8results2"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="607dp" />
+        app:layout_constraintTop_toBottomOf="@+id/c8xValue" />
 
     <TextView
         android:id="@+id/c8results2"
