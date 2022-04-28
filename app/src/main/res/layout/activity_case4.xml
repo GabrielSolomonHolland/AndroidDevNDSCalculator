@@ -31,6 +31,7 @@
         android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/deltaMaxSpinner"
         app:layout_constraintEnd_toStartOf="@+id/calculateBTN4"
+        app:layout_constraintStart_toEndOf="@+id/pET4"
         app:layout_constraintTop_toBottomOf="@+id/spinnera4" />
 
     <EditText
