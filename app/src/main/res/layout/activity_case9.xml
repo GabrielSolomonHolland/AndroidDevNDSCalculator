@@ -22,7 +22,7 @@
         android:id="@+id/c9backBTN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="7dp"
+        android:layout_marginStart="4dp"
         android:backgroundTint="@color/CP1Green"
         android:onClick="returnToCalc"
         android:text="Go Back"
@@ -34,7 +34,7 @@
         android:id="@+id/c9title"
         android:layout_width="259dp"
         android:layout_height="48dp"
-        android:layout_marginStart="15dp"
+        android:layout_marginStart="28dp"
         android:gravity="center"
         android:text="Beam Overhanging One Support, concentrated load at end of overhang"
         android:textSize="14sp"
@@ -87,37 +87,22 @@
         android:id="@+id/c9results1"
         android:layout_width="190dp"
         android:layout_height="120dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="2dp"
         android:textColor="@color/CP1Beige"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/c9adBanner"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/c9results2"
         android:layout_width="190dp"
         android:layout_height="120dp"
-        android:layout_marginStart="26dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="2dp"
         android:textColor="@color/CP1Beige"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/c9adBanner"
-        app:layout_constraintStart_toEndOf="@+id/c9results1" />
-
-    <com.google.android.gms.ads.AdView
-        android:id="@+id/c9adBanner"
-        ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-3940256099942544/6300978111"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="45dp"
-        android:layout_marginEnd="46dp"
-        android:layout_marginBottom="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toEndOf="@+id/c9results1" />
 
     <TextView
         android:id="@+id/c9delta"

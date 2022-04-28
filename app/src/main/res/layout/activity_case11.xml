@@ -88,37 +88,20 @@
         android:id="@+id/c11results1"
         android:layout_width="190dp"
         android:layout_height="120dp"
-        android:layout_marginBottom="10dp"
         android:textColor="@color/CP1Beige"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/c11adBanner"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/c11results2"
         android:layout_width="190dp"
         android:layout_height="120dp"
-        android:layout_marginStart="26dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginStart="32dp"
         android:textColor="@color/CP1Beige"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/c11adBanner"
-        app:layout_constraintStart_toEndOf="@+id/c11results1" />
-
-    <com.google.android.gms.ads.AdView
-        android:id="@+id/c11adBanner"
-        ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-3940256099942544/6300978111"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="45dp"
-        android:layout_marginEnd="46dp"
-        android:layout_marginBottom="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toEndOf="@+id/c11results1" />
 
     <TextView
         android:id="@+id/c11delta"

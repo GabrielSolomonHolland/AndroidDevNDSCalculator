@@ -86,12 +86,13 @@
         android:layout_height="75dp"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="5dp"
-        android:layout_marginBottom="53dp"
+        android:layout_marginBottom="152dp"
         android:backgroundTint="@color/CP1Green"
         android:text="Calculate"
         android:textColor="@color/CP1Beige"
-        app:layout_constraintBottom_toTopOf="@+id/c8results2"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/c8deltaSpinner" />
 
     <TextView
@@ -99,37 +100,22 @@
         android:layout_width="190dp"
         android:layout_height="120dp"
         android:layout_marginEnd="26dp"
-        android:layout_marginBottom="10dp"
         android:textColor="@color/CP1Beige"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/c8adBanner"
-        app:layout_constraintEnd_toStartOf="@+id/c8results2" />
+        app:layout_constraintEnd_toStartOf="@+id/c8results2"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="607dp" />
 
     <TextView
         android:id="@+id/c8results2"
         android:layout_width="190dp"
         android:layout_height="120dp"
-        android:layout_marginStart="26dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="4dp"
         android:textColor="@color/CP1Beige"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/c8adBanner"
-        app:layout_constraintStart_toEndOf="@+id/c8results1" />
-
-    <com.google.android.gms.ads.AdView
-        android:id="@+id/c8adBanner"
-        ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-3940256099942544/6300978111"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="45dp"
-        android:layout_marginEnd="46dp"
-        android:layout_marginBottom="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toEndOf="@+id/c8results1" />
 
     <TextView
         android:id="@+id/c8delta"
@@ -181,10 +167,11 @@
         android:layout_width="240dp"
         android:layout_height="40dp"
         android:layout_marginStart="32dp"
+        android:layout_marginBottom="132dp"
         android:ems="10"
         android:hint=" X Value (in) (optional)"
         android:inputType="numberDecimal"
         android:textColor="@color/CP1Beige"
-        app:layout_constraintBottom_toTopOf="@+id/c8results1"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

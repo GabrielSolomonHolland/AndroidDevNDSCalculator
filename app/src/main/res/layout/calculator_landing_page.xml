@@ -234,7 +234,7 @@
                     android:layout_span="2"
                     android:layout_weight="1"
                     android:backgroundTint="@color/CP1Green"
-                    android:onClick="returnToHome"
+                    android:onClick="enterCases"
                     android:text="continuous beam of 4 equal spans. Uniformly distributed load"
                     android:textColor="@color/CP1Beige" />
 
