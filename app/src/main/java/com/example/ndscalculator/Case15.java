@@ -20,16 +20,7 @@ public class Case15 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_case15);
 
-        Log.i("log","About to initialize ads");
-        MobileAds.initialize(this,new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete (InitializationStatus initializationStatus){
-            }
-        });
-        AdView madView = findViewById(R.id.c15adBanner);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        madView.loadAd(adRequest);
-        Log.i("log","Ad initialized");
+
     }
     public void returnToCalc(View v)
     {

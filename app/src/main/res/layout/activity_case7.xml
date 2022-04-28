@@ -17,6 +17,7 @@
         android:layout_marginBottom="14dp"
         app:layout_constraintBottom_toTopOf="@+id/c7woodSelect"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/c7backBTN"
         app:srcCompat="@drawable/case7cropped" />
@@ -73,6 +74,8 @@
         android:layout_marginStart="27dp"
         android:layout_marginTop="2dp"
         android:layout_marginEnd="12dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toTopOf="@+id/c7wValue"
         app:layout_constraintEnd_toStartOf="@+id/c7sizesBTN"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -82,70 +85,61 @@
         android:id="@+id/c7sizesBTN"
         android:layout_width="110dp"
         android:layout_height="75dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="16dp"
         android:backgroundTint="@color/CP1Green"
         android:text="show Sizes"
         android:textColor="@color/CP1Beige"
-        tools:layout_editor_absoluteX="296dp"
-        tools:layout_editor_absoluteY="328dp" />
+        app:layout_constraintBottom_toTopOf="@+id/c7calculateBTN"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/c7calculateBTN"
         android:layout_width="110dp"
         android:layout_height="75dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="55dp"
         android:backgroundTint="@color/CP1Green"
         android:text="Calculate"
         android:textColor="@color/CP1Beige"
-        tools:layout_editor_absoluteX="296dp"
-        tools:layout_editor_absoluteY="419dp" />
+        app:layout_constraintBottom_toTopOf="@+id/c7results2"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/c7results1"
         android:layout_width="190dp"
         android:layout_height="120dp"
         android:layout_marginEnd="26dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="4dp"
         android:textColor="@color/CP1Beige"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/c7adBanner"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/c7results2"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/c7results2"
         android:layout_width="190dp"
         android:layout_height="120dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
         android:textColor="@color/CP1Beige"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/c7adBanner"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <com.google.android.gms.ads.AdView
-        android:id="@+id/c7adBanner"
-        ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-3940256099942544/6300978111"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="45dp"
-        android:layout_marginEnd="46dp"
-        android:layout_marginBottom="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/c7delta"
         android:layout_width="120dp"
         android:layout_height="40dp"
         android:layout_marginStart="32dp"
+        android:layout_marginBottom="164dp"
         android:gravity="center_vertical"
         android:text="Delta Max: "
         android:textAlignment="center"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/c7xValue"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/c7deltaSpinner"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -154,7 +148,8 @@
         android:layout_width="120dp"
         android:layout_height="40dp"
         android:layout_marginEnd="24dp"
-        app:layout_constraintBottom_toTopOf="@+id/c7xValue"
+        android:layout_marginBottom="164dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/c7calculateBTN"
         app:layout_constraintStart_toEndOf="@+id/c7delta" />
 
@@ -164,24 +159,29 @@
         android:layout_height="40dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="1dp"
+        android:layout_marginBottom="4dp"
         android:ems="10"
         android:hint="W Value (lbs)"
         android:inputType="numberDecimal"
         android:textColor="@color/CP1Beige"
+        app:layout_constraintBottom_toTopOf="@+id/c7delta"
         app:layout_constraintEnd_toStartOf="@+id/c7LValue"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/c7spinner" />
+        app:layout_constraintTop_toBottomOf="@+id/c7spinner"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/c7LValue"
         android:layout_width="120dp"
         android:layout_height="40dp"
-        android:layout_marginTop="1dp"
+        android:layout_marginTop="4dp"
         android:layout_marginEnd="24dp"
+        android:layout_marginBottom="1dp"
         android:ems="10"
         android:hint="L Value (in)"
         android:inputType="numberDecimal"
         android:textColor="@color/CP1Beige"
+        app:layout_constraintBottom_toTopOf="@+id/c7deltaSpinner"
         app:layout_constraintEnd_toStartOf="@+id/c7calculateBTN"
         app:layout_constraintStart_toEndOf="@+id/c7wValue"
         app:layout_constraintTop_toBottomOf="@+id/c7spinner" />
@@ -198,5 +198,8 @@
         android:textColor="@color/CP1Beige"
         app:layout_constraintBottom_toTopOf="@+id/c7results1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/c7delta"
+        app:layout_constraintVertical_bias="1.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

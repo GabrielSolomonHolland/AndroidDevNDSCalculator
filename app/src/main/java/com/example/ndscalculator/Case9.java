@@ -19,16 +19,7 @@ public class Case9 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_case9);
-        Log.i("log","About to initialize ads");
-        MobileAds.initialize(this,new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete (InitializationStatus initializationStatus){
-            }
-        });
-        AdView madView = findViewById(R.id.c9adBanner);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        madView.loadAd(adRequest);
-        Log.i("log","Ad initialized");
+
     }
     public void returnToCalc(View v)
     {
