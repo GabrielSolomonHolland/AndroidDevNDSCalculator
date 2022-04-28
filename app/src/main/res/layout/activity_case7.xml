@@ -8,18 +8,47 @@
     android:background="@color/CP1Blue"
     tools:context=".Case7">
 
+    <EditText
+        android:id="@+id/c7wValue2"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="1dp"
+        android:ems="10"
+        android:hint="W Value (lbs)"
+        android:inputType="numberDecimal"
+        android:textColor="@color/CP1Beige"
+        app:layout_constraintBottom_toTopOf="@+id/c7aValue"
+        app:layout_constraintEnd_toStartOf="@+id/c7LValue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/c7spinner" />
+
+    <EditText
+        android:id="@+id/c7aValue"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="28dp"
+        android:ems="10"
+        android:hint="A Value (in)"
+        android:inputType="numberDecimal"
+        android:textColor="@color/CP1Beige"
+        app:layout_constraintBottom_toTopOf="@+id/c7delta"
+        app:layout_constraintEnd_toStartOf="@+id/c7bValue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/c7wValue2" />
+
     <ImageView
         android:id="@+id/case7image"
         android:layout_width="278dp"
         android:layout_height="259dp"
         android:layout_marginStart="66dp"
         android:layout_marginEnd="67dp"
-        android:layout_marginBottom="14dp"
-        app:layout_constraintBottom_toTopOf="@+id/c7woodSelect"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/c7backBTN"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.139"
         app:srcCompat="@drawable/case7cropped" />
 
     <Button
@@ -28,13 +57,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="7dp"
         android:layout_marginTop="7dp"
-        android:layout_marginEnd="15dp"
         android:backgroundTint="@color/CP1Green"
         android:onClick="returnToCalc"
         android:text="Go Back"
         android:textColor="@color/CP1Beige"
         app:layout_constraintBottom_toTopOf="@+id/case7image"
-        app:layout_constraintEnd_toStartOf="@+id/case7title"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -42,28 +69,30 @@
         android:id="@+id/case7title"
         android:layout_width="225dp"
         android:layout_height="45dp"
-        android:layout_marginStart="15dp"
+        android:layout_marginStart="6dp"
         android:layout_marginTop="7dp"
-        android:layout_marginEnd="76dp"
+        android:layout_marginEnd="93dp"
         android:layout_marginBottom="3dp"
         android:gravity="center"
         android:text="Cantilever Beam, concentrated load at any point"
+        android:textColor="@color/CP1Beige"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/case7image"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/c7backBTN"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.727" />
 
     <Spinner
         android:id="@+id/c7woodSelect"
         android:layout_width="257dp"
         android:layout_height="37dp"
-        android:layout_marginStart="27dp"
-        android:layout_marginTop="14dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="12dp"
-        android:layout_marginBottom="9dp"
         app:layout_constraintBottom_toTopOf="@+id/c7spinner"
         app:layout_constraintEnd_toStartOf="@+id/c7sizesBTN"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/case7image" />
 
@@ -71,11 +100,9 @@
         android:id="@+id/c7spinner"
         android:layout_width="257dp"
         android:layout_height="37dp"
-        android:layout_marginStart="27dp"
-        android:layout_marginTop="2dp"
+        android:layout_marginStart="28dp"
         android:layout_marginEnd="12dp"
-        android:layout_marginBottom="1dp"
-        app:layout_constraintBottom_toTopOf="@+id/c7wValue"
+        app:layout_constraintBottom_toTopOf="@+id/c7wValue2"
         app:layout_constraintEnd_toStartOf="@+id/c7sizesBTN"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -85,123 +112,123 @@
         android:id="@+id/c7sizesBTN"
         android:layout_width="110dp"
         android:layout_height="75dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="4dp"
         android:backgroundTint="@color/CP1Green"
         android:onClick="setSpinner2"
         android:text="show Sizes"
         android:textColor="@color/CP1Beige"
-        app:layout_constraintBottom_toTopOf="@+id/c7calculateBTN"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/c7results2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/case7image"
+        app:layout_constraintVertical_bias="0.089" />
 
     <Button
         android:id="@+id/c7calculateBTN"
         android:layout_width="110dp"
         android:layout_height="75dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="55dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="4dp"
         android:backgroundTint="@color/CP1Green"
         android:onClick="calculateCase1"
         android:text="Calculate"
         android:textColor="@color/CP1Beige"
-        app:layout_constraintBottom_toTopOf="@+id/c7results2"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/c7results1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/c7sizesBTN"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/c7results1"
-        android:layout_width="190dp"
-        android:layout_height="120dp"
-        android:layout_marginEnd="26dp"
-        android:layout_marginBottom="4dp"
+        android:layout_width="200dp"
+        android:layout_height="140dp"
         android:textColor="@color/CP1Beige"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/c7results2"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/c7sizesBTN"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/c7results2"
-        android:layout_width="190dp"
-        android:layout_height="120dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="4dp"
+        android:layout_width="200dp"
+        android:layout_height="140dp"
         android:textColor="@color/CP1Beige"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/c7results1"
+        app:layout_constraintTop_toBottomOf="@+id/case7image"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/c7delta"
         android:layout_width="120dp"
         android:layout_height="40dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginBottom="164dp"
+        android:layout_marginStart="28dp"
         android:gravity="center_vertical"
         android:text="Delta Max: "
         android:textAlignment="center"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/c7xValue"
         app:layout_constraintEnd_toStartOf="@+id/c7deltaSpinner"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/c7aValue" />
 
     <Spinner
         android:id="@+id/c7deltaSpinner"
         android:layout_width="120dp"
         android:layout_height="40dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="164dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginEnd="28dp"
+        app:layout_constraintBottom_toTopOf="@+id/c7xValue"
         app:layout_constraintEnd_toStartOf="@+id/c7calculateBTN"
-        app:layout_constraintStart_toEndOf="@+id/c7delta" />
+        app:layout_constraintStart_toEndOf="@+id/c7delta"
+        app:layout_constraintTop_toBottomOf="@+id/c7bValue"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/c7wValue"
+        android:id="@+id/c7bValue"
         android:layout_width="120dp"
         android:layout_height="40dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginEnd="28dp"
         android:ems="10"
-        android:hint="W Value (lbs)"
+        android:hint="B Value (in)"
         android:inputType="numberDecimal"
         android:textColor="@color/CP1Beige"
-        app:layout_constraintBottom_toTopOf="@+id/c7delta"
-        app:layout_constraintEnd_toStartOf="@+id/c7LValue"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/c7spinner"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintBottom_toTopOf="@+id/c7deltaSpinner"
+        app:layout_constraintEnd_toStartOf="@+id/c7calculateBTN"
+        app:layout_constraintStart_toEndOf="@+id/c7aValue"
+        app:layout_constraintTop_toBottomOf="@+id/c7LValue" />
 
     <EditText
         android:id="@+id/c7LValue"
         android:layout_width="120dp"
         android:layout_height="40dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginEnd="28dp"
         android:layout_marginBottom="1dp"
         android:ems="10"
         android:hint="L Value (in)"
         android:inputType="numberDecimal"
         android:textColor="@color/CP1Beige"
-        app:layout_constraintBottom_toTopOf="@+id/c7deltaSpinner"
+        app:layout_constraintBottom_toTopOf="@+id/c7bValue"
         app:layout_constraintEnd_toStartOf="@+id/c7calculateBTN"
-        app:layout_constraintStart_toEndOf="@+id/c7wValue"
+        app:layout_constraintStart_toEndOf="@+id/c7wValue2"
         app:layout_constraintTop_toBottomOf="@+id/c7spinner" />
 
     <EditText
         android:id="@+id/c7xValue"
         android:layout_width="240dp"
         android:layout_height="40dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="139dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="12dp"
         android:ems="10"
         android:hint=" X Value (in) (optional)"
         android:inputType="numberDecimal"
         android:textColor="@color/CP1Beige"
         app:layout_constraintBottom_toTopOf="@+id/c7results1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintEnd_toStartOf="@+id/c7calculateBTN"
+        app:layout_constraintHorizontal_bias="0.034"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/c7delta"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/case7image"
+        app:layout_constraintVertical_bias="0.985" />
 </androidx.constraintlayout.widget.ConstraintLayout>

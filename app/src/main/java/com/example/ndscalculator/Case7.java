@@ -200,7 +200,7 @@ public class Case7 extends AppCompatActivity {
         //make values for result and pull in all attributes from the xml
         float rVMax,mMax,vx,mx,deltax,i_required; //this is what we're calculating
         float w,l,x, deltaMax, e; //what we're using
-        EditText wET =(EditText)findViewById(R.id.c7wValue);
+        EditText wET =(EditText)findViewById(R.id.c7bValue);
         EditText lET =(EditText)findViewById(R.id.c7LValue);
         EditText xET =(EditText)findViewById(R.id.c7xValue);
         //EditText deltaMaxET = (EditText)findViewById((R.id.deltaMaxET));
