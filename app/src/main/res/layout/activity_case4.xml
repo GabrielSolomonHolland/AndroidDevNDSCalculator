@@ -65,7 +65,7 @@
         android:id="@+id/case4Title"
         android:layout_width="225dp"
         android:layout_height="65dp"
-        android:text="Single Beam\nConcentrated Load at Center"
+        android:text="Two Equally Concentrated Loads Symmetrically Placed"
         android:textAlignment="center"
         android:textColor="@color/CP1Beige"
         android:textSize="18sp"
