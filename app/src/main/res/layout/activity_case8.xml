@@ -13,10 +13,12 @@
         android:layout_width="278dp"
         android:layout_height="259dp"
         android:layout_marginStart="66dp"
+        android:layout_marginTop="64dp"
         android:layout_marginEnd="67dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/case8BackBTN"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/case8cropped" />
 
     <Button
@@ -51,11 +53,13 @@
         android:layout_width="257dp"
         android:layout_height="37dp"
         android:layout_marginStart="27dp"
+        android:layout_marginTop="61dp"
         android:layout_marginEnd="12dp"
-        android:layout_marginBottom="9dp"
         app:layout_constraintBottom_toTopOf="@+id/case8Spinner"
         app:layout_constraintEnd_toStartOf="@+id/case8sizesBTN"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/case8image" />
 
     <Spinner
         android:id="@+id/case8Spinner"
@@ -63,17 +67,19 @@
         android:layout_height="37dp"
         android:layout_marginStart="27dp"
         android:layout_marginEnd="12dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="13dp"
         app:layout_constraintBottom_toTopOf="@+id/c8wValue"
         app:layout_constraintEnd_toStartOf="@+id/case8sizesBTN"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/case8woodSelect" />
 
     <Button
         android:id="@+id/case8sizesBTN"
         android:layout_width="110dp"
         android:layout_height="75dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="5dp"
         android:backgroundTint="@color/CP1Green"
         android:onClick="setSpinner2"
         android:text="show Sizes"
@@ -87,7 +93,7 @@
         android:layout_height="75dp"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="5dp"
-        android:layout_marginBottom="152dp"
+        android:layout_marginBottom="184dp"
         android:backgroundTint="@color/CP1Green"
         android:onClick="calculateCase1"
         android:text="Calculate"
@@ -179,4 +185,21 @@
         android:textColor="@color/CP1Beige"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextNumberDecimal"
+        android:layout_width="107dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="13dp"
+        android:ems="10"
+        android:hint="A Value"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/c8results2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/case8woodSelect"
+        app:layout_constraintTop_toBottomOf="@+id/case8calculateBTN" />
 </androidx.constraintlayout.widget.ConstraintLayout>
