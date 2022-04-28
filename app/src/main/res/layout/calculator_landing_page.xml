@@ -84,7 +84,7 @@
                     android:layout_weight="1"
                     android:backgroundTint="@color/CP1Green"
                     android:onClick="enterCases"
-                    android:text="two equal conc. loads. symetrically placed"
+                    android:text="2 equal conc. loads. symet. placed"
                     android:textColor="@color/CP1Beige" />
             </TableRow>
 
@@ -192,7 +192,7 @@
                     android:layout_weight="1"
                     android:backgroundTint="@color/CP1Green"
                     android:onClick="enterCases"
-                    android:text="cont. beam 2 eql span. eql conc loads @center of each span"
+                    android:text="cont. beam 2 eql span. eql conc loads @center"
                     android:textColor="@color/CP1Beige" />
             </TableRow>
 
