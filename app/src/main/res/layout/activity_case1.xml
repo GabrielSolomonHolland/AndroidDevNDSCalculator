@@ -1,143 +1,222 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:ads="http://schemas.android.com/apk/res-auto"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/coordinatorLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     android:background="@color/CP1Blue"
-    android:orientation="vertical"
     android:visibility="visible"
-    tools:context=".Case1">
+    tools:context=".Case1" >
 
-    <androidx.gridlayout.widget.GridLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        ads:rowCount="15"
-        ads:columnCount="3">
+    <ImageView
+        android:id="@+id/case1"
+        android:layout_width="278dp"
+        android:layout_height="259dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginBottom="224dp"
+        app:layout_constraintBottom_toTopOf="@+id/result2TV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/case1Title"
+        app:srcCompat="@drawable/case1cropped" />
 
-        <Button
-            android:id="@+id/goBack"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/CP1Green"
-            android:onClick="returnToCalc"
-            android:text="Go Back"
-            android:textColor="@color/CP1Beige" />
+    <TextView
+        android:id="@+id/case1Title"
+        android:layout_width="225dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="8dp"
+        android:text="Single Beam\nUniformely Distributed Load"
+        android:textAlignment="center"
+        android:textColor="@color/CP1Beige"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/case1Title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Single Beam\nUniformely Distributed Load"
-            android:textAlignment="center"
-            android:textColor="@color/CP1Beige"
-            android:textSize="18sp"
-            ads:layout_columnSpan="2"/>
+    <EditText
+        android:id="@+id/pET"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="26dp"
+        android:ems="10"
+        android:hint="W Value (lbs)"
+        android:inputType="numberDecimal"
+        android:textAlignment="center"
+        android:textColor="@color/CP1Beige"
+        app:layout_constraintEnd_toStartOf="@+id/lET"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner2" />
 
+    <EditText
+        android:id="@+id/lET"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="24dp"
+        android:ems="10"
+        android:hint="L Value (in)"
+        android:inputType="numberDecimal"
+        android:textAlignment="center"
+        android:textColor="@color/CP1Beige"
+        app:layout_constraintEnd_toStartOf="@+id/calculateBTNA2"
+        app:layout_constraintStart_toEndOf="@+id/pET"
+        app:layout_constraintTop_toBottomOf="@+id/spinner2" />
 
-        <EditText
-            android:id="@+id/xET"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint=" X Value (in) (optional)"
-            android:inputType="numberDecimal"
-            android:textAlignment="center"
-            android:textColor="@color/CP1Beige" />
+    <EditText
+        android:id="@+id/xET"
+        android:layout_width="240dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="16dp"
+        android:ems="10"
+        android:hint=" X Value (in) (optional)"
+        android:inputType="numberDecimal"
+        android:textAlignment="center"
+        android:textColor="@color/CP1Beige"
+        app:layout_constraintBottom_toTopOf="@+id/result1TV"
+        app:layout_constraintEnd_toStartOf="@+id/calculateBTNA2"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
-        <TextView
-            android:id="@+id/result2TV"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/CP1Beige"
-            android:textSize="20sp" />
+    <Button
+        android:id="@+id/calculateBTNA2"
+        android:layout_width="110dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="25dp"
+        android:backgroundTint="@color/CP1Green"
+        android:onClick="calculateCase1"
+        android:text="Calculate"
+        android:textColor="@color/CP1Beige"
+        app:layout_constraintBottom_toTopOf="@+id/result2TV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toEndOf="@+id/spinner2"
+        app:layout_constraintTop_toBottomOf="@+id/doneBTN1"
+        app:layout_constraintVertical_bias="0.028" />
 
-        <EditText
-            android:id="@+id/pET"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="W Value (lbs)"
-            android:inputType="numberDecimal"
-            android:textAlignment="center"
-            android:textColor="@color/CP1Beige" />
+    <TextView
+        android:id="@+id/result1TV"
+        android:layout_width="190dp"
+        android:layout_height="120dp"
+        android:layout_marginBottom="56dp"
+        android:textColor="@color/CP1Beige"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
-        <Button
-            android:id="@+id/calculateBTNA2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/CP1Green"
-            android:onClick="calculateCase1"
-            android:text="Calculate"
-            android:textColor="@color/CP1Beige" />
+    <TextView
+        android:id="@+id/result2TV"
+        android:layout_width="190dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="1dp"
+        android:textColor="@color/CP1Beige"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.995"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/xET"
+        app:layout_constraintVertical_bias="0.217" />
 
-        <Spinner
-            android:id="@+id/deltaMaxSpinner"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            ads:layout_column="0"
-            ads:layout_row="6" />
+    <Spinner
+        android:id="@+id/woodSelect"
+        android:layout_width="250dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="16dp"
+        android:entries="@array/dropDownWoods"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.161"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/case1" />
 
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="250dp"
+        android:layout_height="36dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.161"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/woodSelect" />
 
-        <Button
-            android:id="@+id/doneBTN1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/CP1Green"
-            android:onClick="setSpinner2"
-            android:text="Show Sizes"
-            android:textColor="@color/CP1Beige"
-            ads:layout_column="5"
-            ads:layout_row="6" />
+    <Button
+        android:id="@+id/doneBTN1"
+        android:layout_width="110dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="50dp"
+        android:backgroundTint="@color/CP1Green"
+        android:onClick="setSpinner2"
+        android:text="Show Sizes"
+        android:textColor="@color/CP1Beige"
+        app:layout_constraintBottom_toTopOf="@+id/result2TV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toEndOf="@+id/woodSelect"
+        app:layout_constraintTop_toBottomOf="@+id/case1"
+        app:layout_constraintVertical_bias="0.042" />
 
-        <TextView
-            android:id="@+id/result1TV"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/CP1Beige"
-            android:textSize="20sp" />
+    <Button
+        android:id="@+id/goBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="@color/CP1Green"
+        android:onClick="returnToCalc"
+        android:text="Go Back"
+        android:textColor="@color/CP1Beige"
+        app:layout_constraintBottom_toTopOf="@+id/case1"
+        app:layout_constraintEnd_toStartOf="@+id/case1Title"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.23" />
 
-        <Spinner
-            android:id="@+id/woodSelect"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:entries="@array/dropDownWoods" />
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/AC1Banner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:layout_marginEnd="46dp"
+        android:layout_marginBottom="5dp"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-3940256099942544/6300978111"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/result1TV"
+        app:layout_constraintVertical_bias="1.0" />
 
-        <EditText
-            android:id="@+id/lET"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="L Value (in)"
-            android:inputType="numberDecimal"
-            android:textAlignment="center"
-            android:textColor="@color/CP1Beige"
-            ads:layout_column="0"
-            ads:layout_row="9" />
+    <Spinner
+        android:id="@+id/deltaMaxSpinner"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/xET"
+        app:layout_constraintEnd_toStartOf="@+id/calculateBTNA2"
+        app:layout_constraintStart_toEndOf="@+id/deltaXTV"
+        app:layout_constraintTop_toBottomOf="@+id/lET" />
 
-        <TextView
-            android:id="@+id/deltaXTV"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:text="Delta Max: "
-            android:textAlignment="center"
-            android:textSize="18sp" />
-
-        <Spinner
-            android:id="@+id/spinner2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <com.google.android.gms.ads.AdView
-            android:id="@+id/AC1Banner"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            ads:layout_columnSpan="3"
-            ads:layout_rowSpan="0" />
-    </androidx.gridlayout.widget.GridLayout>
+    <TextView
+        android:id="@+id/deltaXTV"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center_vertical"
+        android:text="Delta Max: "
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/xET"
+        app:layout_constraintEnd_toStartOf="@+id/deltaMaxSpinner"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pET" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
