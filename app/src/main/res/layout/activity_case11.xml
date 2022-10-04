@@ -131,7 +131,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginBottom="8dp"
         android:ems="10"
-        android:hint="W Value (lbs)"
+        android:hint="P Value (lbs)"
         android:inputType="numberDecimal"
         android:textColor="@color/CP1Beige"
         app:layout_constraintBottom_toTopOf="@+id/c11delta"

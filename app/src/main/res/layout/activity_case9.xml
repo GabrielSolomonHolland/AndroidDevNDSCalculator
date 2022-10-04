@@ -146,7 +146,7 @@
         android:layout_height="40dp"
         android:layout_marginStart="32dp"
         android:ems="10"
-        android:hint="W Value (lbs)"
+        android:hint="P Value (lbs)"
         android:inputType="numberDecimal"
         android:textColor="@color/CP1Beige"
         app:layout_constraintStart_toStartOf="parent"
