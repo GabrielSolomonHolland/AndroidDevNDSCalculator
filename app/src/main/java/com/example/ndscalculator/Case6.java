@@ -263,7 +263,7 @@ public class Case6 extends AppCompatActivity {
                         "\ni required: " + i;
                 resultTV1.setText(output1);
             } catch (Exception except) {
-                Toast.makeText(getApplicationContext(), "L, W and DeltaMax are required", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Please fill out all values", Toast.LENGTH_SHORT).show();
             }
 
             try {

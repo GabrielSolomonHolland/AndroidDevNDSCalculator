@@ -272,7 +272,7 @@ public class Case4 extends AppCompatActivity {
             catch (Exception except)
             {
                 Log.i("log","Could not do non x value calculations");
-                Toast.makeText(getApplicationContext(), "L, W, and deltaMax are required", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Please fill out all values", Toast.LENGTH_SHORT).show();
             }
 
             try{
