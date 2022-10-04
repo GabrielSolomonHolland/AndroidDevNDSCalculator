@@ -15,7 +15,7 @@
         android:layout_marginTop="154dp"
         android:layout_marginEnd="11dp"
         android:layout_marginBottom="61dp"
-        android:text="Currently at this moment the developers are unaware of how they will be implementing the custom cases. We are currently looking into different solutions for this problem and trying to come up with a plan. Please be patient while we try to find a solution that is user friendly. In the meantime please enjoy the rest that this app has to offer, and we hope that this app has helped some in some difficult calculation."
+        android:text="At this moment the developers are unaware of how they will be implementing the custom cases. We are currently looking into different solutions for this problem and trying to come up with a plan. Please be patient while we try to find a solution that is user friendly. In the meantime please enjoy the rest that this app has to offer, and we hope that this app has helped some in some difficult calculation."
         android:textAlignment="center"
         android:textColor="@color/CP1Beige"
         android:textSize="20sp"
