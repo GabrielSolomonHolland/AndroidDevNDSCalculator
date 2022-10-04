@@ -42,13 +42,12 @@
         android:layout_width="278dp"
         android:layout_height="259dp"
         android:layout_marginStart="66dp"
+        android:layout_marginTop="64dp"
         android:layout_marginEnd="67dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.139"
         app:srcCompat="@drawable/case7cropped" />
 
     <Button
@@ -141,25 +140,25 @@
         android:id="@+id/c7results1"
         android:layout_width="200dp"
         android:layout_height="140dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
         android:textColor="@color/CP1Beige"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/c7results2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/c7sizesBTN"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/c7xValue" />
 
     <TextView
         android:id="@+id/c7results2"
         android:layout_width="200dp"
         android:layout_height="140dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="4dp"
         android:textColor="@color/CP1Beige"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/c7results1"
-        app:layout_constraintTop_toBottomOf="@+id/case7image"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/c7xValue" />
 
     <TextView
         android:id="@+id/c7delta"
@@ -220,15 +219,13 @@
         android:layout_width="240dp"
         android:layout_height="40dp"
         android:layout_marginStart="28dp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginTop="224dp"
         android:ems="10"
         android:hint=" X Value (in) (optional)"
         android:inputType="numberDecimal"
         android:textColor="@color/CP1Beige"
-        app:layout_constraintBottom_toTopOf="@+id/c7results1"
         app:layout_constraintEnd_toStartOf="@+id/c7calculateBTN"
         app:layout_constraintHorizontal_bias="0.034"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/case7image"
-        app:layout_constraintVertical_bias="0.985" />
+        app:layout_constraintTop_toBottomOf="@+id/case7image" />
 </androidx.constraintlayout.widget.ConstraintLayout>
