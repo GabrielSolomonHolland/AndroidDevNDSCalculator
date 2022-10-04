@@ -286,7 +286,7 @@ public class Case4 extends AppCompatActivity {
                 mx = p*x;
 
                 Log.i("log","starting deltax");
-                ireq1 = ((p*x)/(24*e*l))*(((float)Math.pow(l,3)) - (2*l*(float)Math.pow(x,2)) + ((float)Math.pow(x,3)));
+                ireq1 = ((p*x)/(6*e*l))*( (3*l*a) - (3*a*a) - (x*x));
                 ireq2 =((p*a)/(6*deltaMax*e)) * ((3*l*x)-(3 * x * x) - (a*a));
 
                 String output2 =
