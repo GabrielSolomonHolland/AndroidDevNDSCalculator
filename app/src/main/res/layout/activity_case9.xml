@@ -12,83 +12,97 @@
         android:id="@+id/c9image"
         android:layout_width="278dp"
         android:layout_height="259dp"
-        android:layout_marginStart="66dp"
-        android:layout_marginBottom="14dp"
-        app:layout_constraintBottom_toTopOf="@+id/c9woodSelect"
+        android:layout_marginTop="84dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/case9cropped" />
 
     <Button
         android:id="@+id/c9backBTN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="20dp"
         android:backgroundTint="@color/CP1Green"
         android:onClick="returnToCalc"
         android:text="Go Back"
         android:textColor="@color/CP1Beige"
         app:layout_constraintBottom_toTopOf="@+id/c9image"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/c9title"
         android:layout_width="259dp"
         android:layout_height="48dp"
-        android:layout_marginStart="28dp"
+        android:layout_marginEnd="48dp"
         android:gravity="center"
         android:text="Beam Overhanging One Support, concentrated load at end of overhang"
+        android:textColor="@color/CP1Beige"
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/c9image"
-        app:layout_constraintStart_toEndOf="@+id/c9backBTN" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/c9backBTN"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.432" />
 
     <Spinner
         android:id="@+id/c9woodSelect"
         android:layout_width="257dp"
         android:layout_height="37dp"
-        android:layout_marginStart="27dp"
-        android:layout_marginBottom="9dp"
-        app:layout_constraintBottom_toTopOf="@+id/c9spinner"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.207"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/c9image" />
 
     <Spinner
         android:id="@+id/c9spinner"
         android:layout_width="257dp"
         android:layout_height="37dp"
-        android:layout_marginStart="27dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/c9wValue"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.207"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/c9woodSelect" />
 
     <Button
         android:id="@+id/c9SizesBTN"
         android:layout_width="110dp"
         android:layout_height="75dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="8dp"
         android:backgroundTint="@color/CP1Green"
         android:onClick="setSpinner2"
         android:text="show Sizes"
         android:textColor="@color/CP1Beige"
-        app:layout_constraintBottom_toTopOf="@+id/c9calculateBTN"
-        app:layout_constraintStart_toEndOf="@+id/c9woodSelect" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/c9woodSelect"
+        app:layout_constraintTop_toBottomOf="@+id/c9image" />
 
     <Button
         android:id="@+id/c9calculateBTN"
         android:layout_width="110dp"
         android:layout_height="75dp"
         android:layout_marginStart="24dp"
-        android:layout_marginBottom="53dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
         android:backgroundTint="@color/CP1Green"
         android:onClick="calculateCase1"
         android:text="Calculate"
         android:textColor="@color/CP1Beige"
-        app:layout_constraintBottom_toTopOf="@+id/c9results2"
-        app:layout_constraintStart_toEndOf="@+id/c9deltaSpinner" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/c9deltaSpinner"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumberDecimal2" />
 
     <TextView
         android:id="@+id/c9results1"
         android:layout_width="190dp"
-        android:layout_height="120dp"
+        android:layout_height="150dp"
         android:layout_marginBottom="2dp"
         android:textColor="@color/CP1Beige"
         android:textSize="20sp"
@@ -98,7 +112,7 @@
     <TextView
         android:id="@+id/c9results2"
         android:layout_width="190dp"
-        android:layout_height="120dp"
+        android:layout_height="150dp"
         android:layout_marginStart="24dp"
         android:layout_marginBottom="2dp"
         android:textColor="@color/CP1Beige"
@@ -114,41 +128,40 @@
         android:gravity="center_vertical"
         android:text="Delta Max: "
         android:textAlignment="center"
+        android:textColor="@color/CP1Beige"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/c9xValue"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/c9wValue" />
 
     <Spinner
         android:id="@+id/c9deltaSpinner"
         android:layout_width="120dp"
         android:layout_height="40dp"
-        app:layout_constraintBottom_toTopOf="@+id/c9xValue"
-        app:layout_constraintStart_toEndOf="@+id/c9delta" />
+        app:layout_constraintStart_toEndOf="@+id/c9delta"
+        app:layout_constraintTop_toBottomOf="@+id/c9LValue" />
 
     <EditText
         android:id="@+id/c9wValue"
         android:layout_width="120dp"
         android:layout_height="40dp"
         android:layout_marginStart="32dp"
-        android:layout_marginBottom="8dp"
         android:ems="10"
         android:hint="W Value (lbs)"
         android:inputType="numberDecimal"
         android:textColor="@color/CP1Beige"
-        app:layout_constraintBottom_toTopOf="@+id/c9delta"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/c9spinner" />
 
     <EditText
         android:id="@+id/c9LValue"
         android:layout_width="120dp"
         android:layout_height="40dp"
-        android:layout_marginBottom="8dp"
         android:ems="10"
         android:hint="L Value (in)"
         android:inputType="numberDecimal"
         android:textColor="@color/CP1Beige"
-        app:layout_constraintBottom_toTopOf="@+id/c9deltaSpinner"
-        app:layout_constraintStart_toEndOf="@+id/c9wValue" />
+        app:layout_constraintStart_toEndOf="@+id/c9wValue"
+        app:layout_constraintTop_toBottomOf="@+id/c9spinner" />
 
     <EditText
         android:id="@+id/c9xValue"
@@ -159,22 +172,16 @@
         android:hint=" X Value (in) (optional)"
         android:inputType="numberDecimal"
         android:textColor="@color/CP1Beige"
-        app:layout_constraintBottom_toTopOf="@+id/c9results1"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/c9delta" />
 
     <EditText
         android:id="@+id/editTextNumberDecimal2"
-        android:layout_width="102dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="27dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="12dp"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
         android:ems="10"
-        android:hint="A Value"
+        android:hint="A Value (in)"
         android:inputType="numberDecimal"
-        app:layout_constraintBottom_toTopOf="@+id/c9results2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/c9deltaSpinner"
-        app:layout_constraintTop_toBottomOf="@+id/c9calculateBTN" />
+        app:layout_constraintStart_toEndOf="@+id/c9LValue"
+        app:layout_constraintTop_toBottomOf="@+id/c9SizesBTN" />
 </androidx.constraintlayout.widget.ConstraintLayout>
