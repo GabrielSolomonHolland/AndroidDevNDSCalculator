@@ -13,99 +13,113 @@
         android:layout_width="278dp"
         android:layout_height="259dp"
         android:layout_marginStart="66dp"
-        android:layout_marginBottom="14dp"
-        app:layout_constraintBottom_toTopOf="@+id/c10woodSelect"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="66dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/c10backBTN"
         app:srcCompat="@drawable/case10cropped" />
 
     <Button
         android:id="@+id/c10backBTN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="7dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="17dp"
         android:backgroundTint="@color/CP1Green"
         android:onClick="returnToCalc"
         android:text="Go Back"
         android:textColor="@color/CP1Beige"
         app:layout_constraintBottom_toTopOf="@+id/c10image"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/c10title"
         android:layout_width="225dp"
         android:layout_height="45dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginBottom="3dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="20dp"
         android:gravity="center"
         android:text="Continuous Beam with Equal Overhang, uniformly distributed load"
+        android:textColor="@color/CP1Beige"
         android:textSize="13sp"
         app:layout_constraintBottom_toTopOf="@+id/c10image"
-        app:layout_constraintStart_toEndOf="@+id/c10backBTN" />
+        app:layout_constraintStart_toEndOf="@+id/c10backBTN"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
         android:id="@+id/c10woodSelect"
         android:layout_width="257dp"
         android:layout_height="37dp"
-        android:layout_marginStart="27dp"
-        android:layout_marginBottom="9dp"
-        app:layout_constraintBottom_toTopOf="@+id/c10spinner"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="13dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/c10image" />
 
     <Spinner
         android:id="@+id/c10spinner"
         android:layout_width="257dp"
         android:layout_height="37dp"
-        android:layout_marginStart="27dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/c10wValue"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_marginStart="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/c10woodSelect" />
 
     <Button
         android:id="@+id/c10sizeBTN"
         android:layout_width="110dp"
         android:layout_height="75dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="5dp"
         android:backgroundTint="@color/CP1Green"
         android:onClick="setSpinner2"
         android:text="show Sizes"
         android:textColor="@color/CP1Beige"
-        app:layout_constraintBottom_toTopOf="@+id/c10calculateBTN"
-        app:layout_constraintStart_toEndOf="@+id/c10woodSelect" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/c10woodSelect"
+        app:layout_constraintTop_toBottomOf="@+id/c10image" />
 
     <Button
         android:id="@+id/c10calculateBTN"
         android:layout_width="110dp"
         android:layout_height="75dp"
         android:layout_marginStart="24dp"
-        android:layout_marginBottom="53dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="5dp"
         android:backgroundTint="@color/CP1Green"
         android:onClick="calculateCase1"
         android:text="Calculate"
         android:textColor="@color/CP1Beige"
-        app:layout_constraintBottom_toTopOf="@+id/c10results2"
-        app:layout_constraintStart_toEndOf="@+id/c10deltaSpinner" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/c10deltaSpinner"
+        app:layout_constraintTop_toBottomOf="@+id/c10sizeBTN" />
 
     <TextView
         android:id="@+id/c10results1"
         android:layout_width="190dp"
-        android:layout_height="120dp"
-        android:layout_marginBottom="4dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="32dp"
         android:textColor="@color/CP1Beige"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/c10xValue" />
 
     <TextView
         android:id="@+id/c10results2"
         android:layout_width="190dp"
-        android:layout_height="120dp"
+        android:layout_height="150dp"
         android:layout_marginStart="24dp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="7dp"
         android:textColor="@color/CP1Beige"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/c10results1" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/c10results1"
+        app:layout_constraintTop_toBottomOf="@+id/c10xValue" />
 
     <TextView
         android:id="@+id/c10delta"
@@ -115,41 +129,40 @@
         android:gravity="center_vertical"
         android:text="Delta Max: "
         android:textAlignment="center"
+        android:textColor="@color/CP1Beige"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/c10xValue"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/c10wValue" />
 
     <Spinner
         android:id="@+id/c10deltaSpinner"
         android:layout_width="120dp"
         android:layout_height="40dp"
-        app:layout_constraintBottom_toTopOf="@+id/c10xValue"
-        app:layout_constraintStart_toEndOf="@+id/c10delta" />
+        app:layout_constraintStart_toEndOf="@+id/c10delta"
+        app:layout_constraintTop_toBottomOf="@+id/c10LValue" />
 
     <EditText
         android:id="@+id/c10wValue"
         android:layout_width="120dp"
         android:layout_height="40dp"
         android:layout_marginStart="32dp"
-        android:layout_marginBottom="8dp"
         android:ems="10"
         android:hint="W Value (lbs)"
         android:inputType="numberDecimal"
         android:textColor="@color/CP1Beige"
-        app:layout_constraintBottom_toTopOf="@+id/c10delta"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/c10spinner" />
 
     <EditText
         android:id="@+id/c10LValue"
         android:layout_width="120dp"
         android:layout_height="40dp"
-        android:layout_marginBottom="8dp"
         android:ems="10"
         android:hint="L Value (in)"
         android:inputType="numberDecimal"
         android:textColor="@color/CP1Beige"
-        app:layout_constraintBottom_toTopOf="@+id/c10deltaSpinner"
-        app:layout_constraintStart_toEndOf="@+id/c10wValue" />
+        app:layout_constraintStart_toEndOf="@+id/c10wValue"
+        app:layout_constraintTop_toBottomOf="@+id/c10spinner" />
 
     <EditText
         android:id="@+id/c10xValue"
@@ -157,9 +170,9 @@
         android:layout_height="40dp"
         android:layout_marginStart="32dp"
         android:ems="10"
-        android:hint="A Value"
+        android:hint="A Value (in)"
         android:inputType="numberDecimal"
         android:textColor="@color/CP1Beige"
-        app:layout_constraintBottom_toTopOf="@+id/c10results1"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/c10delta" />
 </androidx.constraintlayout.widget.ConstraintLayout>
