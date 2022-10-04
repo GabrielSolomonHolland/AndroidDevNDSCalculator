@@ -73,38 +73,6 @@ public class Case2 extends AppCompatActivity {
         Log.i("log","Finished adapter for deltaMax, options should be set");
     }
 
-    public void returnToCalc(View v) {
-        Intent toCalc = new Intent(this, CalculatorLanding.class);
-        startActivity(toCalc);
-    }
-
-    public void setSpinner2(View v) {
-
-        Log.i("log", "\nEntered setSpinner2");
-        Spinner woodSelect = (Spinner) findViewById(R.id.woodSelect);
-        Spinner spinner2 = (Spinner) findViewById(R.id.spinner2);
-
-        try {
-            //Log.i("log", "retrieved spinners, pulling selection from 1");
-            String selection1 = woodSelect.getSelectedItem().toString();
-            Log.i("log", "selection 1 retrieved, should be: " + selection1);
-            String[] spinner2Options = getTypesFromWood(selection1);
-            Log.i("log", "success retrieving wood array");
-            //Log.i("log","first and last value: " + spinner2Options[0] + spinner2Options[spinner2Options.length]);
-
-            //setspinner here
-            Log.i("log", "entering array adapter #2");
-            ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this,
-                    android.R.layout.simple_spinner_item, spinner2Options);
-            adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-            spinner2.setAdapter(adapter2);
-
-            Log.i("log", "success?!");
-        } catch (Exception e) {
-            Log.i("log", "Failure");
-        }
-    }
-
     public String[] getTypesFromWood(String woodType) throws FileNotFoundException {
         //The goal of this monstrosity is to, from the file they selected in the first spinner,
         //pull the headings from the first position of each line and return that to set as the
@@ -199,6 +167,39 @@ public class Case2 extends AppCompatActivity {
         Log.i("log", "returning empty array, this is bad");
         return returnArray; //should be impossible
     }
+
+    public void returnToCalc(View v) {
+        Intent toCalc = new Intent(this, CalculatorLanding.class);
+        startActivity(toCalc);
+    }
+
+    public void setSpinner2(View v) {
+
+        Log.i("log", "\nEntered setSpinner2");
+        Spinner woodSelect = (Spinner) findViewById(R.id.woodSelect);
+        Spinner spinner2 = (Spinner) findViewById(R.id.spinner2);
+
+        try {
+            //Log.i("log", "retrieved spinners, pulling selection from 1");
+            String selection1 = woodSelect.getSelectedItem().toString();
+            Log.i("log", "selection 1 retrieved, should be: " + selection1);
+            String[] spinner2Options = getTypesFromWood(selection1);
+            Log.i("log", "success retrieving wood array");
+            //Log.i("log","first and last value: " + spinner2Options[0] + spinner2Options[spinner2Options.length]);
+
+            //setspinner here
+            Log.i("log", "entering array adapter #2");
+            ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this,
+                    android.R.layout.simple_spinner_item, spinner2Options);
+            adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            spinner2.setAdapter(adapter2);
+
+            Log.i("log", "success?!");
+        } catch (Exception e) {
+            Log.i("log", "Failure");
+        }
+    }
+
 
     public void calculateCase2(View v) {
         Log.i("log", "Entered calculations");
