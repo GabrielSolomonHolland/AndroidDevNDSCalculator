@@ -289,7 +289,7 @@ public class Case7 extends AppCompatActivity {
 
                 String output2 = "M(x) (x>a): " + mx +
                         "\ni required " + condition + i_req +
-                        "\ndelta(a) at point of load";
+                        "\ndelta(a) at point of load: idk how to program this one tbh";
                 resultTV2.setText(output2);
 
                 if(x>l)
