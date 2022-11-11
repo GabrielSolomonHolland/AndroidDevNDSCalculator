@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -197,17 +198,20 @@ public class Case9 extends AppCompatActivity {
     {
         Log.i("log","Entered calculations");
         //make values for result and pull in all attributes from the xml
-        float rVMax,mMax,vx,mx,deltax,i_required; //this is what we're calculating
-        float w,l,x, deltaMax, e; //what we're using
-        EditText wET =(EditText)findViewById(R.id.c9wValue);
+        float r1, r2, mmax, mx, mx1, i_req1, i_req2, i_req3, i_req4; //this is what we're calculating
+        float p,l,x, x1, deltaMax, e, a; //what we're using
+        EditText pET =(EditText)findViewById(R.id.c9PValue);
         EditText lET =(EditText)findViewById(R.id.c9LValue);
         EditText xET =(EditText)findViewById(R.id.c9xValue);
+        EditText aET =(EditText)findViewById(R.id.c9AValue);
+        EditText x1ET=(EditText)findViewById(R.id.c9x1Value);
         //EditText deltaMaxET = (EditText)findViewById((R.id.deltaMaxET));
         TextView resultTV1 = (TextView)findViewById(R.id.c9results1);
         TextView resultTV2 = (TextView)findViewById(R.id.c9results2);
         Spinner woodSelect = (Spinner)findViewById(R.id.c9woodSelect);
         Spinner gradeSelect = (Spinner)findViewById(R.id.c9spinner);
         Spinner deltaMaxSpinner = (Spinner)findViewById(R.id.c9deltaSpinner);
+        Switch bsSwitch = (Switch)findViewById(R.id.c9bsSwitch);
         Log.i("log","pulled all views from activity");
 
         //clear views
@@ -233,25 +237,26 @@ public class Case9 extends AppCompatActivity {
             try{
                 //pull info from edit texts
                 Log.i("log","getting w,l");
-                w = Float.parseFloat(wET.getText().toString());
+                p = Float.parseFloat(pET.getText().toString());
                 l = Float.parseFloat(lET.getText().toString());
-
-                //get deltaMax from spinner
-                Log.i("log","getting deltaMax from spinner");
-                deltaMax = l/(Float.parseFloat(deltaMaxSpinner.getSelectedItem().toString()));
-
+                a = Float.parseFloat(aET.getText().toString());
 
                 Log.i("log","starting initial calculations");
-                rVMax = (w*l)/2;
-                mMax = (l*l*w)/8; //l^2 * w
-                Log.i("log","rvmax, mmax complete");
-                i_required = (5*w*l*l*l*l)/(384*e*deltaMax);
+                r1 = (p*a)/l;
+                r2 = p/l*(l+a);
+                mmax = p*a;
 
                 //set outputs
-                String output1 = "R=V(max): " + rVMax +
-                        "\nM(max): " + mMax +
-                        "\ni required:\n" + i_required;
+                String output1 = "  R1=V1: " + r1 +
+                        "\n  R2=V1+V2: " + r2 +
+                        "\n  V2: " + p +
+                        "\n  Mmax at R2: " + mmax;
                 resultTV1.setText(output1);
+
+                if(bsSwitch.isChecked())
+                {
+                    Toast.makeText(getApplicationContext(),"Yeah this was BS to program too, I feel you",Toast.LENGTH_SHORT).show();
+                }
             }
             catch (Exception except)
             {
@@ -259,20 +264,36 @@ public class Case9 extends AppCompatActivity {
             }
 
             try{
+                //float r1, r2, mmax, mx, mx1, i_req1, i_req2, i_req3, i_req4; //this is what we're calculating
                 x = Float.parseFloat(xET.getText().toString());
-                w = Float.parseFloat(wET.getText().toString());
+                x1 = Float.parseFloat(x1ET.getText().toString());
+                p = Float.parseFloat(pET.getText().toString());
                 l = Float.parseFloat(lET.getText().toString());
+                a = Float.parseFloat(aET.getText().toString());
 
-                vx = w*((l/2)-x);
-                mx = ((w*x)/2)*(l-x);
+                //get deltaMax from spinner
+                Log.i("log","getting deltaMax from spinner");
+                deltaMax = l/(Float.parseFloat(deltaMaxSpinner.getSelectedItem().toString()));
 
-                Log.i("log","starting deltax");
-                deltax = ((w*x)/(24*e*l))*(((float)Math.pow(l,3)) - (2*l*x*x) + ((float)Math.pow(x,3)));
+                mx = (p*a*x)/l;
+                mx1 = p*(a-x1);
+                i_req1 = Float.parseFloat("0.06415") * ((p*a*l*l)/(e*deltaMax)); //dawg why
+                i_req2 = ((p*a*a)/(e*3*deltaMax))*(l+a);
+                i_req3 = ((p*a*x)/(6*e*deltaMax*l))*((l*l)-(x*x)); // this is actually deltax
+                i_req4 = ((p*x1)/(6*e*deltaMax)) *
+                        (
+                        (2*a*l)
+                        + (3*a*x1)
+                        - (x1*x1)
+                        ); //this is actually deltax1
 
-                Log.i("log","deltax complete, got:" + deltax);
-                String output2 = "V(x): " + vx +
-                        "\nM(x): " + mx +
-                        "\nDelta(x): " + deltax;
+                String output2 = "  Mx (Between supporst): " + mx +
+                        "\n  Mx1 (For overhang): " + mx1 +
+                        "\n  i Required (Between supports (x=1/sqrt3)): " + i_req1 +
+                        "\n  i Required (For overhang (x1 = a): " + i_req2 +
+                        "\n  deltax (between supports): " + i_req3 +
+                        "\n  deltax1 (for overhang)" + i_req4;
+
                 resultTV2.setText(output2);
 
                 if(x>l)

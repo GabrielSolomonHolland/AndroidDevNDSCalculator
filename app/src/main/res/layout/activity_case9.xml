@@ -88,37 +88,16 @@
         android:id="@+id/c9calculateBTN"
         android:layout_width="110dp"
         android:layout_height="75dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="5dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="9dp"
         android:backgroundTint="@color/CP1Green"
         android:onClick="calculateCase1"
         android:text="Calculate"
         android:textColor="@color/CP1Beige"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/c9deltaSpinner"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumberDecimal2" />
-
-    <TextView
-        android:id="@+id/c9results1"
-        android:layout_width="190dp"
-        android:layout_height="150dp"
-        android:layout_marginBottom="2dp"
-        android:textColor="@color/CP1Beige"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/c9results2"
-        android:layout_width="190dp"
-        android:layout_height="150dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginBottom="2dp"
-        android:textColor="@color/CP1Beige"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/c9results1" />
+        app:layout_constraintTop_toBottomOf="@+id/c9SizesBTN" />
 
     <TextView
         android:id="@+id/c9delta"
@@ -131,7 +110,7 @@
         android:textColor="@color/CP1Beige"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/c9wValue" />
+        app:layout_constraintTop_toBottomOf="@+id/c9PValue" />
 
     <Spinner
         android:id="@+id/c9deltaSpinner"
@@ -141,7 +120,7 @@
         app:layout_constraintTop_toBottomOf="@+id/c9LValue" />
 
     <EditText
-        android:id="@+id/c9wValue"
+        android:id="@+id/c9PValue"
         android:layout_width="120dp"
         android:layout_height="40dp"
         android:layout_marginStart="32dp"
@@ -160,28 +139,82 @@
         android:hint="L Value (in)"
         android:inputType="numberDecimal"
         android:textColor="@color/CP1Beige"
-        app:layout_constraintStart_toEndOf="@+id/c9wValue"
+        app:layout_constraintStart_toEndOf="@+id/c9PValue"
         app:layout_constraintTop_toBottomOf="@+id/c9spinner" />
 
     <EditText
         android:id="@+id/c9xValue"
-        android:layout_width="240dp"
+        android:layout_width="120dp"
         android:layout_height="40dp"
         android:layout_marginStart="32dp"
         android:ems="10"
-        android:hint=" X Value (in) (optional)"
+        android:hint="x (in) (Optional)"
         android:inputType="numberDecimal"
         android:textColor="@color/CP1Beige"
+        android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/c9delta" />
 
     <EditText
-        android:id="@+id/editTextNumberDecimal2"
+        android:id="@+id/c9AValue"
         android:layout_width="120dp"
         android:layout_height="40dp"
         android:ems="10"
         android:hint="A Value (in)"
         android:inputType="numberDecimal"
-        app:layout_constraintStart_toEndOf="@+id/c9LValue"
-        app:layout_constraintTop_toBottomOf="@+id/c9SizesBTN" />
+        android:textColor="@color/CP1Beige"
+        app:layout_constraintStart_toEndOf="@+id/c9xValue"
+        app:layout_constraintTop_toBottomOf="@+id/c9deltaSpinner" />
+
+    <ScrollView
+        android:layout_width="410dp"
+        android:layout_height="124dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/c9x1Value"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="2dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/c9results1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/CP1Beige" />
+
+            <TextView
+                android:id="@+id/c9results2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/CP1Beige" />
+        </LinearLayout>
+    </ScrollView>
+
+    <EditText
+        android:id="@+id/c9x1Value"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="32dp"
+        android:ems="10"
+        android:hint="x1 (in) (Optional)"
+        android:inputType="number"
+        android:textColor="@color/CP1Beige"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/c9xValue" />
+
+    <Switch
+        android:id="@+id/c9bsSwitch"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:text="This is BS"
+        android:textColor="@color/CP1Beige"
+        app:layout_constraintStart_toEndOf="@+id/c9x1Value"
+        app:layout_constraintTop_toBottomOf="@+id/c9AValue" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
