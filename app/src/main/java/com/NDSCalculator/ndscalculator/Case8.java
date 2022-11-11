@@ -255,6 +255,10 @@ public class Case8 extends AppCompatActivity {
                         "\nM1 (x = (1/2)[1-(a^2)/(l^2)]): " + m1 +
                         "\nM2 (at R2): " + m2;
                 resultTV1.setText(output1);
+                if(bsSwitch.isChecked())
+                {
+                    Toast.makeText(getApplicationContext(),"Yeah this was BS to program too, I feel you",Toast.LENGTH_SHORT).show();
+                }
             }
             catch (Exception except)
             {
@@ -316,13 +320,8 @@ public class Case8 extends AppCompatActivity {
 
                 resultTV2.setText(output2);
 
-                if(x>l)
-                {
+                if(x>l) {
                     Toast.makeText(getApplicationContext(), "X should not be larger than L", Toast.LENGTH_SHORT).show();
-                }
-                if(bsSwitch.isChecked())
-                {
-                    Toast.makeText(getApplicationContext(),"Yeah this was BS to program too, I feel you",Toast.LENGTH_SHORT).show();
                 }
             }
             catch (Exception except)
