@@ -196,11 +196,12 @@ public class Case10 extends AppCompatActivity {
     {
         Log.i("log","Entered calculations");
         //make values for result and pull in all attributes from the xml
-        float rVMax,mMax,vx,mx,deltax,i_required; //this is what we're calculating
-        float w,l,x, deltaMax, e; //what we're using
+        float r1, v1, v2, mr, mc, i_req, i_req2; //this is what we're calculating
+        float w,l,a, deltaMax, e; //what we're using
         EditText wET =(EditText)findViewById(R.id.c10wValue);
         EditText lET =(EditText)findViewById(R.id.c10LValue);
-        EditText xET =(EditText)findViewById(R.id.c10xValue);
+        EditText aET =(EditText)findViewById(R.id.c10aValue);
+
         //EditText deltaMaxET = (EditText)findViewById((R.id.deltaMaxET));
         TextView resultTV1 = (TextView)findViewById(R.id.c10results1);
         TextView resultTV2 = (TextView)findViewById(R.id.c10results2);
@@ -234,22 +235,20 @@ public class Case10 extends AppCompatActivity {
                 Log.i("log","getting w,l");
                 w = Float.parseFloat(wET.getText().toString());
                 l = Float.parseFloat(lET.getText().toString());
+                a = Float.parseFloat(aET.getText().toString());
 
-                //get deltaMax from spinner
-                Log.i("log","getting deltaMax from spinner");
-                deltaMax = l/(Float.parseFloat(deltaMaxSpinner.getSelectedItem().toString()));
-
-
-                Log.i("log","starting initial calculations");
-                rVMax = (w*l)/2;
-                mMax = (l*l*w)/8; //l^2 * w
-                Log.i("log","rvmax, mmax complete");
-                i_required = (5*w*l*l*l*l)/(384*e*deltaMax);
+                r1 = w/2;
+                v1 = w*a;
+                v2 = (w/2)*(l-(2*a));
+                mr = -1 * ((w*a*a)/2);
+                mc = ((w*l)/8)*(l-(4*a));
 
                 //set outputs
-                String output1 = "R=V(max): " + rVMax +
-                        "\nM(max): " + mMax +
-                        "\ni required:\n" + i_required;
+                String output1 = "R1 = R2: " + r1 +
+                        "\nV1: " + v1 +
+                        "\nV2: " + v2 +
+                        "\nMr: " + mr +
+                        "\nMc: " + mc;
                 resultTV1.setText(output1);
             }
             catch (Exception except)
@@ -258,26 +257,30 @@ public class Case10 extends AppCompatActivity {
             }
 
             try{
-                x = Float.parseFloat(xET.getText().toString());
+                //mc, i_req, i_req2
+                a = Float.parseFloat(aET.getText().toString());
                 w = Float.parseFloat(wET.getText().toString());
                 l = Float.parseFloat(lET.getText().toString());
+                //get deltaMax from spinner
+                Log.i("log","getting deltaMax from spinner");
+                deltaMax = l/(Float.parseFloat(deltaMaxSpinner.getSelectedItem().toString()));
 
-                vx = w*((l/2)-x);
-                mx = ((w*x)/2)*(l-x);
 
-                Log.i("log","starting deltax");
-                deltax = ((w*x)/(24*e*l))*(((float)Math.pow(l,3)) - (2*l*x*x) + ((float)Math.pow(x,3)));
 
-                Log.i("log","deltax complete, got:" + deltax);
-                String output2 = "V(x): " + vx +
-                        "\nM(x): " + mx +
-                        "\nDelta(x): " + deltax;
+                //This is why this calculator exists, this is dogshit
+                i_req = (float)((((w*l)*Math.pow(l-(2*a),3))/(384 * deltaMax * e)) *
+                        (((5/l)*(l-(2*a)))
+                        - ((24/l)
+                        * (a/(l-(2*a))))));
+
+                i_req2 = (float)((((w*l)*Math.pow(l-(2*a),3)*a)/(24 * deltaMax * e)) *
+                        (-1 + (6*Math.pow((a/(l-(2*a))),2)) +
+                        (3*(Math.pow((a/(l-(2*a))),3)))));
+
+                String output2 = "i required (at center): " + i_req +
+                        "\ni required (at free ends): " + i_req2;
                 resultTV2.setText(output2);
 
-                if(x>l)
-                {
-                    Toast.makeText(getApplicationContext(), "X should not be larger than L", Toast.LENGTH_SHORT).show();
-                }
             }
             catch (Exception except)
             {

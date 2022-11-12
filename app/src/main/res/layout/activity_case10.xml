@@ -105,7 +105,7 @@
         android:textColor="@color/CP1Beige"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/c10xValue" />
+        app:layout_constraintTop_toBottomOf="@+id/c10aValue" />
 
     <TextView
         android:id="@+id/c10results2"
@@ -119,7 +119,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/c10results1"
-        app:layout_constraintTop_toBottomOf="@+id/c10xValue" />
+        app:layout_constraintTop_toBottomOf="@+id/c10aValue" />
 
     <TextView
         android:id="@+id/c10delta"
@@ -165,7 +165,7 @@
         app:layout_constraintTop_toBottomOf="@+id/c10spinner" />
 
     <EditText
-        android:id="@+id/c10xValue"
+        android:id="@+id/c10aValue"
         android:layout_width="240dp"
         android:layout_height="40dp"
         android:layout_marginStart="32dp"
