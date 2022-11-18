@@ -12,6 +12,12 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+
 import java.io.DataInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -27,6 +33,17 @@ public class Case11 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_case11);
+
+        Log.i("log","About to initialize ads");
+        MobileAds.initialize(this,new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete (InitializationStatus initializationStatus){
+            }
+        });
+        AdView madView = findViewById(R.id.AC11Banner);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        madView.loadAd(adRequest);
+        Log.i("log","Ad initialized");
 
         Log.i("log","setting dropDown view");
         Spinner woodSelect = (Spinner)findViewById(R.id.c11woodSelect);
@@ -197,11 +214,11 @@ public class Case11 extends AppCompatActivity {
     {
         Log.i("log","Entered calculations");
         //make values for result and pull in all attributes from the xml
-        float rVMax,mMax,vx,mx,deltax,i_required; //this is what we're calculating
-        float w,l,x, deltaMax, e; //what we're using
-        EditText wET =(EditText)findViewById(R.id.c11wValue);
+        float v1, mmax, i_req1, i_req2;
+        float p,l,a, deltaMax, e; //what we're using
+        EditText pET =(EditText)findViewById(R.id.c11pValue);
         EditText lET =(EditText)findViewById(R.id.c11LValue);
-        EditText xET =(EditText)findViewById(R.id.c11xValue);
+        EditText aET =(EditText)findViewById(R.id.c11aValue);
         //EditText deltaMaxET = (EditText)findViewById((R.id.deltaMaxET));
         TextView resultTV1 = (TextView)findViewById(R.id.c11results1);
         TextView resultTV2 = (TextView)findViewById(R.id.c11results2);
@@ -233,7 +250,8 @@ public class Case11 extends AppCompatActivity {
             try{
                 //pull info from edit texts
                 Log.i("log","getting w,l");
-                w = Float.parseFloat(wET.getText().toString());
+                a = Float.parseFloat(aET.getText().toString());
+                p = Float.parseFloat(pET.getText().toString());
                 l = Float.parseFloat(lET.getText().toString());
 
                 //get deltaMax from spinner
@@ -241,16 +259,15 @@ public class Case11 extends AppCompatActivity {
                 deltaMax = l/(Float.parseFloat(deltaMaxSpinner.getSelectedItem().toString()));
 
 
-                Log.i("log","starting initial calculations");
-                rVMax = (w*l)/2;
-                mMax = (l*l*w)/8; //l^2 * w
-                Log.i("log","rvmax, mmax complete");
-                i_required = (5*w*l*l*l*l)/(384*e*deltaMax);
+                //float r1, v1, v2, mmax, i_req1, i_req2;
+                v1 = p*-1;
+                mmax = (p*-1)*a;
 
                 //set outputs
-                String output1 = "R=V(max): " + rVMax +
-                        "\nM(max): " + mMax +
-                        "\ni required:\n" + i_required;
+                String output1 = "R1=R2: " + p +
+                        "\nV1: " + v1 +
+                        "\nV2: " + p +
+                        "\nM(Max) (Between Supports): " + mmax;
                 resultTV1.setText(output1);
             }
             catch (Exception except)
@@ -259,25 +276,23 @@ public class Case11 extends AppCompatActivity {
             }
 
             try{
-                x = Float.parseFloat(xET.getText().toString());
-                w = Float.parseFloat(wET.getText().toString());
+                a = Float.parseFloat(aET.getText().toString());
+                p = Float.parseFloat(pET.getText().toString());
                 l = Float.parseFloat(lET.getText().toString());
+                deltaMax = l/(Float.parseFloat(deltaMaxSpinner.getSelectedItem().toString()));
 
-                vx = w*((l/2)-x);
-                mx = ((w*x)/2)*(l-x);
+                //float r1, v1, v2, mmax, i_req1, i_req2
 
-                Log.i("log","starting deltax");
-                deltax = ((w*x)/(24*e*l))*(((float)Math.pow(l,3)) - (2*l*x*x) + ((float)Math.pow(x,3)));
+                i_req1 = ((p*a*a)/(3*e*deltaMax))*(a+((3/2)*l));
+                i_req2 = -1*((p*l*l*a)/(8*e*deltaMax));
 
-                Log.i("log","deltax complete, got:" + deltax);
-                String output2 = "V(x): " + vx +
-                        "\nM(x): " + mx +
-                        "\nDelta(x): " + deltax;
+                String output2 = "i required (at point of load/ends): " + i_req1 +
+                        "\ni required (at center): " + i_req2;
                 resultTV2.setText(output2);
 
-                if(x>l)
+                if(a>l)
                 {
-                    Toast.makeText(getApplicationContext(), "X should not be larger than L", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "A should not be larger than L", Toast.LENGTH_SHORT).show();
                 }
             }
             catch (Exception except)

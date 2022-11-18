@@ -13,151 +13,172 @@
         android:layout_width="278dp"
         android:layout_height="259dp"
         android:layout_marginStart="66dp"
-        android:layout_marginBottom="14dp"
-        app:layout_constraintBottom_toTopOf="@+id/c11woodSelect"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="67dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/c11title"
         app:srcCompat="@drawable/case11cropped" />
 
     <Button
         android:id="@+id/c11backBTN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="7dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:backgroundTint="@color/CP1Green"
         android:onClick="returnToCalc"
         android:text="Go Back"
         android:textColor="@color/CP1Beige"
-        app:layout_constraintBottom_toTopOf="@+id/c11image"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/c11title"
-        android:layout_width="225dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginBottom="3dp"
+        android:layout_width="226dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="16dp"
         android:gravity="center"
         android:text="Continuous Beam with Equal Overhang, equal concentrated loads at ends of overhang"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toTopOf="@+id/c11image"
-        app:layout_constraintStart_toEndOf="@+id/c11backBTN" />
+        android:textColor="@color/CP1Beige"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/c11backBTN"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
         android:id="@+id/c11woodSelect"
         android:layout_width="257dp"
         android:layout_height="37dp"
-        android:layout_marginStart="27dp"
-        android:layout_marginBottom="9dp"
-        app:layout_constraintBottom_toTopOf="@+id/c11spinner"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/c11image" />
 
     <Spinner
         android:id="@+id/c11spinner"
         android:layout_width="257dp"
         android:layout_height="37dp"
-        android:layout_marginStart="27dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/c11wValue"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="1dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/c11woodSelect" />
 
     <Button
         android:id="@+id/c11sizeBTN"
         android:layout_width="110dp"
         android:layout_height="75dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="10dp"
         android:backgroundTint="@color/CP1Green"
         android:onClick="setSpinner2"
         android:text="show Sizes"
         android:textColor="@color/CP1Beige"
-        app:layout_constraintBottom_toTopOf="@+id/c11calculateBTN"
-        app:layout_constraintStart_toEndOf="@+id/c11woodSelect" />
+        app:layout_constraintStart_toEndOf="@+id/c11woodSelect"
+        app:layout_constraintTop_toBottomOf="@+id/c11image" />
 
     <Button
         android:id="@+id/c11calculateBTN"
         android:layout_width="110dp"
         android:layout_height="75dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginBottom="53dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="10dp"
         android:backgroundTint="@color/CP1Green"
         android:onClick="calculateCase1"
         android:text="Calculate"
         android:textColor="@color/CP1Beige"
-        app:layout_constraintBottom_toTopOf="@+id/c11results2"
-        app:layout_constraintStart_toEndOf="@+id/c11deltaSpinner" />
+        app:layout_constraintStart_toEndOf="@+id/c11deltaSpinner"
+        app:layout_constraintTop_toBottomOf="@+id/c11sizeBTN" />
 
     <TextView
         android:id="@+id/c11results1"
-        android:layout_width="190dp"
+        android:layout_width="180dp"
         android:layout_height="120dp"
+        android:layout_marginTop="7dp"
         android:textColor="@color/CP1Beige"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/c11aValue" />
 
     <TextView
         android:id="@+id/c11results2"
-        android:layout_width="190dp"
+        android:layout_width="220dp"
         android:layout_height="120dp"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="7dp"
         android:textColor="@color/CP1Beige"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/c11results1" />
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/c11results1"
+        app:layout_constraintTop_toBottomOf="@+id/c11aValue" />
 
     <TextView
         android:id="@+id/c11delta"
         android:layout_width="120dp"
         android:layout_height="40dp"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="24dp"
         android:gravity="center_vertical"
         android:text="Delta Max: "
         android:textAlignment="center"
+        android:textColor="@color/CP1Beige"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/c11xValue"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/c11pValue" />
 
     <Spinner
         android:id="@+id/c11deltaSpinner"
         android:layout_width="120dp"
         android:layout_height="40dp"
-        app:layout_constraintBottom_toTopOf="@+id/c11xValue"
-        app:layout_constraintStart_toEndOf="@+id/c11delta" />
+        app:layout_constraintStart_toEndOf="@+id/c11delta"
+        app:layout_constraintTop_toBottomOf="@+id/c11LValue" />
 
     <EditText
-        android:id="@+id/c11wValue"
+        android:id="@+id/c11pValue"
         android:layout_width="120dp"
         android:layout_height="40dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginStart="24dp"
         android:ems="10"
         android:hint="P Value (lbs)"
         android:inputType="numberDecimal"
         android:textColor="@color/CP1Beige"
-        app:layout_constraintBottom_toTopOf="@+id/c11delta"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/c11spinner" />
 
     <EditText
         android:id="@+id/c11LValue"
         android:layout_width="120dp"
         android:layout_height="40dp"
-        android:layout_marginBottom="8dp"
         android:ems="10"
         android:hint="L Value (in)"
         android:inputType="numberDecimal"
         android:textColor="@color/CP1Beige"
-        app:layout_constraintBottom_toTopOf="@+id/c11deltaSpinner"
-        app:layout_constraintStart_toEndOf="@+id/c11wValue" />
+        app:layout_constraintStart_toEndOf="@+id/c11pValue"
+        app:layout_constraintTop_toBottomOf="@+id/c11spinner" />
 
     <EditText
-        android:id="@+id/c11xValue"
+        android:id="@+id/c11aValue"
         android:layout_width="240dp"
         android:layout_height="40dp"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="24dp"
         android:ems="10"
         android:hint="A Value"
         android:inputType="numberDecimal"
         android:textColor="@color/CP1Beige"
-        app:layout_constraintBottom_toTopOf="@+id/c11results1"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/c11delta" />
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/AC11Banner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="46dp"
+        android:layout_marginBottom="3dp"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-3940256099942544/6300978111"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/c11results1" />
 </androidx.constraintlayout.widget.ConstraintLayout>
+<!--ca-app-pub-9877834407809121/1448686802 -->
