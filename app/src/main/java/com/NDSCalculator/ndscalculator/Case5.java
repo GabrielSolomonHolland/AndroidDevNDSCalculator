@@ -263,7 +263,7 @@ public class Case5 extends AppCompatActivity {
                 //set outputs
                 String output1 = "R=V(max): " + rVMax +
                         "\nM(max): " + mMax +
-                        "\ni required:\n" + i_required;
+                        "\ni required at free end:\n" + i_required;
                 resultTV1.setText(output1);
             }
             catch (Exception except)
@@ -288,7 +288,7 @@ public class Case5 extends AppCompatActivity {
 
                 String output2 = "V(x): " + vx +
                         "\nM(x): " + mx +
-                        "\nsomething?: " + i_req_2;
+                        "\ni required: " + i_req_2;
                 resultTV2.setText(output2);
 
                 if(x>l)
