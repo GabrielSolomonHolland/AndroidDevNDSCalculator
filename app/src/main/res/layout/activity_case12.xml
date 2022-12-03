@@ -90,8 +90,9 @@
         android:id="@+id/c12results1"
         android:layout_width="190dp"
         android:layout_height="120dp"
+        android:text="thinking making a popout for all these results and a full size ad as well on that pop out, maybe a fragment?"
         android:textColor="@color/CP1Beige"
-        android:textSize="20sp"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
